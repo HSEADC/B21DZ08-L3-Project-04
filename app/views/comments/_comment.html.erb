@@ -4,9 +4,9 @@
     <%= comment.body %>
   </p>
 
-  <p>
-    <strong>Post:</strong>
-    <%= comment.post_id %>
-  </p>
+</div>
 
+<div>
+  <%= link_to "Edit this comment", edit_post_comment_path(@post, comment) %>
+  <%= button_to "Destroy this comment", [@post, comment], method: :delete %>
 </div>

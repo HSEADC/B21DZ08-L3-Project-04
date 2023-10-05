@@ -2,7 +2,9 @@
 
 <%= render @post %>
 
-<%= render @post.comments %>
+<%= link_to "New Comment", new_post_comment_path(@post) %>
+
+<%= render @post.comments, post: @post %>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
