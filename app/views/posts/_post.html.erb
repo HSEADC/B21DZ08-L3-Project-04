@@ -1,5 +1,5 @@
-<div id="<%= dom_id post %>">
-<%= image_tag post.post_image.url, width:100 %>
+<div class="post" id="<%= dom_id post %>">
+<%= image_tag post.post_image.url, class:"postImage" %>
   <p>
     <strong>Title:</strong>
     <%= post.title %>

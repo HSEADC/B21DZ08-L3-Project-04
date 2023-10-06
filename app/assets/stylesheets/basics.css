@@ -1,0 +1,15 @@
+.post {
+  display: block;
+  width: 500px;
+  height: fit-content;
+  border: 3px solid magenta;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+}
+.postImage {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}

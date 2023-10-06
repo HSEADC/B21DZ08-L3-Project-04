@@ -3,9 +3,8 @@
 
 def seed
   reset_db
-  create_posts(5)
+  create_posts(10)
   create_comments(2..8)
-  puts "yay"
 end
 
 def reset_db
