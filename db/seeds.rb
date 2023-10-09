@@ -4,16 +4,22 @@
 "Руй-руй, бай-бай,\nЗолотая моя гора,\nКаменная моя стена.\nНоги твои обгонят оленя,\nПальцы твои проворнее белки,\nГлаза твои не проглядят глухаря.\nОхотничью добычу будешь доставлять возами,\nУлов будешь привозить плотами,\nБудешь играть в городе серебряными рюхами,\nВ лапту будешь играть золотым мячом.\nЧерез пять городков будешь перескакивать,\nНад шестью городками седьмой выбивать.\nТы, мое солнышко, как посредине неба мерцающая звездочка,\nНа ладонях ты лелеянный,\nТы как тень у окна,\nКак куколка на коленях,\nДля дома ты большая радость.\n"
 ]
 
+@title_adj = ["Зеленовицкая", "Флорандская", "Марсилийская", "Тенебрисская", "Лунгарская", "Эмберская", "Солнецская", "Нирвандская", "Ксантийская", "Аурантийская"]
+
 def seed
   reset_db
-  create_posts(10)
-  # create_comments(2..8)
+  create_posts(15)
+  create_comments(2..8)
 end
 
 def reset_db
   Rake::Task['db:drop'].invoke
   Rake::Task['db:create'].invoke
   Rake::Task['db:migrate'].invoke
+end
+
+def create_title(adj)
+  title = "#{adj} песня" 
 end
 
 def split_song_into_lines(song)
@@ -27,14 +33,15 @@ def generate_random_song(raw_songs)
   return selected_lines
 end
 
-def create_mashup
+def create_mashup(how_many_lines)
   @mashup = []
-  rand(4..8).times do
+  how_many_lines.times do
     @mashup.concat(generate_random_song(@raw_songs))
   end
   @mashup = @mashup.join("<br>").html_safe
  return @mashup
 end
+
 def upload_random_image
     uploader = PostImageUploader.new(Post.new, :post_image)
     uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/autoupload/posts', '*')).sample))
@@ -43,18 +50,18 @@ end
 
 def create_posts(quantity)
   quantity.times do
-    post = Post.create(title: "невероятно", text: create_mashup, post_image: upload_random_image)
-    puts "Post with id #{post.id} just created"
+    post = Post.create(title: "#{@title_adj.sample} народная песня", text: create_mashup(rand(4..8)), post_image: upload_random_image)
+    puts "Пост #{post.id} создан"
   end
 end
 
-# def create_comments(quantity)
-#   Post.all.each do |post|
-#     quantity.to_a.sample.times do
-#       comment = Comment.create(post_id: post.id, body: create_sentence)
-#       puts "Comment with id #{comment.id} for pin with id #{comment.post.id} just created"
-#     end
-#   end
-# end
+def create_comments(quantity)
+  Post.all.each do |post|
+    quantity.to_a.sample.times do
+      comment = Comment.create(post_id: post.id, body: create_mashup(2))
+      puts "Комментарий #{comment.id} для поста #{comment.post.id} создан"
+    end
+  end
+end
 
 seed

@@ -1,12 +1,10 @@
 <div class="post" id="<%= dom_id post %>">
 <%= image_tag post.post_image.url, class:"postImage" %>
   <p>
-    <strong>Title:</strong>
-    <%= post.title.html_safe %>
+    <h2><%= post.title.html_safe %></h2>
   </p>
 
   <p>
-    <strong>Text:</strong>
     <%= post.text.html_safe %>
   </p>
 

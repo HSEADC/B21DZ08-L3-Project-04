@@ -1,12 +1,10 @@
-<div id="<%= dom_id comment %>">
+<div class="comment" id="<%= dom_id comment %>">
   <p>
-    <strong>Body:</strong>
-    <%= comment.body %>
+    <%= comment.body.html_safe %>
   </p>
 
-</div>
-
-<div>
-  <%= link_to "Edit this comment", edit_post_comment_path(@post, comment) %>
-  <%= button_to "Destroy this comment", [@post, comment], method: :delete %>
+  <div>
+    <%= link_to "Редактировать", edit_post_comment_path(@post, comment) %>
+    <%= button_to "Удалить", [@post, comment], method: :delete %>
+  </div>
 </div>
