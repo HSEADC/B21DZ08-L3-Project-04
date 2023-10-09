@@ -2,12 +2,12 @@
 <%= image_tag post.post_image.url, class:"postImage" %>
   <p>
     <strong>Title:</strong>
-    <%= post.title %>
+    <%= post.title.html_safe %>
   </p>
 
   <p>
     <strong>Text:</strong>
-    <%= post.text %>
+    <%= post.text.html_safe %>
   </p>
 
 </div>
