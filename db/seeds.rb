@@ -8,6 +8,7 @@
 
 def seed
   reset_db
+  create_users
   create_posts(15)
   create_comments(2..8)
 end
@@ -16,6 +17,22 @@ def reset_db
   Rake::Task['db:drop'].invoke
   Rake::Task['db:create'].invoke
   Rake::Task['db:migrate'].invoke
+end
+
+def create_users
+  i = 0
+
+  10.times do
+    user_data = {
+      email: "user_#{i}@email.com",
+      password: 'testtest'
+    }
+
+    user = User.create!(user_data)
+    puts "User created with id #{user.id}"
+
+    i += 1
+  end
 end
 
 def create_title(adj)
@@ -50,7 +67,8 @@ end
 
 def create_posts(quantity)
   quantity.times do
-    post = Post.create(title: "#{@title_adj.sample} народная песня", text: create_mashup(rand(4..8)), post_image: upload_random_image)
+    user = User.all.sample
+    post = Post.create(title: "#{@title_adj.sample} народная песня", text: create_mashup(rand(4..8)), post_image: upload_random_image, user_id: user.id)
     puts "Пост #{post.id} создан"
   end
 end
@@ -58,7 +76,8 @@ end
 def create_comments(quantity)
   Post.all.each do |post|
     quantity.to_a.sample.times do
-      comment = Comment.create(post_id: post.id, body: create_mashup(2))
+      user = User.all.sample
+      comment = Comment.create(post_id: post.id, body: create_mashup(2), user_id: user.id)
       puts "Комментарий #{comment.id} для поста #{comment.post.id} создан"
     end
   end

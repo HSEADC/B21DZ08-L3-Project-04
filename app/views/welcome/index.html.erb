@@ -1,3 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
 <h1>всем привет</h1>
 <p>скоро тут будет невероятный проект</p>
-<%= image_tag "meme.png", width: 1000 %>
+
+<%# image_tag "meme.png", width: 1000 %>
+
+<%= turbo_frame_tag @subscription do %>
+  <%= render 'subscriptions/form', subscription: @subscription %>
+<% end%>

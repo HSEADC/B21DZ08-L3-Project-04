@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :comments
 
   resources :posts do
     resources :comments
   end
+
+  resources :subscriptions
+  # resources :subscriptions, only: [:create, :show]
 
   get 'welcome/index'
   get 'welcome/about'

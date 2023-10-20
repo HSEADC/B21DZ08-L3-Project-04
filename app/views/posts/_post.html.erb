@@ -1,5 +1,5 @@
 <div class="post" id="<%= dom_id post %>">
-<%= image_tag post.post_image.url, class:"postImage" %>
+<%= image_tag post.post_image.url, class:"postImage" if post.post_image.url %>
   <p>
     <h2><%= post.title.html_safe %></h2>
   </p>
@@ -7,5 +7,7 @@
   <p>
     <%= post.text.html_safe %>
   </p>
+
+  <p><%= post.user.email %></p>
 
 </div>

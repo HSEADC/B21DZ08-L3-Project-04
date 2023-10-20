@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, except: %i[ show ]
+  load_and_authorize_resource
   before_action :set_comment, only: %i[ show edit update destroy ]
   before_action :set_post, only: %i[ show new edit create update destroy ]
 
@@ -23,6 +25,7 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @comment = @post.comments.new(comment_params)
+    # @comment = @post.comments.new(body: params[:body], user_id: current_user.id)
     respond_to do |format|
       if @comment.save
         format.html { redirect_to post_url(@post), notice: "Comment was successfully created." }
@@ -66,6 +69,6 @@ class CommentsController < ApplicationController
     end
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:body, :post_id)
+      params.require(:comment).permit(:body, :post_id).merge(user_id: current_user.id)
     end
 end
