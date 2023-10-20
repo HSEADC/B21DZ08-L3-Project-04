@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :comments
+  namespace :admin do
+    resources :posts do
+      resources :comments, except: :show
+    end
 
-  resources :posts do
     resources :comments
+    resources :subscriptions
   end
 
-  resources :subscriptions
+  # resources :posts do
+  #   resources :comments, except: :show
+  # end
+
+  devise_for :users
+
+  resources :subscriptions, only: [:create, :show]
+
   # resources :subscriptions, only: [:create, :show]
 
   get 'welcome/index'

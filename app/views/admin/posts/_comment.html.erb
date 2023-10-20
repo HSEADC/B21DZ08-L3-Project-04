@@ -7,8 +7,8 @@
   </p>
 <% if can? :manage, @comment%>
   <div>
-    <%= link_to "Редактировать", edit_post_comment_path(@post, comment) %>
-    <%= button_to "Удалить", [@post, comment], method: :delete %>
+    <%= link_to "Редактировать", edit_admin_post_comment_path(@post, comment) %>
+    <%= button_to "Удалить", [:admin, @post comment], method: :delete %>
   </div>
 </div>
 <% end%>

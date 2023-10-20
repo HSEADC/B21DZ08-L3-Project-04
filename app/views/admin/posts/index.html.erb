@@ -3,11 +3,11 @@
 
 <h1>Песни</h1>
 
-<%= link_to "Выложить песню", new_post_path %>
+<%= link_to "Выложить песню", new_admin_post_path %>
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= link_to post, class:"postLink" do%>
+    <%= link_to [:admin, post], class:"postLink" do%>
       <%= render post %>
     <% end %>
   <% end %>

@@ -1,16 +1,20 @@
 <nav>
 <%= link_to "главная", welcome_index_url %>
 <%= link_to "о нас", welcome_about_url %>
-<%= link_to "блог", posts_url %>
 
+<% if user_signed_in? && current_user.admin == true%>
+  <%= link_to "песни", admin_posts_url %>
+  <%# link_to "комментарии", admin_comments_url %>
+  <%= link_to "подписки", admin_subscriptions_url %>
+<% end %>
 <div>
     <%# render 'devise/shared/links' %>
 </div>
 <% if user_signed_in? %>
-  <%= link_to current_user.email, edit_user_registration_path %>
+  <%# link_to current_user.email, edit_user_registration_path %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <% else %>
-  <%= link_to "Log in", new_user_session_path %>
-  <%= link_to "Register", new_user_registration_path %>
+  <%#= link_to "Log in", new_user_session_path %>
+  <%# link_to "Register", new_user_registration_path %>
 <% end %>
 </nav>

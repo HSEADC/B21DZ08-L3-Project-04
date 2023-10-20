@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post %>
+
+<div>
+  <%= link_to "Редактировать", edit_admin_post_path(@post) %> |
+  <%= link_to "Обратно к постам", admin_posts_path %>
+
+  <%= button_to "Удалить этот пост", [:admin, @post], method: :delete %>
+</div>
+
+<%= link_to "Оставить комментарий", new_admin_post_comment_path(@post) %>
+
+<div class="comments">
+  <%= render @post.comments, post: [:admin, @post] %>
+</div>

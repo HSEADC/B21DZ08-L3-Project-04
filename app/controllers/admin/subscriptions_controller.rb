@@ -1,4 +1,4 @@
-class SubscriptionsController < ApplicationController
+class Admin::SubscriptionsController < ApplicationController
   before_action :set_subscription, only: %i[ show edit update destroy ]
 
   # GET /subscriptions or /subscriptions.json
@@ -26,7 +26,7 @@ class SubscriptionsController < ApplicationController
     respond_to do |format|
       if @subscription.save
         # format.turbo_stream
-        format.html { redirect_to subscription_url(@subscription), notice: "Subscription was successfully created." }
+        format.html { redirect_to admin_subscription_url(@subscription), notice: "Subscription was successfully created." }
         format.json { render :show, status: :created, location: @subscription }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class SubscriptionsController < ApplicationController
   def update
     respond_to do |format|
       if @subscription.update(subscription_params)
-        format.html { redirect_to subscription_url(@subscription), notice: "Subscription was successfully updated." }
+        format.html { redirect_to admin_subscription_url(@subscription), notice: "Subscription was successfully updated." }
         format.json { render :show, status: :ok, location: @subscription }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class SubscriptionsController < ApplicationController
     @subscription.destroy
 
     respond_to do |format|
-      format.html { redirect_to subscriptions_url, notice: "Subscription was successfully destroyed." }
+      format.html { redirect_to admin_subscriptions_url, notice: "Subscription was successfully destroyed." }
       format.json { head :no_content }
     end
   end

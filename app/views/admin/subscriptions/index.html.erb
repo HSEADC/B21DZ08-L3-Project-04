@@ -6,9 +6,9 @@
   <% @subscriptions.each do |subscription| %>
     <%= render subscription %>
     <p>
-      <%= link_to "Show this subscription", subscription %>
+      <%= link_to "Show this subscription", [:admin, subscription] %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New subscription", new_subscription_path %>
+<%= link_to "New subscription", new_admin_subscription_path %>
