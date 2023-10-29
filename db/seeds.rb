@@ -70,7 +70,7 @@ def create_mashup(how_many_lines)
   how_many_lines.times do
     @mashup.concat(generate_random_song(@raw_songs))
   end
-  @mashup = @mashup.join("<br>").html_safe
+  @mashup = @mashup.join("\n").html_safe
  return @mashup
 end
 

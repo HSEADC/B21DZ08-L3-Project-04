@@ -1,13 +1,9 @@
-<div class="post" id="<%= dom_id post %>">
-<%= image_tag post.post_image.url, class:"postImage" if post.post_image.url %>
-  <p>
-    <h2><%= post.title.html_safe %></h2>
-  </p>
+<div class="M_Post" id="<%= dom_id post %>">
+<%#= image_tag post.post_image.url, class:"A_PostImage" if post.post_image.url %>
+  <p class="A_Heading2"><%= post.title.html_safe %></p>
 
-  <p>
-    <%= post.text.html_safe %>
-  </p>
+  <pre class="A_Heading3"><%= post.text.html_safe %></pre>
 
-  <p><%= post.user.email %></p>
+  <p class="A_Paragraph"><%= post.user.email %></p>
 
 </div>

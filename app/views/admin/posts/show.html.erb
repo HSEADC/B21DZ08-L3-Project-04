@@ -12,5 +12,5 @@
 <%= link_to "Оставить комментарий", new_admin_post_comment_path(@post) %>
 
 <div class="comments">
-  <%= render @post.comments, post: [:admin, @post] %>
+  <%= render @post.comments, post: @post %>
 </div>

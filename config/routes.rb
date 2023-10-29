@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   get 'welcome/about'
+  get 'change_locale', to: 'welcome#change_locale', as: 'change_locale'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

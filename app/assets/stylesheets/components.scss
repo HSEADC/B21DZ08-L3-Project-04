@@ -1,0 +1,61 @@
+.O_Menubar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--black);
+  padding: 0 48px;
+  .W_MenuPages {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+  .W_MenuAuth {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+.A_MenuButton {
+  position: relative;
+  padding: 20px 15px;
+  font-size: 18px;
+  color: var(--white);
+}
+.A_Heading1 {
+  position: relative;
+  display: block;
+  font-size: 72px;
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+}
+.A_Button {
+  position: relative;
+  display: block;
+  font-size: 24px;
+  background-color: var(--black);
+  padding: 24px 24px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  margin: 0 auto;
+  .A_ButtonText {
+    text-decoration: none;
+    color: var(--white);
+  }
+}
+.M_Post {
+  position: relative;
+  display: block;
+  width: 500px;
+  height: fit-content;
+  padding: 24px;
+  background-color: var(--white);
+  border: solid var(--black) 2px;
+  border-radius: 10px;
+}

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>всем привет</h1>
+<h1><%= t('hello') %></h1>
 <p>скоро тут будет невероятный проект</p>
 
 <%# image_tag "meme.png", width: 1000 %>
@@ -8,3 +8,8 @@
 <%= turbo_frame_tag @subscription do %>
   <%= render 'subscriptions/form', subscription: @subscription %>
 <% end%>
+
+<div class="language-switcher">
+  <%= link_to "Русский", change_locale_path(locale: :ru), class: ('active' if I18n.locale == :ru) %>
+  <%= link_to "English", change_locale_path(locale: :en), class: ('active' if I18n.locale == :en) %>
+</div>
