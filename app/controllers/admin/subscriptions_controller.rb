@@ -26,8 +26,10 @@ class Admin::SubscriptionsController < ApplicationController
     respond_to do |format|
       if @subscription.save
         # format.turbo_stream
-        format.html { redirect_to admin_subscription_url(@subscription), notice: "Subscription was successfully created." }
+        # format.turbo_stream { render turbo_stream: turbo_stream.append(@subscription) }
+        format.html 
         format.json { render :show, status: :created, location: @subscription }
+        # render turbo_stream.replace(@subscription, partial: "success", locals: { subscription: @subscription })
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @subscription.errors, status: :unprocessable_entity }

@@ -6,9 +6,9 @@
   <% @comments.each do |comment| %>
     <%= render comment %>
     <p>
-      <%= link_to "Show this comment", [:admin, comment] %>
+      <%= link_to "Показать комментарий", [:admin, comment] %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New comment", new_admin_comment_path %>
+<%= link_to "Оставить комментарий", new_admin_comment_path %>

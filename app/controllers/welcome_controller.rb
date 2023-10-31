@@ -12,6 +12,7 @@ class WelcomeController < ApplicationController
   end
 
   def about
+    @subscription = Subscription.new
   end
 
   def set_locale

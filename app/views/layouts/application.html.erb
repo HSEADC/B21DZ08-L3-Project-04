@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>луток</title>
+    <title>Луток — фольклор</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/Q_Cursor_Pointer.svg">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,10 +11,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.8.0/lib/p5.js"></script>
-  </head>
 
+  </head>
   <body>
-  <%= render 'menubar' %>
+    <%= render 'menubar' %>
     <%= yield %>
+    <%= render 'footer' %>
   </body>
 </html>

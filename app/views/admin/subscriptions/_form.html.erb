@@ -1,3 +1,4 @@
+<div class="M_EditForm">
 <%= form_with(model: [:admin, subscription]) do |form| %>
   <% if subscription.errors.any? %>
     <div style="color: red">
@@ -20,3 +21,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

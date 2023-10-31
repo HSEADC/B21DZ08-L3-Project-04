@@ -1,10 +1,6 @@
-<div class="comment" id="<%= dom_id comment %>">
-  <p>
-    <h2><%= comment.user.email %></h2>
-  </p>
-  <p>
-    <%= comment.body%>
-  </p>
+<div class="M_Post" id="<%= dom_id comment %>">
+  <p class="M_PostHeading"><%= comment.user.email %></p>
+  <p class="M_PostDescription"><%= comment.body%></p>
 <% if can? :manage, @comment%>
   <div>
     <%= link_to "Редактировать", edit_admin_post_comment_path(post, comment) %>
