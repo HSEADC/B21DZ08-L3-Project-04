@@ -1,0 +1,2 @@
+module SuggestedTranslationsHelper
+end

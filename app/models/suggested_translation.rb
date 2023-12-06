@@ -1,0 +1,2 @@
+class SuggestedTranslation < ApplicationRecord
+end

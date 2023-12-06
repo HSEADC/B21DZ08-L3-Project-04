@@ -12,6 +12,7 @@ def seed
   create_users
   create_posts(15)
   create_comments(2..8)
+  create_comment_replies(1000)
 end
 
 def reset_db
@@ -95,6 +96,15 @@ def create_comments(quantity)
       comment = Comment.create(post_id: post.id, body: create_mashup(2), user_id: user.id)
       puts "Комментарий #{comment.id} для поста #{comment.post.id} создан"
     end
+  end
+end
+
+def create_comment_replies(quantity)
+  quantity.times do
+    user = User.all.sample
+    comment = Comment.all.sample
+    reply = comment.replies.create(post_id: comment.post_id, user_id: user.id, body: create_mashup(2))
+    puts "Ответ на комментарий #{reply.id} для комментария #{comment.id} создан"
   end
 end
 

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :suggested_translations
+  resources :attachments
   namespace :admin do
     resources :posts do
       resources :comments, except: :show

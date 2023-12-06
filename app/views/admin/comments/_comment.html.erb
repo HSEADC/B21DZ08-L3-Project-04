@@ -6,5 +6,10 @@
     <%= link_to "Редактировать", edit_admin_post_comment_path(post, comment) %>
     <%= button_to "Удалить", [:admin, post, comment], method: :delete %>
   </div>
+  <div class="W_CommentReplies">
+    <% comment.replies.each do |reply|%>
+    <%= render reply, partial: "admin/comments/comment", comment: reply, post: post%>
+    <% end %>
+  </div>
 </div>
 <% end%>
