@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :posts do
       resources :comments, except: :show
     end
-    resources :attachments
+    resources :attachments, except: [:index, :show]
     resources :suggested_translations
     resources :comments
     resources :subscriptions

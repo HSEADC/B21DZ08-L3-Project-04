@@ -1,8 +1,11 @@
 <div class="M_Post" id="<%= dom_id post %>">
+  <p class="A_Paragraph"><%= post.user.email %></p>
+  
   <p class="A_PostHeading"><%= post.title.html_safe %></p>
 
   <pre class="A_PostDescription"><%= post.text.html_safe %></pre>
 
-  <p class="A_Paragraph"><%= post.user.email %></p>
-
+  <div class="W_Attachments">
+    <%= render post.attachments, post: @post %>
+  </div>
 </div>

@@ -25,7 +25,6 @@ class Admin::CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @comment = @post.comments.new(comment_params)
-    # @comment = @post.comments.new(body: params[:body], user_id: current_user.id)
     respond_to do |format|
       if @comment.save
         format.html { redirect_to admin_post_url(@post), notice: "Comment was successfully created." }
@@ -59,9 +58,11 @@ class Admin::CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   def set_post
     @post = Post.find(params[:post_id])
   end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment

@@ -491,3 +491,16 @@ body {
     background-color: var(--black);
   }
 }
+.Attachment {
+  position: relative;
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-color: aquamarine;
+}
+.W_Attachments {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

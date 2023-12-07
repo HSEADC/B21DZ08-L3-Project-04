@@ -12,7 +12,8 @@ def seed
   create_users
   create_posts(15)
   create_comments(2..8)
-  create_comment_replies(1000)
+  create_comment_replies(300)
+  create_attachments(10)
 end
 
 def reset_db
@@ -75,11 +76,11 @@ def create_mashup(how_many_lines)
  return @mashup
 end
 
-def upload_random_image
-    uploader = PostImageUploader.new(Post.new, :post_image)
-    uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/autoupload/posts', '*')).sample))
-    uploader
-end
+# def upload_random_image
+#     uploader = PostImageUploader.new(Post.new, :post_image)
+#     uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/autoupload/posts', '*')).sample))
+#     uploader
+# end
 
 def create_posts(quantity)
   quantity.times do
@@ -88,6 +89,12 @@ def create_posts(quantity)
     puts "Пост #{post.id} создан"
   end
 end
+
+# def create_attachments (quantity)
+#   quantity.times do
+#     attachment.url=
+#   end
+# end
 
 def create_comments(quantity)
   Post.all.each do |post|
@@ -105,6 +112,15 @@ def create_comment_replies(quantity)
     comment = Comment.all.sample
     reply = comment.replies.create(post_id: comment.post_id, user_id: user.id, body: create_mashup(2))
     puts "Ответ на комментарий #{reply.id} для комментария #{comment.id} создан"
+  end
+end
+
+def create_attachments(quantity)
+  Post.all.each do |post|
+    rand(quantity).times do
+      attachment = Attachment.create(post_id: post.id, url: "уррраааа работает")
+      puts "Вложение #{attachment.id} для поста #{attachment.post.id} создано"
+    end
   end
 end
 
