@@ -1,0 +1,11 @@
+<div class="M_Post" id="<%= dom_id photo %>">
+
+  <p class="A_PostDescription"><%= photo.type %></p>
+
+  <p class="A_Paragraph"><%= photo.url %></p>
+
+  <p>
+    <%= link_to "Показать вложение", admin_attachment_path(photo)%>
+  </p>
+
+</div>

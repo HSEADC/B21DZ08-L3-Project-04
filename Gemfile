@@ -75,4 +75,4 @@ end
 
 gem "devise", "~> 4.9"
 
-gem "haml-rails", "~> 2.0"
+# gem "haml-rails", "~> 2.0"

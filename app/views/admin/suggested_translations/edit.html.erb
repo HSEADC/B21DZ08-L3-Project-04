@@ -1,0 +1,14 @@
+<%
+=begin%>
+ <h1>Editing post</h1>
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div class="Edit">
+  <%= link_to "Посмотреть пост", [:admin, @post] %> |
+  <%= link_to "Обратно к постам", admin_posts_path %>
+</div> 
+<%
+=end%>

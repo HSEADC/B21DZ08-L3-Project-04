@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_06_191639) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_06_214901) do
+  create_table "attachments", force: :cascade do |t|
+    t.string "type"
+    t.integer "post_id"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "post_id"
@@ -31,6 +39,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_06_191639) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "suggested_translations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.string "language"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,4 @@
-class SuggestedTranslationsController < ApplicationController
+class Admin::SuggestedTranslationsController < ApplicationController
   before_action :set_suggested_translation, only: %i[ show edit update destroy ]
 
   # GET /suggested_translations or /suggested_translations.json
@@ -25,7 +25,7 @@ class SuggestedTranslationsController < ApplicationController
 
     respond_to do |format|
       if @suggested_translation.save
-        format.html { redirect_to suggested_translation_url(@suggested_translation), notice: "Suggested translation was successfully created." }
+        format.html { redirect_to admin_suggested_translation_url(@suggested_translation), notice: "Suggested translation was successfully created." }
         format.json { render :show, status: :created, location: @suggested_translation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SuggestedTranslationsController < ApplicationController
   def update
     respond_to do |format|
       if @suggested_translation.update(suggested_translation_params)
-        format.html { redirect_to suggested_translation_url(@suggested_translation), notice: "Suggested translation was successfully updated." }
+        format.html { redirect_to admin_suggested_translation_url(@suggested_translation), notice: "Suggested translation was successfully updated." }
         format.json { render :show, status: :ok, location: @suggested_translation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class SuggestedTranslationsController < ApplicationController
     @suggested_translation.destroy
 
     respond_to do |format|
-      format.html { redirect_to suggested_translations_url, notice: "Suggested translation was successfully destroyed." }
+      format.html { redirect_to admin_suggested_translations_url, notice: "Suggested translation was successfully destroyed." }
       format.json { head :no_content }
     end
   end

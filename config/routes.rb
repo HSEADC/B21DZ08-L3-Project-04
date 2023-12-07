@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :suggested_translations
-  resources :attachments
+
   namespace :admin do
     resources :posts do
       resources :comments, except: :show
     end
-
+    resources :attachments
+    resources :suggested_translations
     resources :comments
     resources :subscriptions
   end

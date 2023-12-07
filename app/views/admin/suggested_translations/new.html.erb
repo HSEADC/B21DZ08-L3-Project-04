@@ -1,0 +1,13 @@
+<%
+=begin%>
+ <h1 class="A_Heading">Новый пост</h1>
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div class="Edit">
+  <%= link_to "Обратно к постам", admin_posts_path %>
+</div> 
+<%
+=end%>

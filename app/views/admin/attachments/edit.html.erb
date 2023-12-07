@@ -1,0 +1,10 @@
+<h1>Редактирование</h1>
+
+<%= render "form", attachment: @attachment %>
+
+<br>
+
+<div class="Edit">
+  <%= link_to "Посмотреть вложение", [:admin, @attachment] %> |
+  <%= link_to "Обратно к вложениям", admin_attachments_path %>
+</div>
