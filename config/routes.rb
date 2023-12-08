@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :subscriptions
   end
 
+  resources :profiles, only: [:show, :edit, :update]
+
   # resources :posts do
   #   resources :comments, except: :show
   # end
