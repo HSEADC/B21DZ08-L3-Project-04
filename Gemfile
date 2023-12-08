@@ -75,4 +75,5 @@ end
 
 gem "devise", "~> 4.9"
 
+gem "rack-cors"
 # gem "haml-rails", "~> 2.0"
