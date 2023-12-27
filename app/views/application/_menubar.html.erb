@@ -1,22 +1,28 @@
 <div class="O_Menu">
-    <%= link_to "", welcome_index_url, class:"A_Logo" %>
+    <%= link_to "", welcome_index_url, class:"A_Logo A_MenuLogo" %>
     <div class="W_MenuElements">
-    <%= link_to "узнать о запуске", welcome_index_url, class:"A_MenuElement" %>
-    <%= link_to "о нас", welcome_about_url, class:"A_MenuElement" %>
-    <%= link_to "рус", change_locale_path(locale: :ru), class: ('active' if I18n.locale == :ru), class:"A_MenuElement" %>
-    <%= link_to "en", change_locale_path(locale: :en), class: ('active' if I18n.locale == :en),  class:"A_MenuElement" %>
+      <div class="W_MenuElementsLeft">
+        <%#= link_to "узнать о запуске", welcome_index_url, class:"A_MenuElement" %>
+        <%#= link_to "о нас", welcome_about_url, class:"A_MenuElement" %>
+        <%= link_to "Рус", change_locale_path(locale: :ru), class: ('active' if I18n.locale == :ru), class:"A_Paragraph A_MenuElement" %>
+        <%= link_to "En", change_locale_path(locale: :en), class: ('active' if I18n.locale == :en),  class:"A_Paragraph A_MenuElement" %>
+        <%= link_to "Тат", change_locale_path(locale: :en), class: ('active' if I18n.locale == :en),  class:"A_Paragraph A_MenuElement" %>
+      </div>
+      <div class="W_MenuElementsRight">
+        <% if user_signed_in? && current_user.admin == true%>
+          <%#= link_to "песни", admin_posts_url, class:"A_MenuElement" %>
+          <%#= link_to "комментарии", admin_comments_url, class:"A_MenuButton" %>
+          <%#= link_to "подписки", admin_subscriptions_url, class:"A_MenuElement" %>
+          <div class="A_Button">
+            <%= link_to "Загрузить", new_admin_post_path, class:"A_Paragraph" %>
+          </div> 
+        <% end %>
 
-
-      <% if user_signed_in? && current_user.admin == true%>
-      <%= link_to "песни", admin_posts_url, class:"A_MenuElement" %>
-      <%#= link_to "комментарии", admin_comments_url, class:"A_MenuButton" %>
-      <%= link_to "подписки", admin_subscriptions_url, class:"A_MenuElement" %>
-    <% end %>
-
-      <% if user_signed_in? %>
-    <%= link_to "Профиль", profile_path(current_user.profile)%>
-    <%= link_to current_user.email, edit_user_registration_path, class:"A_MenuElement" %>
-    <%= link_to "выйти", destroy_user_session_path, class:"A_MenuElement", method: :delete %>
-  <% end %>
+        <% if user_signed_in? %>
+          <%= link_to "Профиль", profile_path(current_user.profile), class:"A_Paragraph A_MenuElement"%>
+          <%#= link_to current_user.email, edit_user_registration_path, class:"A_MenuElement" %>
+          <%#= link_to "выйти", destroy_user_session_path, class:"A_MenuElement", method: :delete %>
+        <% end %>
+      </div>
     </div>
   </div>
