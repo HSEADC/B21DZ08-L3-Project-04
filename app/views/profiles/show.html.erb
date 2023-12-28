@@ -1,6 +1,24 @@
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<% if @profile.avatar? %>
+  <%= image_tag @profile.avatar.url %>
+<% else %>
+  <div></div>
+<% end %>
 
 <%= @profile.username%>
 <br><br><br>
+<%= @profile.login%>
+<br><br><br>
 <%= @profile.about%>
 <br><br><br>
-<%=link_to "Редактировать", edit_profile_path(@profile)%>
+<div class="A_Button">
+<%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Paragraph'%>
+</div>
+<p>Публикации</p>
+<div class="W_Posts">
+  <% @posts.each do |post| %>
+    <%= link_to [:admin, post] do%>
+      <%= render partial: 'admin/posts/post', locals: { post: post, show_email: false, } %>
+    <% end %>
+  <% end %>
+</div>

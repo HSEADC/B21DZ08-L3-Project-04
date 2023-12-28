@@ -1,3 +1,4 @@
+<br><br><br><br><br><br><br><br><br><br><br>
 <div class="M_EditForm">
   <%= form_with(model: @profile) do |form| %>
     <% if @profile.errors.any? %>
@@ -11,6 +12,15 @@
         </ul>
       </div>
     <% end %>
+    <div>
+      <%= form.label :avatar, style: "display: block" %>
+      <%= form.file_field :avatar %>
+    </div>
+
+    <div>
+      <%= form.label :login, style: "display: block" %>
+      <%= form.text_field :login %>
+    </div>
 
     <div>
       <%= form.label :username, style: "display: block" %>

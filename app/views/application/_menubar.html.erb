@@ -1,5 +1,5 @@
 <div class="O_Menu">
-    <%= link_to "", welcome_index_url, class:"A_Logo A_MenuLogo" %>
+    <%= link_to "", admin_posts_url, class:"A_Logo A_MenuLogo" %>
     <div class="W_MenuElements">
       <div class="W_MenuElementsLeft">
         <%#= link_to "узнать о запуске", welcome_index_url, class:"A_MenuElement" %>
@@ -19,7 +19,11 @@
         <% end %>
 
         <% if user_signed_in? %>
-          <%= link_to "Профиль", profile_path(current_user.profile), class:"A_Paragraph A_MenuElement"%>
+          <%#= link_to "Профиль", profile_path(current_user.profile), class:"A_Paragraph A_MenuElement"%>
+          <%= link_to profile_path(current_user.profile), class: "" do %>
+            <p class="A_Paragraph A_MenuElement">Профиль</p>
+            <%= image_tag current_user.profile.avatar.url, class: "avatar-thumbnail" %>
+          <% end %>
           <%#= link_to current_user.email, edit_user_registration_path, class:"A_MenuElement" %>
           <%#= link_to "выйти", destroy_user_session_path, class:"A_MenuElement", method: :delete %>
         <% end %>

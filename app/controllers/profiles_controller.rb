@@ -3,6 +3,8 @@ class ProfilesController < ApplicationController
     before_action :set_profile, only: %i[ show edit update destroy ]
   
     def show
+      @user = @profile.user
+      @posts = @user.posts
     end
   
     def edit
@@ -28,7 +30,7 @@ class ProfilesController < ApplicationController
   
     #   # Only allow a list of trusted parameters through.
       def profile_params
-        params.require(:profile).permit(:username, :about)
+        params.require(:profile).permit(:username, :about, :avatar, :login)
       end
   end
   

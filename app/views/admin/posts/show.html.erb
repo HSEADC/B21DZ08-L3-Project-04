@@ -1,7 +1,8 @@
-<div class="W_ShowPos">
+<br><br><br><br><br><br><br>
+<div class="W_ShowPost">
   <p style="color: green"><%= notice %></p>
 
-  <%= render @post %>
+  <%= render @post, show_email: true %>
 
   <div class="Edit">
     <%= link_to "Редактировать", edit_admin_post_path(@post) %> |

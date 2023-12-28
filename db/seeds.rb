@@ -49,6 +49,12 @@ def create_admin
     user = User.create!(user_data)
     puts "Admin created with id #{user.id}"
 
+    profile_data = {
+      user_id: user.id,
+      username: "Ваша Манурина",
+      about: "Антропологиня класс"
+    }
+
 
 end
 

@@ -1,5 +1,5 @@
 <div class="M_Post" id="<%= dom_id comment %>">
-  <p class="M_PostHeading"><%= comment.user.email %></p>
+  <p class="M_PostHeading"><%= comment.user.profile.username %></p>
   <p class="M_PostDescription"><%= comment.body%></p>
 <% if can? :manage, @comment%>
   <div>
