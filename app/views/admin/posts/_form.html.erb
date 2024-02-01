@@ -13,17 +13,17 @@
     <% end %>
 
     <div>
-      <%= form.label :title, style: "display: block" %>
-      <%= form.text_field :title %>
+      <%= form.label :title, style: "display: block", class: "A_Heading3" %>
+      <%= form.text_field :title , class: "A_Input"%>
     </div>
 
     <div>
-      <%= form.label :text, style: "display: block" %>
-      <%= form.text_area :text %>
+      <%= form.label :text, style: "display: block", class: "A_Heading3" %>
+      <%= form.text_area :text , class: "A_Input"%>
     </div>
 
     <div>
-      <%= form.submit %>
+    <%= form.submit class: "A_Button" %>
     </div>
   <% end %>
 </div>

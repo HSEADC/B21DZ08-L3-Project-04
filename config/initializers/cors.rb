@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins '' #Вот тут ссылка на адрес фронта
+      origins 'http://localhost:3000'
       resource '*', headers: :any, methods: [:get, :post]
     end
   end

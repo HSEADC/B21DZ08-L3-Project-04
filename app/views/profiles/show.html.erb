@@ -1,20 +1,34 @@
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="O_Account">
 <% if @profile.avatar? %>
-  <%= image_tag @profile.avatar.url %>
+  <%= image_tag @profile.avatar.url, class: "A_Icon"  %>
 <% else %>
   <div></div>
 <% end %>
-
+<div class="W_Account">
+<div class="A_Heading3">
 <%= @profile.username%>
-<br><br><br>
+</div>
+<div class="A_Nickname">
 <%= @profile.login%>
-<br><br><br>
+</div>
+<div class="A_Text">
 <%= @profile.about%>
-<br><br><br>
+</div>
+</div>
 <div class="A_Button">
 <%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Paragraph'%>
 </div>
+</div>
+
+
+
+<div class="M_Posts">
 <p>Публикации</p>
+</div>
+
+
+
+
 <div class="W_Posts">
   <% @posts.each do |post| %>
     <%= link_to [:admin, post] do%>

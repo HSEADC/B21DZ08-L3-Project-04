@@ -1,12 +1,12 @@
 <div class="M_Post" id="<%= dom_id post %>">
   
-  <p class="A_PostHeading"><%= post.title.html_safe %></p>
+  <p class="A_PostHeading A_Heading3"><%= post.title.html_safe %></p>
 
   <% if local_assigns[:show_email] %>
     <%= "Автор: #{post.user.profile.username}" %>
   <% end %>
 
-  <pre class="A_PostDescription"><%= post.text.html_safe %></pre>
+  <pre class="A_PostDescription A_Text"><%= post.text.html_safe %></pre>
 
   <!--<div class="W_Attachments">
     <%= render partial: 'admin/attachments/attachment', collection: post.attachments, as: :attachment %>

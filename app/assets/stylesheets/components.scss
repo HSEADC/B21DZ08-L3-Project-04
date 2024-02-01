@@ -1,3 +1,8 @@
+button{
+  border: 0;
+  text-decoration: none;
+}
+
 .A_Heading1 {
   position: relative;
   display: block;
@@ -6,6 +11,21 @@
   padding: 100px 0 50px;
   text-align: center;
 }
+.A_Heading3 {
+  font-family: Noto Serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+}
+.A_Nickname{
+  color: var(--dark_gray);
+  font-family: Noto Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%; }
+
 section {
   position: relative;
   width: fit-content;
@@ -207,14 +227,8 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 650px;
+  gap: 24px;
   height: fit-content;
-  padding: 24px;
-  background-color: var(--white);
-  border: solid var(--black) 2px;
-  border-radius: 10px;
-  margin: 0 auto;
 }
 .A_PostHeading {
   position: relative;
@@ -231,10 +245,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   -ms-flex-align: center;
-  width: 1348px;
+  width: 1360px;
   height: fit-content;
-  gap: 24px;
+  gap: 8px;
   margin: 50px auto;
+  .M_Post{
+    width: 437px;
+    height: 245px;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 16px;
+  }
 }
 .W_Posts:hover {
   border-color: pink;
@@ -250,32 +271,38 @@ body {
 }
 .Edit {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 650px;
-  background-color: rgb(222, 222, 222);
-  border-radius: 10px;
-  padding: 24px;
-  margin: 0px auto;
+  gap: 20px;
+  padding-bottom: 20px;
 }
 .W_ShowPost {
   position: relative;
+  padding-top: 100px;
   display: block;
   width: fit-content;
   height: fit-content;
-  margin: 100px auto;
+  padding-left: 38px;
+  
 }
 .M_EditForm {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 650px;
+  gap: 16px;
+  width: 100vw;
+  padding-left: 67px;
   height: fit-content;
-  padding: 24px;
-  background-color: var(--white);
-  border: solid var(--black) 2px;
-  border-radius: 10px;
-  // margin: 100px auto 0;
+  .A_Button{
+    color: var(--white);
+    background-color: var(--dark_blue);
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
 }
 .Texts {
   position: absolute;
@@ -336,14 +363,7 @@ body {
   position: relative;
   display: block;
 }
-.A_Input {
-  width: 62vw;
-  height: 7vh;
-  font-size: 3.7vw;
-  font-family: 'Times New Roman';
-  font-style: italic;
-  padding-left: 4vw;
-}
+
 .Form {
   position: relative;
   display: flex;
@@ -454,6 +474,18 @@ body {
       color: var(--white);
     }
   }
+  .A_Profile{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    .avatar-thumbnail{
+      width: 46px;
+      height: 46px;
+      border-radius: 200px;
+    }
+    
+  }
+  
 }
 .A_Logo {
   background-image: url('A_LogoSurqhuri.svg');
@@ -495,6 +527,8 @@ body {
   width: fit-content;
   height: fit-content;
   border-radius: 10px;
+  text-decoration: none;
+    color: var(--black);
   .A_Paragraph {
     text-decoration: none;
     color: var(--black);
@@ -511,6 +545,7 @@ body {
 }
 .O_Footer {
   position: relative;
+  margin-top: 300px;
   width: 100%;
   height: 277px;
   background-color: var(--gray);
@@ -556,3 +591,176 @@ body {
     bottom: 12px;
   }
 }
+.no-avatar {
+  background-color: grey; /* Set the desired background color for the "no avatar" state */
+}
+
+////////////////////
+// User
+.O_Account{
+  margin: 0 auto;
+  top: 96px;
+  height: 207px;
+  margin-bottom: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 1352px;
+  flex-wrap: nowrap;
+  .A_Icon{
+    width: 207px;
+    height: 207px;
+    border-radius: 300px;
+    display: block;
+  }
+  .W_Account{
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+    margin-left: 16px;
+    gap: 16px;
+  }
+  .A_Button{
+    background-color: var(--dark_blue);
+    
+    .A_Paragraph{
+      color: var(--white);
+    }
+    .A_Button:hover{
+      background-color: var(--black);
+    }
+  }
+}
+
+
+.M_Posts{
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  top: 100px;
+  display: flex;
+width: 102px;
+height: 28px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.W_Posts{
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  top: 140px;
+}
+
+.A_Text{
+  font-family: Noto Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 115%;
+}
+
+.M_Heading{
+  padding-top: 100px;
+  position: relative;
+  font-family: Noto Serif;
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 25px;
+text-transform: uppercase;
+}
+.M_Heading::before {
+  content:url('M_Heading.svg');
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.A_Heading2{
+  font-family: Noto Serif;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+input{
+  text-decoration: none;
+border: 0px;
+
+
+}
+.A_Input {
+  display: flex;
+width: 470px;
+height: fit-content;
+padding: 22px 32px;
+align-items: center;
+  font-family: Noto Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 115%;
+color: var(--dark_gray);
+border-radius: 30px;
+background: #FFF;
+text-decoration: none;
+border: 0px;
+}
+.custom-file-upload {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.custom-file-upload input {
+  position: absolute;
+  font-size: 100px;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-label {
+  display: inline-block;
+  position: relative;
+  background-color: var(--white);
+  padding: 8px 60px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.A_Decoration{
+  background-image: url('A_Decoration.svg');
+  width: 50vw;
+  height: 50vw;
+  position: absolute;
+  right: 0;
+  top: 20vh;
+  background-repeat: no-repeat;
+
+}
+.W_NewPost{
+  margin-top: 64px;
+  position: relative;
+  left: 67px;
+  text-decoration: underline;
+  color: var(--black);
+}
+
+
+
+

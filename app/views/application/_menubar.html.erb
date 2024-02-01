@@ -20,9 +20,13 @@
 
         <% if user_signed_in? %>
           <%#= link_to "Профиль", profile_path(current_user.profile), class:"A_Paragraph A_MenuElement"%>
-          <%= link_to profile_path(current_user.profile), class: "" do %>
+          <%= link_to profile_path(current_user.profile), class: "A_Profile" do %>
             <p class="A_Paragraph A_MenuElement">Профиль</p>
+            <% if current_user.profile.avatar.present? %>
             <%= image_tag current_user.profile.avatar.url, class: "avatar-thumbnail" %>
+          <% else %>
+            <div class="avatar-thumbnail no-avatar"></div>
+          <% end %>          
           <% end %>
           <%#= link_to current_user.email, edit_user_registration_path, class:"A_MenuElement" %>
           <%#= link_to "выйти", destroy_user_session_path, class:"A_MenuElement", method: :delete %>
