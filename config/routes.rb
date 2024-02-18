@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :api do
     namespace :v1 do
       resources :posts
@@ -29,7 +30,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   get 'welcome/about'
+  get 'support/index'
   get 'change_locale', to: 'welcome#change_locale', as: 'change_locale'
+  post 'support/request_support'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

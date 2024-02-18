@@ -1,4 +1,4 @@
-button{
+button {
   border: 0;
   text-decoration: none;
 }
@@ -18,13 +18,14 @@ button{
   font-weight: 400;
   line-height: 115%;
 }
-.A_Nickname{
+.A_Nickname {
   color: var(--dark_gray);
   font-family: Noto Sans;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 115%; }
+  line-height: 115%;
+}
 
 section {
   position: relative;
@@ -249,10 +250,10 @@ body {
   height: fit-content;
   gap: 8px;
   margin: 50px auto;
-  .M_Post{
+  .M_Post {
     width: 437px;
     height: 245px;
-    background-color: #FFF;
+    background-color: #fff;
     border-radius: 10px;
     padding: 16px;
   }
@@ -284,7 +285,6 @@ body {
   width: fit-content;
   height: fit-content;
   padding-left: 38px;
-  
 }
 .M_EditForm {
   position: relative;
@@ -294,11 +294,11 @@ body {
   width: 100vw;
   padding-left: 67px;
   height: fit-content;
-  .A_Button{
+  .A_Button {
     color: var(--white);
     background-color: var(--dark_blue);
   }
-  form{
+  form {
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -474,18 +474,16 @@ body {
       color: var(--white);
     }
   }
-  .A_Profile{
+  .A_Profile {
     display: flex;
     flex-direction: row;
     gap: 16px;
-    .avatar-thumbnail{
+    .avatar-thumbnail {
       width: 46px;
       height: 46px;
       border-radius: 200px;
     }
-    
   }
-  
 }
 .A_Logo {
   background-image: url('A_LogoSurqhuri.svg');
@@ -528,7 +526,7 @@ body {
   height: fit-content;
   border-radius: 10px;
   text-decoration: none;
-    color: var(--black);
+  color: var(--black);
   .A_Paragraph {
     text-decoration: none;
     color: var(--black);
@@ -597,7 +595,7 @@ body {
 
 ////////////////////
 // User
-.O_Account{
+.O_Account {
   margin: 0 auto;
   top: 96px;
   height: 207px;
@@ -607,33 +605,32 @@ body {
   flex-direction: row;
   width: 1352px;
   flex-wrap: nowrap;
-  .A_Icon{
+  .A_Icon {
     width: 207px;
     height: 207px;
     border-radius: 300px;
     display: block;
   }
-  .W_Account{
+  .W_Account {
     display: flex;
     flex-direction: column;
     margin-right: 200px;
     margin-left: 16px;
     gap: 16px;
   }
-  .A_Button{
+  .A_Button {
     background-color: var(--dark_blue);
-    
-    .A_Paragraph{
+
+    .A_Paragraph {
       color: var(--white);
     }
-    .A_Button:hover{
+    .A_Button:hover {
       background-color: var(--black);
     }
   }
 }
 
-
-.M_Posts{
+.M_Posts {
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -643,77 +640,75 @@ body {
   flex-wrap: nowrap;
   top: 100px;
   display: flex;
-width: 102px;
-height: 28px;
-padding: 10px;
-justify-content: center;
-align-items: center;
-gap: 10px;
+  width: 102px;
+  height: 28px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.W_Posts{
+.W_Posts {
   margin: 0 auto;
   display: flex;
   position: relative;
   top: 140px;
 }
 
-.A_Text{
+.A_Text {
   font-family: Noto Sans;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 115%;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
 }
 
-.M_Heading{
+.M_Heading {
   padding-top: 100px;
   position: relative;
   font-family: Noto Serif;
-font-size: 50px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 25px;
-text-transform: uppercase;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 25px;
+  text-transform: uppercase;
 }
 .M_Heading::before {
-  content:url('M_Heading.svg');
+  content: url('M_Heading.svg');
   display: inline-block;
   width: 15px;
   height: 15px;
   margin-right: 5px;
 }
-.A_Heading2{
+.A_Heading2 {
   font-family: Noto Serif;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-input{
+input {
   text-decoration: none;
-border: 0px;
-
-
+  border: 0px;
 }
 .A_Input {
   display: flex;
-width: 470px;
-height: fit-content;
-padding: 22px 32px;
-align-items: center;
+  width: 470px;
+  height: fit-content;
+  padding: 22px 32px;
+  align-items: center;
   font-family: Noto Sans;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 115%;
-color: var(--dark_gray);
-border-radius: 30px;
-background: #FFF;
-text-decoration: none;
-border: 0px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  color: var(--dark_gray);
+  border-radius: 30px;
+  background: #fff;
+  text-decoration: none;
+  border: 0px;
 }
 .custom-file-upload {
   position: relative;
@@ -743,7 +738,7 @@ border: 0px;
   cursor: pointer;
 }
 
-.A_Decoration{
+.A_Decoration {
   background-image: url('A_Decoration.svg');
   width: 50vw;
   height: 50vw;
@@ -751,16 +746,11 @@ border: 0px;
   right: 0;
   top: 20vh;
   background-repeat: no-repeat;
-
 }
-.W_NewPost{
+.W_NewPost {
   margin-top: 64px;
   position: relative;
   left: 67px;
   text-decoration: underline;
   color: var(--black);
 }
-
-
-
-

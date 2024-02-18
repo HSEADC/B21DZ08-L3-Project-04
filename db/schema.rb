@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_28_005037) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_13_193826) do
   create_table "attachments", force: :cascade do |t|
     t.string "type"
     t.integer "post_id"
@@ -57,6 +57,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_28_005037) do
     t.integer "user_id"
     t.integer "post_id"
     t.string "language"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "supports", force: :cascade do |t|
+    t.string "email"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
