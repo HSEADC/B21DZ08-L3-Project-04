@@ -1,0 +1,156 @@
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .W_Body {
+    width: 1344px;
+  }
+  .A_Heading1 {
+    font-size: 50px;
+    letter-spacing: 25px;
+  }
+  .A_Heading3 {
+    font-size: 36px;
+  }
+  .M_AuthHeader {
+    gap: 32px;
+    .A_Heading3 {
+      width: 774px;
+    }
+  }
+  .A_Paragraph,
+  .A_Link,
+  .A_Button,
+  .A_Input {
+    font-size: 18px;
+  }
+  .A_Input {
+    padding: 18px 24px;
+  }
+  .Q_ChaoticLetters {
+    width: 775px;
+    height: 380px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .W_Body {
+    width: 983px;
+  }
+  .A_Heading1 {
+    font-size: 45px;
+    letter-spacing: 22.5px;
+  }
+  .A_Heading3 {
+    font-size: 32px;
+  }
+  .A_Paragraph,
+  .A_Link,
+  .A_Button,
+  .A_Input {
+    font-size: 16px;
+  }
+  .A_Input {
+    padding: 16px 22px;
+  }
+  .M_FormHeader {
+    .A_Heading3 {
+      width: 650px;
+    }
+  }
+  .Q_ChaoticLetters {
+    width: 645px;
+    height: 316px;
+    bottom: 50px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .W_Body {
+    width: 650px;
+  }
+  .A_Heading1 {
+    font-size: 40px;
+    letter-spacing: 20px;
+  }
+  .A_Heading3 {
+    font-size: 28px;
+  }
+  .A_Paragraph,
+  .A_Link,
+  .A_Button,
+  .A_Input {
+    font-size: 14px;
+  }
+  .A_Input {
+    width: 428px;
+    padding: 14px 20px;
+  }
+  .M_FormHeader {
+    gap: 12px;
+    .A_Heading3 {
+      width: 539px;
+    }
+  }
+  .M_InputWithLabel {
+    gap: 6px;
+  }
+  .W_InputsColumn {
+    gap: 12px;
+    margin-top: 48px;
+  }
+  .W_FormButton {
+    margin-top: 48px;
+    gap: 12px;
+  }
+  .W_FormAdditionalInfo {
+    margin-top: 24px;
+    gap: 12px;
+  }
+  .Q_ChaoticLetters {
+    // width: 475px;
+    // height: 232px;
+    display: none;
+  }
+}
+@media only screen and (min-device-width: 360px) and (max-device-width: 767px) {
+  .W_Body {
+    width: 324px;
+  }
+  .A_Heading1 {
+    font-size: 21px;
+    letter-spacing: 10.5px;
+  }
+  .A_Heading3 {
+    font-size: 24px;
+  }
+  .A_Paragraph,
+  .A_Link,
+  .A_Button,
+  .A_Input {
+    font-size: 14px;
+  }
+  .A_Input {
+    width: 324px;
+    padding: 14px 20px;
+  }
+  .M_FormHeader {
+    gap: 12px;
+    .A_Heading3 {
+      width: 324px;
+    }
+  }
+  .M_InputWithLabel {
+    gap: 6px;
+  }
+  .W_InputsColumn {
+    gap: 12px;
+    margin-top: 48px;
+  }
+  .W_FormButton {
+    margin-top: 48px;
+    gap: 12px;
+  }
+  .W_FormAdditionalInfo {
+    margin-top: 24px;
+    gap: 12px;
+  }
+  .Q_ChaoticLetters {
+    display: none;
+  }
+}

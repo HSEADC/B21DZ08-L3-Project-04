@@ -1,26 +1,35 @@
-<div class="M_Heading">Авторизация</div>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="W_Body">
+  <div class="M_FormHeader">
+    <div class="A_Heading1">Авторизация</div>
+    <div class="A_Heading3">Войдите в аккаунт, чтобы пользоваться всеми возможностями лутка</div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="W_InputsColumn">
+      <div class="M_InputWithLabel">
+        <%= f.label :email, "Email", class:"A_Heading3" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Введите email", class: "A_Input"  %>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <div class="M_InputWithLabel">
+        <%= f.label :password, "Пароль", class:"A_Heading3" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Введите пароль", class: "A_Input"  %>
+      </div>
+    </div>
+    <div class="W_FormButton">
+      <% if devise_mapping.rememberable? %>
+        <div class="A_Checkbox">
+          <%= f.check_box :remember_me%>
+          <%= f.label :remember_me, "Запомнить меня", class:"A_Paragraph" %>
+        </div>
+      <% end %>
+      <%= f.submit "Войти", class:"A_Button Blue" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="W_FormAdditionalInfo">
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+    <div class="Q_ChaoticLetters"></div>
+</div>

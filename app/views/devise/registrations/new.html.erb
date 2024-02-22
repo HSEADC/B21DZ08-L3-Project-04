@@ -1,29 +1,42 @@
-<div class="M_Heading">Регистрация</div>
+<div class="W_Body">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="M_FormHeader">
+    <div class="A_Heading1">Регистрация</div>
+    <div class="A_Heading3">Создайте аккаунт, чтобы пользоваться всеми возможностями лутка</div>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="A_Input">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="W_InputsColumn">
+      <div class="M_InputWithLabel">
+        <%= f.label :email, "Email", class:"A_Heading3" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "Введите ваш email", placeholder: "Введите ваш email", class: "A_Input" %>
+      </div>
+
+      <div class="M_InputWithLabel">
+        <div class="W_InputLabel">
+          <%= f.label :password, "Пароль", class:"A_Heading3" %>
+          <% if @minimum_password_length %>
+          <p class="A_Paragraph Grey"><%= @minimum_password_length %> знаков минимум</p>
+          <% end %>
+        </div>
+        <%= f.password_field :password, autocomplete: "Введите пароль", placeholder: "Введите пароль", class: "A_Input" %>
+      </div>
+
+      <div class="M_InputWithLabel">
+        <%= f.label :password_confirmation, "Подтвердите пароль", class:"A_Heading3" %>
+        <%= f.password_field :password_confirmation, autocomplete: "Введите пароль еще раз", placeholder: "Введите пароль еще раз", class: "A_Input" %>
+      </div>
+    </div>
+    <div class="W_FormButton">
+      <%= f.submit "Зарегистрироваться", class:"A_Button Blue" %>
+    </div>
+  <% end %>
+
+  <div class="W_FormAdditionalInfo">
+    <%= render "devise/shared/links" %>
   </div>
 
-  <div class="A_Input">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> знаков минимум)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="A_Input">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <div class="Q_ChaoticLetters"></div>
+</div>
