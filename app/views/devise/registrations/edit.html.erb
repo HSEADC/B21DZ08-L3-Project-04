@@ -1,43 +1,52 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="W_Body">
+  <p class="A_Heading1">Редактировать профиль <%= resource_name.to_s.humanize %></p>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="W_InputsColumn">
+      <div class="M_InputWithLabel">
+        <%= f.label :email, "Email", class:"A_Heading3" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Введите email", class: "A_Input" %>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="M_InputWithLabel">
+      <div class="W_InputLabel">
+        <%= f.label :password, "Новый пароль", class:"A_Heading3" %> 
+        <% if @minimum_password_length %>
+          <p class="A_Paragraph Grey"><%= @minimum_password_length %> знаков минимум</p>
+        <% end %>
+      </div>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Введите новый пароль", class: "A_Input" %>
+        <p class="A_Paragraph Grey">Оставьте поле пустым, если не хотите менять пароль<p>
+      </div>
+
+      <div class="M_InputWithLabel">
+        <%= f.label :password_confirmation, "Повторите новый пароль", class:"A_Heading3" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Введите новый пароль еще раз", class: "A_Input" %>
+      </div>
+
+      <div class="M_InputWithLabel">
+        <%= f.label :current_password, "Текущий пароль", class:"A_Heading3" %> 
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Введите текущий пароль", class: "A_Input" %>
+        <p class="A_Paragraph Grey">Нам нужен ваш текущий пароль, чтобы подтвердить изменения<p>
+      </div>
+    </div>
+
+    <div class="W_FormButton">
+      <%= f.submit "Обновить", class:"A_Button Blue" %>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> знаков минимум</em>
-    <% end %>
-  </div>
+  <p class="A_Heading3">Удалить аккаунт</p>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <div>Недовольны лутком? :( <%= button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы уверены?", turbo_confirm: "Вы уверены" }, method: :delete, class:"A_Button Black" %></div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+  <div class="Q_ChaoticLetters"></div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+  <%#= link_to "Обратно", :back, class:"A_Button White" %>
+</div>

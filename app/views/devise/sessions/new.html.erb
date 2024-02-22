@@ -5,6 +5,7 @@
   </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
     <div class="W_InputsColumn">
       <div class="M_InputWithLabel">
         <%= f.label :email, "Email", class:"A_Heading3" %>
@@ -27,9 +28,7 @@
     </div>
   <% end %>
 
-  <div class="W_FormAdditionalInfo">
     <%= render "devise/shared/links" %>
-  </div>
 
     <div class="Q_ChaoticLetters"></div>
 </div>
