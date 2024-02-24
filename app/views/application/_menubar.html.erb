@@ -1,35 +1,25 @@
-<div class="O_Menu">
-    <%= link_to "", admin_posts_url, class:"A_Logo A_MenuLogo" %>
-    <div class="W_MenuElements">
-      <div class="W_MenuElementsLeft">
-        <%#= link_to "узнать о запуске", welcome_index_url, class:"A_MenuElement" %>
-        <%#= link_to "о нас", welcome_about_url, class:"A_MenuElement" %>
-        <%= link_to "Рус", change_locale_path(locale: :ru), class: ('active' if I18n.locale == :ru), class:"A_Paragraph A_MenuElement" %>
-        <%= link_to "En", change_locale_path(locale: :en), class: ('active' if I18n.locale == :en),  class:"A_Paragraph A_MenuElement" %>
-        <%= link_to "Тат", change_locale_path(locale: :en), class: ('active' if I18n.locale == :en),  class:"A_Paragraph A_MenuElement" %>
-      </div>
-      <div class="W_MenuElementsRight">
+<div class="O_Header">
+    <div class="W_Menu">
+      <%= link_to "", admin_posts_url, class:"A_Logo" %>
+      <!--<div class="W_MenuBarCenter">
+        <p> Скоро тут будет поиск :) </p>
+      </div> -->
+      <div class="W_MenuBarRight">
         <% if user_signed_in? && current_user.admin == true%>
-          <%#= link_to "песни", admin_posts_url, class:"A_MenuElement" %>
-          <%#= link_to "комментарии", admin_comments_url, class:"A_MenuButton" %>
-          <%#= link_to "подписки", admin_subscriptions_url, class:"A_MenuElement" %>
-          <div class="A_Button">
-            <%= link_to "Загрузить", new_admin_post_path, class:"A_Paragraph" %>
-          </div> 
+            <%= link_to "Загрузить", new_admin_post_path, class:"A_Button Black" %>
         <% end %>
-
+        
         <% if user_signed_in? %>
-          <%#= link_to "Профиль", profile_path(current_user.profile), class:"A_Paragraph A_MenuElement"%>
-          <%= link_to profile_path(current_user.profile), class: "A_Profile" do %>
-            <p class="A_Paragraph A_MenuElement">Профиль</p>
+          <%= link_to profile_path(current_user.profile), class: "A_AvatarHeaderButton" do %>
             <% if current_user.profile.avatar.present? %>
-            <%= image_tag current_user.profile.avatar.url, class: "avatar-thumbnail" %>
-          <% else %>
-            <div class="avatar-thumbnail no-avatar"></div>
-          <% end %>          
+                <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
+            <% else %>
+              <div class="Q_MockImage NoImage"></div>
+            <% end %>         
           <% end %>
-          <%#= link_to current_user.email, edit_user_registration_path, class:"A_MenuElement" %>
-          <%#= link_to "выйти", destroy_user_session_path, class:"A_MenuElement", method: :delete %>
+        <% else %>
+          <%= link_to "Зарегистрироваться", new_user_registration_path, class: "A_Paragraph" %>
+          <%= link_to "Войти", new_user_session_path, class: "A_Paragraph" %>
         <% end %>
       </div>
     </div>

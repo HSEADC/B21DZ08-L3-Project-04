@@ -404,136 +404,6 @@ body {
 
 ////////////////////////////////////////////////
 
-.O_Menu {
-  position: fixed;
-  z-index: 100;
-  width: 100%;
-  height: 75px;
-  background-color: var(--gray);
-  .W_MenuElements {
-    position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto 40px;
-  }
-  .W_MenuElementsLeft {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
-  }
-  .W_MenuElementsRight {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 35px;
-  }
-  .A_Button:hover {
-    background-color: var(--dark_blue);
-    .A_Paragraph {
-      color: var(--white);
-    }
-  }
-  .A_Profile {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    .avatar-thumbnail {
-      width: 46px;
-      height: 46px;
-      border-radius: 200px;
-    }
-  }
-}
-.A_Logo {
-  background-image: url('A_LogoSurqhuri.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-.A_MenuLogo {
-  height: 100%;
-  z-index: 101;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 137px;
-}
-
-.A_MenuElement {
-  padding: 13px 13px;
-  &:hover {
-    color: var(--dark_blue);
-  }
-}
-.A_Whisper {
-  position: relative;
-  display: block;
-  font-family: 'Noto Serif';
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 115%;
-  color: var(--black);
-}
-.O_Footer {
-  position: relative;
-  margin-top: 300px;
-  width: 100%;
-  height: 277px;
-  background-color: var(--gray);
-  background-image: url('Q_FooterCorner.svg');
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  .W_FooterText {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 26px;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    .W_FooterLinks {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      .A_Paragraph::after {
-        content: url('Q_LinkArrow.svg');
-      }
-      .A_MenuElement {
-        width: fit-content;
-        height: fit-content;
-      }
-    }
-  }
-  .A_Whisper {
-    width: 282px;
-    height: fit-content;
-    text-align: center;
-  }
-  .A_Logo {
-    z-index: 101px;
-    position: absolute;
-    display: block;
-    width: 137px;
-    height: 34px;
-    left: 12px;
-    bottom: 12px;
-  }
-}
 .no-avatar {
   background-color: grey;
 }
@@ -674,6 +544,13 @@ body {
   line-height: 115%;
   text-decoration: underline;
   color: var(--black);
+  &.Arrow {
+    text-decoration: none;
+  }
+  &.Arrow::after {
+    content: url('Q_LinkArrow.svg');
+    padding-left: 6px;
+  }
 }
 .A_Heading1 {
   position: relative;
@@ -874,4 +751,102 @@ input[type='checkbox']:checked + label::before {
   background-color: var(--dark_blue);
   background-image: image-url('Q_CheckBoxIcon.svg');
   background-size: cover;
+}
+.A_Caption {
+  position: relative;
+  display: block;
+  font-family: 'Noto Serif';
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 115%;
+  color: var(--black);
+}
+.O_Footer {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--white);
+  background-image: url('Q_FooterCorner.svg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  .W_FooterText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 52px;
+    padding: 39px 0;
+    .W_FooterLinks {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+      width: fit-content;
+    }
+  }
+  .A_Caption {
+    width: 352px;
+    height: fit-content;
+    text-align: center;
+  }
+  .A_Logo {
+    z-index: 101px;
+    position: absolute;
+    display: block;
+    width: 140px;
+    height: 34px;
+    left: 10px;
+    bottom: 10px;
+  }
+}
+.O_Header {
+  position: fixed;
+  z-index: 100;
+  height: fit-content;
+  width: 100%;
+  background-color: var(--gray);
+  .W_Menu {
+    position: relative;
+    display: block;
+    margin: 8px 60px;
+    height: 44px;
+    .A_Logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      background-image: url('A_LogoSurqhuri.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 140px;
+      height: 34px;
+    }
+    .W_MenuBarRight {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
+      gap: 20px;
+      .A_AvatarHeaderButton {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        .Q_MockImage {
+          position: relative;
+          display: block;
+          width: 44px;
+          height: 44px;
+          border-radius: 100px;
+          &.NoImage {
+            background-color: var(--dark_gray);
+          }
+        }
+      }
+    }
+  }
 }

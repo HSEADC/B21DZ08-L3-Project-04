@@ -1,5 +1,5 @@
 <div class="W_Body">
-  <p class="A_Heading1">Редактировать профиль <%= resource_name.to_s.humanize %></p>
+  <p class="A_Heading1">Настройки аккаунта <%= resource_name.to_s.humanize %></p>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -22,7 +22,6 @@
         <% end %>
       </div>
         <%= f.password_field :password, autocomplete: "new-password", placeholder: "Введите новый пароль", class: "A_Input" %>
-        <p class="A_Paragraph Grey">Оставьте поле пустым, если не хотите менять пароль<p>
       </div>
 
       <div class="M_InputWithLabel">
@@ -33,7 +32,6 @@
       <div class="M_InputWithLabel">
         <%= f.label :current_password, "Текущий пароль", class:"A_Heading3" %> 
         <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Введите текущий пароль", class: "A_Input" %>
-        <p class="A_Paragraph Grey">Нам нужен ваш текущий пароль, чтобы подтвердить изменения<p>
       </div>
     </div>
 
