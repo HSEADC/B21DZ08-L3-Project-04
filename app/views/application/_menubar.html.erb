@@ -8,19 +8,50 @@
         <% if user_signed_in? && current_user.admin == true%>
             <%= link_to "Загрузить", new_admin_post_path, class:"A_Button Black" %>
         <% end %>
-        
         <% if user_signed_in? %>
-          <%= link_to profile_path(current_user.profile), class: "A_AvatarHeaderButton" do %>
+        <div class="A_AvatarHeaderButton">
             <% if current_user.profile.avatar.present? %>
                 <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
             <% else %>
-                <%= current_user.profile.username %>
-            <% end %>         
-          <% end %>
+              <div class="Q_MockImage NoImage"></div>
+            <% end %> 
+            <div class="Q_Opener"></div>    
+            </div>      
+        
         <% else %>
-          <%= link_to "Зарегистрироваться", new_user_registration_path, class: "A_Paragraph" %>
-          <%= link_to "Войти", new_user_session_path, class: "A_Paragraph" %>
+          <%= link_to "Войти", new_user_session_path, class: "A_Button Black" %>
         <% end %>
       </div>
     </div>
   </div>
+
+  <div class="W_Dropdown">
+  <div class="M_Dropdown NotActive">
+  <% if user_signed_in? %>
+    <%= link_to profile_path(current_user.profile), class: "M_ProfilePreview" do %>
+      <div class="A_Avatar">
+      <% if current_user.profile.avatar.present? %>
+        <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
+      <% else %>
+        <div class="Q_MockImage NoImage"></div>
+      <% end %>      
+      </div>
+        <div class="W_PreviewInfo">
+          <div class="A_Paragraph">
+          <%= current_user.profile.username %>
+          </div>
+          <div class="A_Paragraph Grey">
+          <%= current_user.profile.username %>
+          </div>
+        </div>
+        <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
+        <%= link_to "Настройки", welcome_about_url, class: "A_Button Transparent" %>
+        <%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
+        <%= link_to "Поддержка", welcome_about_url, class: "A_Button Transparent" %>
+        <%= link_to "Выйти", welcome_about_url, class: "A_Button Transparent" %>
+    <% end %>
+  <% else %>
+  <%= link_to "Войти", new_user_session_path, class: "A_Button Transparent" %>
+  <% end %>
+</div>
+</div>
