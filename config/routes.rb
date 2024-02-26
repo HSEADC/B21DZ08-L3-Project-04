@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         post "sign_in", to: "sessions#create"
         post "sign_out", to: "sessions#destroy"
       end
+    end
   end
 
   namespace :admin do
