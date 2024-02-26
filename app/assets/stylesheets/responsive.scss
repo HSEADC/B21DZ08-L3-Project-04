@@ -2,6 +2,23 @@
   .W_Body {
     width: 1344px;
   }
+
+
+  .O_Header{
+    .W_Menu{
+      width: 1344px;
+    }
+  }
+.W_Dropdown{
+  .M_Dropdown{
+    width: 352;
+    margin-left:992px ;
+    .Q_MockImage {
+      width: 80px;
+      height: 80px;
+    }
+  }}
+
   .A_Heading1 {
     font-size: 50px;
     letter-spacing: 25px;
@@ -45,6 +62,21 @@
   .W_Body {
     width: 983px;
   }
+  .O_Header{
+    .W_Menu{
+      width: 983px;
+    }
+  }
+  .W_Dropdown{
+    .M_Dropdown{
+      width: 317;
+      margin-left:666px ;
+      .Q_MockImage {
+        width: 72px;
+        height: 72px;
+      }
+    }}
+
   .A_Heading1 {
     font-size: 45px;
     letter-spacing: 22.5px;
@@ -88,6 +120,21 @@
   .W_Body {
     width: 650px;
   }
+  .O_Header{
+    .W_Menu{
+      width: 650px;
+    }
+  }
+  .W_Dropdown{
+    .M_Dropdown{
+      width: 294;
+      margin-left:256px ;
+      .Q_MockImage {
+        width: 64px;
+        height: 64px;
+      }
+    }}
+
   .A_Heading1 {
     font-size: 40px;
     letter-spacing: 20px;

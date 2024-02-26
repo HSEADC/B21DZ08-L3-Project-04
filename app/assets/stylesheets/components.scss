@@ -592,7 +592,7 @@ body {
   padding: 8px 30px;
   width: fit-content;
   height: fit-content;
-  border-radius: 10px;
+  border-radius: 16px;
   text-decoration: none;
   font-family: 'Noto Sans';
   font-weight: normal;
@@ -764,6 +764,7 @@ input[type='checkbox']:checked + label::before {
 .O_Footer {
   position: relative;
   width: 100%;
+  margin-top: 100px;
   height: fit-content;
   background-color: var(--white);
   background-image: url('Q_FooterCorner.svg');
@@ -803,18 +804,22 @@ input[type='checkbox']:checked + label::before {
 .O_Header {
   position: fixed;
   z-index: 100;
-  height: fit-content;
+  height: 60px;
   width: 100%;
-  background-color: var(--gray);
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .W_Menu {
     position: relative;
     display: block;
-    margin: 8px 60px;
-    height: 44px;
+    display: flex;
+    width: 1800px;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 40px;
+    
     .A_Logo {
-      position: absolute;
-      top: 0;
-      left: 0;
       display: block;
       background-image: url('A_LogoSurqhuri.svg');
       background-repeat: no-repeat;
@@ -824,16 +829,17 @@ input[type='checkbox']:checked + label::before {
       height: 34px;
     }
     .W_MenuBarRight {
-      position: absolute;
-      top: 0px;
-      right: 0px;
       display: flex;
       flex-direction: row;
       justify-content: end;
       align-items: center;
       gap: 20px;
+      width: fit-content;
       .A_AvatarHeaderButton {
         position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         width: fit-content;
         height: fit-content;
         .Q_MockImage {
@@ -846,7 +852,70 @@ input[type='checkbox']:checked + label::before {
             background-color: var(--dark_gray);
           }
         }
+        .Q_Opener{
+          width: 14px;
+          height: 30px;
+          margin-left: 13px;
+          background-image:url('Q_Opener.svg') ;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position-y: center;
+          cursor: pointer;
+        }
       }
+      
     }
   }
 }
+.W_Dropdown{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+.M_Dropdown{
+  display: inline-flex;
+  overflow: hidden;
+  position: fixed;
+  top: 60px;
+  margin-left:1418px ;
+  width: 382px;
+  z-index: 101;
+  background-color: var(--white);
+  padding: 16px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
+  &.NotActive{
+    display: none;
+    height:0;
+  }
+.M_ProfilePreview{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 350px;
+  align-items:start;
+  padding-left: 8px;
+  .W_PreviewInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+}
+  .A_Button{
+    border-bottom: 2px solid var(--gray);
+    border-radius: 0;
+    width: 350px;
+  }
+    .Q_MockImage {
+      position: relative;
+      display: block;
+      width: 90px;
+      height: 90px;
+      border-radius: 100px;
+      &.NoImage {
+        background-color: var(--dark_gray);
+      }
+    }
+}}
