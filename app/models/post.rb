@@ -2,6 +2,7 @@ class Post < ApplicationRecord
     has_many :comments
     has_many :attachments
     mount_uploader :post_image, PostImageUploader
+    has_rich_text :text
 
     belongs_to :user
     def api_as_json

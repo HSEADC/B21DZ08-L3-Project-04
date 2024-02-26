@@ -14,7 +14,7 @@
             <% if current_user.profile.avatar.present? %>
                 <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
             <% else %>
-              <div class="Q_MockImage NoImage"></div>
+                <%= current_user.profile.username %>
             <% end %>         
           <% end %>
         <% else %>

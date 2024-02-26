@@ -592,7 +592,7 @@ body {
   padding: 8px 30px;
   width: fit-content;
   height: fit-content;
-  border-radius: 10px;
+  border-radius: 16px;
   text-decoration: none;
   font-family: 'Noto Sans';
   font-weight: normal;
@@ -848,5 +848,63 @@ input[type='checkbox']:checked + label::before {
         }
       }
     }
+  }
+}
+
+.A_IconButton {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &.Blue {
+    background-color: var(--dark_blue);
+  }
+  &.White {
+    background-color: var(--white);
+  }
+  &.Black {
+    background-color: var(--black);
+  }
+  &.Transparent {
+    background-color: none;
+  }
+  &.Attachment {
+    background-image: url('Q_IconAttachment.svg');
+  }
+}
+.C_TextEditorButtons {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  text-align: right;
+  font-style: italic;
+  &::before {
+    content: '«';
+  }
+  &::after {
+    content: '»';
   }
 }
