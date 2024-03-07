@@ -15,7 +15,7 @@
             <% else %>
               <div class="Q_MockImage NoImage"></div>
             <% end %> 
-            <div class="Q_Opener"></div>    
+            <div class="Q_Opener Q_DropOpener"></div>    
             </div>      
         
         <% else %>
@@ -45,13 +45,43 @@
           </div>
         </div>
         <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
-        <%= link_to "Настройки", welcome_about_url, class: "A_Button Transparent" %>
+        <%= link_to "Настройки", profile_path(current_user.profile), class: "A_Button Transparent" %>
         <%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
-        <%= link_to "Поддержка", welcome_about_url, class: "A_Button Transparent" %>
-        <%= link_to "Выйти", welcome_about_url, class: "A_Button Transparent" %>
+        <%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>
+        <%= link_to "Выйти", destroy_user_session_url, class: "A_Button Transparent" %>
     <% end %>
   <% else %>
+  <%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
+  <%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>
   <%= link_to "Войти", new_user_session_path, class: "A_Button Transparent" %>
   <% end %>
 </div>
 </div>
+<div class="O_HeaderMobile">
+<div class="W_HeaderMobile">
+  <div class="A_Menu_Mobile Q_DropOpener">
+    <div></div>
+    <div></div>
+    <div></div> 
+  </div>
+  <%= link_to "", admin_posts_url, class:"A_Logo" %>
+  <div class="Q_Search"> </div>
+  </div>
+
+<div class="M_Dropdown NotActive">
+<% if user_signed_in? %>
+      <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
+      <%= link_to "Настройки", profile_path(current_user.profile), class: "A_Button Transparent" %>
+      <%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
+      <%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>
+      <%= link_to "Выйти", destroy_user_session_url, class: "A_Button Transparent" %>
+<% else %>
+<%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
+<%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>
+<%= link_to "Войти", new_user_session_path, class: "A_Button Transparent" %>
+<% end %>
+</div>
+</div>
+
+
+
