@@ -20,12 +20,18 @@
   }
 
   .A_Heading1 {
-    font-size: 50px;
-    letter-spacing: 25px;
+    font-size: 44px;
+    letter-spacing: 22.5px;
   }
+
+  .A_Heading2 {
+    font-size: 40px;
+  }
+
   .A_Heading3 {
-    font-size: 36px;
+    font-size: 32px;
   }
+
   .M_AuthHeader {
     gap: 32px;
     .A_Heading3 {
@@ -79,11 +85,16 @@
   }
 
   .A_Heading1 {
-    font-size: 45px;
-    letter-spacing: 22.5px;
+    font-size: 40px;
+    letter-spacing: 20px;
   }
-  .A_Heading3 {
+
+  .A_Heading2 {
     font-size: 32px;
+  }
+
+  .A_Heading3 {
+    font-size: 22px;
   }
   .A_Paragraph,
   .A_Link,
@@ -138,11 +149,14 @@
   }
 
   .A_Heading1 {
-    font-size: 40px;
-    letter-spacing: 20px;
+    font-size: 36px;
+    letter-spacing: 18px;
+  }
+  .A_Heading2 {
+    font-size: 28px;
   }
   .A_Heading3 {
-    font-size: 28px;
+    font-size: 20px;
   }
   .A_Paragraph,
   .A_Link,
@@ -205,11 +219,14 @@
     display: flex;
   }
   .A_Heading1 {
-    font-size: 21px;
-    letter-spacing: 10.5px;
+    font-size: 24px;
+    letter-spacing: 12px;
+  }
+  .A_Heading2 {
+    font-size: 24px;
   }
   .A_Heading3 {
-    font-size: 24px;
+    font-size: 20px;
   }
   .A_Paragraph,
   .A_Link,

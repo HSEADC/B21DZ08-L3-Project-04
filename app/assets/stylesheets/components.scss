@@ -211,12 +211,6 @@ body {
   flex-wrap: wrap;
 }
 
-////////////////////////////////////////////////
-
-.no-avatar {
-  background-color: grey;
-}
-
 ////////////////////
 // User
 .O_Account {
@@ -334,7 +328,7 @@ body {
   display: block;
   font-family: 'Noto Sans';
   font-weight: normal;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 115%;
   color: var(--black);
   &.Grey {
@@ -390,7 +384,7 @@ body {
 }
 .A_Heading3 {
   font-family: 'Noto Serif';
-  font-size: 36px;
+  font-size: 26px;
   font-style: normal;
   font-weight: 400;
   line-height: 115%;
