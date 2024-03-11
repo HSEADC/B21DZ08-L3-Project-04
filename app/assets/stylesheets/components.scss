@@ -333,7 +333,7 @@ body {
   position: relative;
   display: block;
   font-family: 'Noto Sans';
-  font-weight: normal;
+  font-weight: 400;
   font-size: 20px;
   line-height: 115%;
   color: var(--black);
@@ -342,6 +342,12 @@ body {
   }
   &.White {
     color: var(--white);
+  }
+  &.Blue {
+    color: var(--dark_blue);
+  }
+  &.Bold {
+    font-weight: 700;
   }
 }
 .A_Link {
@@ -425,6 +431,7 @@ body {
   &.Transparent {
     background-color: none;
     color: var(--black);
+    padding: 8px 0px;
   }
   &.Underlined {
     background-color: none;
@@ -566,9 +573,12 @@ input[type='checkbox']:checked + label::before {
   display: block;
   font-family: 'Noto Serif';
   font-weight: normal;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 115%;
   color: var(--black);
+  &.Gray {
+    color: var(--dark_gray);
+  }
 }
 .O_Footer {
   position: relative;
@@ -651,16 +661,6 @@ input[type='checkbox']:checked + label::before {
         align-items: center;
         width: fit-content;
         height: fit-content;
-        .Q_MockImage {
-          position: relative;
-          display: block;
-          width: 44px;
-          height: 44px;
-          border-radius: 100px;
-          &.NoImage {
-            background-color: var(--dark_gray);
-          }
-        }
         .Q_Opener {
           width: 14px;
           height: 30px;
@@ -673,6 +673,16 @@ input[type='checkbox']:checked + label::before {
         }
       }
     }
+  }
+}
+.Q_MockImage {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  &.NoImage {
+    background-color: var(--dark_gray);
   }
 }
 .W_Dropdown {
@@ -849,5 +859,58 @@ blockquote {
         background-color: var(--dark_gray);
       }
     }
+  }
+}
+.M_Comment {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  box-sizing: content-box;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  width: 888px;
+  border-bottom: 2px solid var(--gray);
+  .W_AllTextParts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1 0 0;
+    .W_NameAndBody {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      align-self: stretch;
+    }
+    .W_BottomPart {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+      .W_DateAndReplyButton {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+  .A_Button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+  .A_Button::after {
+    content: url('Q_ArrowDown.svg');
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
   }
 }

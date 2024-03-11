@@ -1,15 +1,25 @@
-<div class="M_Post" id="<%= dom_id comment %>">
-  <p class="M_PostHeading"><%= comment.user.profile.username %></p>
-  <p class="M_PostDescription"><%= comment.body%></p>
-<% if can? :manage, @comment%>
-  <div>
-    <%= link_to "Редактировать", edit_admin_post_comment_path(post, comment) %>
-    <%= button_to "Удалить", [:admin, post, comment], method: :delete %>
+<div class="M_Comment" id="<%= dom_id comment %>">
+  <div class="Q_MockImage NoImage"><%= comment.user.profile.avatar %></div>
+  <div class="W_AllTextParts">
+    <div class="W_NameAndBody">
+      <p class="A_Paragraph Bold"><%= comment.user.profile.username %></p>
+      <p class="A_Paragraph"><%= comment.body%></p>
+    </div>
+    <div class="W_BottomPart">
+      <div class="W_DateAndReplyButton">
+        <p class="A_Caption Gray"><%= comment.created_at%></p>
+        <div class="A_Paragraph Blue">Ответить</div>
+        <% if can? :manage, @comment%>
+          <%= link_to "Редактировать", edit_admin_post_comment_path(post, comment), class:"A_Paragraph" %>
+          <%#= button_to "Удалить", [:admin, post, comment], method: :delete %>
+        <% end%>
+      </div>
+              <div class="A_Button Transparent">2 ответа</div>
+    </div>
   </div>
+</div>
   <div class="W_CommentReplies">
     <% comment.replies.each do |reply|%>
     <%= render reply, partial: "admin/comments/comment", comment: reply, post: post%>
     <% end %>
   </div>
-</div>
-<% end%>

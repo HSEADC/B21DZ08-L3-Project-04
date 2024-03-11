@@ -1,7 +1,7 @@
 <div class="W_ShowPost">
-  <p style="color: green"><%= notice %></p>
+  <!-- <p style="color: green"><%= notice %></p>
 
-  <%= render @post, show_email: true %>
+  <%#= render @post, show_email: true %>
 
   <div class="Edit">
     <%= link_to "Редактировать", edit_admin_post_path(@post) %> |
@@ -9,7 +9,7 @@
 
     <%= button_to "Удалить этот пост", [:admin, @post], method: :delete, class: "A_Button" %>
 
-  </div>
+  </div> -->
   <div class="A_Button">
     <%= link_to "Оставить комментарий", new_admin_post_comment_path(@post), class: "A_ButtonText" %>
   </div>
