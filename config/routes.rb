@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'replies/new'
+  get 'replies/create'
 
   namespace :api do
     namespace :v1 do
@@ -14,7 +16,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :posts do
-      resources :comments, except: :show
+      resources :comments do
+        resources :replies, only: [:create]
+      end
     end
     resources :attachments, except: [:index, :show]
     resources :suggested_translations

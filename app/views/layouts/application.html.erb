@@ -17,7 +17,9 @@
   </head>
   <body>
     <%= render partial: 'menubar', locals: { profile: @profile } %>
-    <%= yield %>
-    <%= render 'footer' %>
+    <div class="W_Body">
+      <%= yield %>
+      <%= render 'footer' %>
+    </div>
   </body>
 </html>

@@ -3,6 +3,7 @@ class Admin::CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :set_comment, only: %i[ show edit update destroy ]
   before_action :set_post, only: %i[ show new edit create update destroy ]
+  
 
   # GET /comments or /comments.json
   def index
@@ -23,8 +24,11 @@ class Admin::CommentsController < ApplicationController
   end
 
   # POST /comments or /comments.json
+
   def create
+    @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to admin_post_url(@post), notice: "Comment was successfully created." }
@@ -35,6 +39,7 @@ class Admin::CommentsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
@@ -59,17 +64,18 @@ class Admin::CommentsController < ApplicationController
     end
   end
 
-  def set_post
-    @post = Post.find(params[:post_id])
-  end
-  
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_comment
       @comment = Comment.find(params[:id])
     end
-    # Only allow a list of trusted parameters through.
+
     def comment_params
-      params.require(:comment).permit(:body, :post_id).merge(user_id: current_user.id)
+      params.require(:comment).permit(:body, :post_id, :reply_to_comment_id).merge(user_id: current_user.id)
+    end
+
+    def set_post
+      @post = Post.find(params[:post_id])
     end
 end
