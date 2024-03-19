@@ -36,5 +36,7 @@ Thumbs.db
 /public/uploads
 /public/autoupload
 
+/app/assets/images/OldImages
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key

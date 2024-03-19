@@ -1,0 +1,106 @@
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .W_Dropdown {
+    .M_Dropdown {
+      width: 352;
+      margin-left: 992px;
+      .Q_MockImage {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .W_Dropdown {
+    .M_Dropdown {
+      width: 317;
+      margin-left: 666px;
+      .Q_MockImage {
+        width: 72px;
+        height: 72px;
+      }
+    }
+  }
+  .M_FormHeader {
+    .A_Heading3 {
+      width: 650px;
+    }
+  }
+  .M_PostPreview {
+    width: 317px;
+    height: 221px;
+    .W_PostPreview {
+      gap: 12px;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .W_Dropdown {
+    .M_Dropdown {
+      width: 294;
+      margin-left: 256px;
+      .Q_MockImage {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+  .M_FormHeader {
+    gap: 12px;
+    .A_Heading3 {
+      width: 539px;
+    }
+  }
+  .M_InputWithLabel {
+    gap: 6px;
+  }
+  .W_InputsColumn {
+    gap: 12px;
+    margin-top: 48px;
+  }
+  .W_FormButton {
+    margin-top: 48px;
+    gap: 12px;
+  }
+  .W_FormAdditionalInfo {
+    margin-top: 24px;
+    gap: 12px;
+  }
+  .M_PostPreview {
+    width: 317px;
+    height: 211px;
+    .W_PostPreview {
+      gap: 12px;
+    }
+  }
+}
+@media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+  .M_FormHeader {
+    gap: 12px;
+    .A_Heading3 {
+      width: 324px;
+    }
+  }
+  .M_InputWithLabel {
+    gap: 6px;
+  }
+  .W_InputsColumn {
+    gap: 12px;
+    margin-top: 48px;
+  }
+  .W_FormButton {
+    margin-top: 48px;
+    gap: 12px;
+  }
+  .W_FormAdditionalInfo {
+    margin-top: 24px;
+    gap: 12px;
+  }
+  .M_PostPreview {
+    width: 324px;
+    height: 211px;
+    .W_PostPreview {
+      gap: 12px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="O_Post" id="<%= dom_id post %>">
+  <div class="M_PostHeading">
+    <p class="A_Heading1"><%= post.title.html_safe %></p>
+    <div class="C_TagCollection">
+      <div class="A_Paragraph Antiqua A_Tag"><%=post.tag_list%></div>
+      <!--<div class="A_Paragraph Antiqua A_Tag">тут</div>
+      <div class="A_Paragraph Antiqua A_Tag">будет</div>
+      <div class="A_Paragraph Antiqua A_Tag">куча</div>
+      <div class="A_Paragraph Antiqua A_Tag">тегов</div>-->
+    </div>
+    <div class="W_AuthorAndDate">
+      <div class="M_PostAuthor">
+        <% if local_assigns[:show_email] %>
+          <div class="A_Avatar NoImage"><%= post.user.profile.avatar %></div>
+          <div class="W_NameAndNick">
+            <div class="A_Paragraph Bold"><%= post.user.profile.username %></div>
+            <div class="A_Paragraph Grey">@FolkloreIsSuper</div>
+          </div>
+        <% end %>
+      </div>
+      <div class="A_Paragraph"><%= formatted_date(post.created_at)%></div>
+    </div>
+  </div>
+
+  <!--<p class="A_Paragraph"><%= post.text %></p>-->
+  
+</div>
