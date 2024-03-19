@@ -1,0 +1,258 @@
+//трикс приколы, временно тут
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  text-align: right;
+  font-style: italic;
+  &::before {
+    content: '«';
+  }
+  &::after {
+    content: '»';
+  }
+}
+.A_Paragraph {
+  position: relative;
+  display: block;
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: var(--black);
+  &.Grey {
+    color: var(--dark_gray);
+  }
+  &.White {
+    color: var(--white);
+  }
+  &.Blue {
+    color: var(--dark_blue);
+  }
+  &.Bold {
+    font-weight: 700;
+  }
+  &.Antiqua {
+    font-family: 'Noto Serif';
+  }
+}
+.A_Link {
+  position: relative;
+  display: block;
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 115%;
+  text-decoration: underline;
+  color: var(--black);
+  &.Arrow {
+    text-decoration: none;
+  }
+  &.Arrow::after {
+    content: url('Q_LinkArrow.svg');
+    padding-left: 6px;
+  }
+}
+.A_Heading1 {
+  position: relative;
+  font-family: 'Noto Serif';
+  color: var(--black);
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 22px;
+  text-transform: uppercase;
+}
+.A_Heading1::before {
+  content: url('M_Heading.svg');
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: -10px;
+}
+.A_Heading2 {
+  font-family: 'Noto Serif';
+  color: var(--black);
+  font-size: 36px;
+  font-style: normal;
+  line-height: 115%;
+  font-weight: 400;
+  font-size: 45px;
+}
+.A_Heading3 {
+  font-family: 'Noto Serif';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+}
+.A_Button {
+  position: relative;
+  display: block;
+  padding: 10px 30px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 16px;
+  text-decoration: none;
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 115%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &.Blue {
+    background-color: var(--dark_blue);
+    color: var(--white);
+  }
+  &.White {
+    background-color: var(--white);
+    color: var(--black);
+  }
+  &.Black {
+    background-color: var(--black);
+    color: var(--white);
+  }
+  &.Transparent {
+    background-color: none;
+    color: var(--black);
+    padding: 8px 0px;
+  }
+  &.Underlined {
+    background-color: none;
+    color: var(--black);
+    text-decoration: underline;
+  }
+}
+.A_Input {
+  display: flex;
+  width: 660px;
+  height: fit-content;
+  padding: 16px 24px;
+  align-items: center;
+  font-family: 'Noto Sans';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  color: var(--black);
+  background: var(--gray);
+  border-radius: 30px;
+  text-decoration: none;
+  border: 0px;
+}
+.A_Input::placeholder {
+  color: var(--dark_gray);
+}
+.Q_ChaoticLetters {
+  background-image: url('Q_ChaoticLetters.svg');
+  width: 970px;
+  height: 475px;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+.A_Checkbox {
+  position: relative;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type='checkbox'] + label {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+input[type='checkbox'] + label::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: var(--gray);
+  margin-right: 10px;
+}
+
+input[type='checkbox']:checked + label::before {
+  background-color: var(--dark_blue);
+  background-image: image-url('Q_CheckBoxIcon.svg');
+  background-size: cover;
+}
+.A_Caption {
+  position: relative;
+  display: block;
+  font-family: 'Noto Serif';
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 115%;
+  color: var(--black);
+  &.Gray {
+    color: var(--dark_gray);
+  }
+}
+.A_Avatar {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  &.NoImage {
+    background-color: var(--dark_gray);
+  }
+}
+.A_IconButton {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &.Blue {
+    background-color: var(--dark_blue);
+  }
+  &.White {
+    background-color: var(--white);
+  }
+  &.Black {
+    background-color: var(--black);
+  }
+  &.Transparent {
+    background-color: none;
+  }
+  &.Attachment {
+    background-image: url('Q_IconAttachment.svg');
+  }
+}
+.A_Tag {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue);
+}

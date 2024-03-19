@@ -1,0 +1,13 @@
+<div class="A_Decoration"></div>
+<div class="M_Heading">
+../изменить пост
+</div> 
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div class="Edit">
+  <%= link_to "Посмотреть пост", @post %> |
+  <%= link_to "Обратно к постам", posts_path %>
+</div>

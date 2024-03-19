@@ -1,19 +1,19 @@
 <div class="O_Header">
     <div class="W_Menu">
-      <%= link_to "", admin_posts_url, class:"A_Logo" %>
+      <%= link_to "", posts_url, class:"A_Logo" %>
       <!--<div class="W_MenuBarCenter">
         <p> Скоро тут будет поиск :) </p>
       </div> -->
       <div class="W_MenuBarRight">
         <% if user_signed_in? && current_user.admin == true%>
-            <%= link_to "Загрузить", new_admin_post_path, class:"A_Button Black" %>
+            <%= link_to "Загрузить", new_post_path, class:"A_Button Black" %>
         <% end %>
         <% if user_signed_in? %>
         <div class="A_AvatarHeaderButton">
             <% if current_user.profile.avatar.present? %>
                 <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
             <% else %>
-              <div class="Q_MockImage NoImage"></div>
+              <div class="A_Avatar NoImage"></div>
             <% end %> 
             <div class="Q_Opener Q_DropOpener"></div>    
             </div>      
@@ -64,7 +64,7 @@
     <div></div>
     <div></div> 
   </div>
-  <%= link_to "", admin_posts_url, class:"A_Logo" %>
+  <%= link_to "", posts_url, class:"A_Logo" %>
   <div class="Q_Search"> </div>
   </div>
 

@@ -1,0 +1,18 @@
+<div class="W_PostPage">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @post, show_email: true %>
+
+  <!--<div class="Edit">
+    <%#= link_to "Редактировать", edit_post_path(@post) %>
+    <%#= button_to "Удалить этот пост", @post, method: :delete, class: "A_Button" %>
+  </div>-->
+
+  <div class="O_CommentsSection">
+    <div class="A_Heading2">15 комментариев</div>
+    <%= render "comments/form", comment: Comment.new, post: @post %>
+    <div class="W_Comments">
+      <%= render @post.comments.reverse, post: @post %>
+    </div>
+  </div>
+</div>

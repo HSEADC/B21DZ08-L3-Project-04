@@ -15,28 +15,19 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :posts do
-      resources :comments do
-        resources :replies, only: [:create]
-      end
-    end
-    resources :attachments, except: [:index, :show]
-    resources :suggested_translations
-    resources :comments
     resources :subscriptions
   end
 
+  resources :posts do
+    resources :comments do
+    end
+  end
+  resources :comments
   resources :profiles, only: [:show, :edit, :update]
-
-  # resources :posts do
-  #   resources :comments, except: :show
-  # end
 
   devise_for :users
 
   resources :subscriptions, only: [:create, :show]
-
-  # resources :subscriptions, only: [:create, :show]
 
   get 'welcome/index'
   get 'welcome/about'
