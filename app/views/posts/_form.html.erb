@@ -23,6 +23,11 @@
       </div>
 
       <div>
+        <%= form.label :tag_list, "Добавить теги", style: "display: block", class: "A_Heading3" %>
+        <%= form.text_field :tag_list, value: post.tag_list.join(', '), class: "A_Input"%>
+      </div>
+
+      <div>
       <%= form.submit "Опубликовать", class:"A_Button Blue" %>
       </div>
     <% end %>

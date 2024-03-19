@@ -14,3 +14,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const commentInput = document.getElementById('CommentInput');
+  const commentButton = document.getElementById('CommentButton');
+
+  // Initially, the button is grey and inactive
+  // But as it's a Ruby form, the button should be already inactive and styled correctly
+
+  // Event listener for input focus
+  commentInput.addEventListener('focus', function () {
+    if (commentInput.value.trim() !== '') {
+      commentButton.classList.remove('Grey');
+      commentButton.classList.add('Blue');
+      commentButton.removeAttribute('disabled');
+    }
+  });
+
+  commentInput.addEventListener('blur', function () {
+    if (commentInput.value.trim() === '') {
+      commentButton.classList.add('Grey');
+      commentButton.classList.remove('Blue');
+      commentButton.setAttribute('disabled', true);
+    }
+  });
+
+  commentInput.addEventListener('input', function () {
+    if (commentInput.value.trim() !== '') {
+      commentButton.classList.remove('Grey');
+      commentButton.classList.add('Blue');
+      commentButton.removeAttribute('disabled');
+    } else {
+      commentButton.classList.add('Grey');
+      commentButton.classList.remove('Blue');
+      commentButton.setAttribute('disabled', true);
+    }
+  });
+});

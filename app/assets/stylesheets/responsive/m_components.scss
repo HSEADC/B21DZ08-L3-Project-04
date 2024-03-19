@@ -26,6 +26,13 @@
       width: 650px;
     }
   }
+  .M_PostPreview {
+    width: 317px;
+    height: 221px;
+    .W_PostPreview {
+      gap: 12px;
+    }
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .W_Dropdown {
@@ -59,6 +66,13 @@
     margin-top: 24px;
     gap: 12px;
   }
+  .M_PostPreview {
+    width: 317px;
+    height: 211px;
+    .W_PostPreview {
+      gap: 12px;
+    }
+  }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
   .M_FormHeader {
@@ -81,5 +95,12 @@
   .W_FormAdditionalInfo {
     margin-top: 24px;
     gap: 12px;
+  }
+  .M_PostPreview {
+    width: 324px;
+    height: 211px;
+    .W_PostPreview {
+      gap: 12px;
+    }
   }
 }

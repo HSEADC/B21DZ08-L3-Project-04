@@ -87,7 +87,7 @@ blockquote {
 }
 .A_Heading3 {
   font-family: 'Noto Serif';
-  font-size: 36px;
+  font-size: 26px;
   font-style: normal;
   font-weight: 400;
   line-height: 115%;
@@ -115,6 +115,10 @@ blockquote {
     background-color: var(--white);
     color: var(--black);
   }
+  &.Grey {
+    background-color: var(--gray);
+    color: var(--black);
+  }
   &.Black {
     background-color: var(--black);
     color: var(--white);
@@ -128,6 +132,17 @@ blockquote {
     background-color: none;
     color: var(--black);
     text-decoration: underline;
+  }
+  &.Icon {
+    background-image: url('icons/Send.svg');
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: 11px 10px;
+    border-radius: 30px;
+    width: 44px;
+    height: 44px;
+    padding: 0 0;
+    opacity: 1;
   }
 }
 .A_Input {
@@ -146,6 +161,7 @@ blockquote {
   border-radius: 30px;
   text-decoration: none;
   border: 0px;
+  overflow: visible;
 }
 .A_Input::placeholder {
   color: var(--dark_gray);

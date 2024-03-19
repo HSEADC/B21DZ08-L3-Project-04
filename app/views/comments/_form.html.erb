@@ -11,6 +11,6 @@
     </div>
   <% end %>
   <div class="A_Avatar NoImage"><%= current_user.profile.avatar %></div>
-  <%= form.text_field :body, placeholder: "Оставить комментарий", class: "A_Input" %>
-  <%= form.submit "отправить", class: "A_Button Blue" %>
+  <%= form.text_field :body, placeholder: "Оставить комментарий", class: "A_Input", id:"CommentInput" %>
+  <%= form.submit "", class: "A_Button Icon Grey", id:"CommentButton", disabled: true %>
 <% end %>

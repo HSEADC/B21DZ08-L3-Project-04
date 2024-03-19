@@ -232,3 +232,59 @@
     display: block;
   }
 }
+.M_PostPreview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  width: 432px;
+  height: 248px;
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--gray);
+  .W_PostPreview {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    overflow: hidden;
+    height: fit-content;
+    .trix-content {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .A_Heading3 {
+      width: 100%;
+      height: fit-content;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    @media (max-height: 3em) {
+      .A_Heading3,
+      .trix-content {
+        height: auto;
+        -webkit-line-clamp: unset;
+      }
+    }
+  }
+  .C_Tags {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end;
+    gap: 5px;
+    align-self: stretch;
+    flex-wrap: wrap;
+  }
+}

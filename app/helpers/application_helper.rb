@@ -12,5 +12,17 @@ module ApplicationHelper
                     end
 
     date.strftime(format_string)
+    end
+    
+    def russian_pluralize(count, one, few, many)
+      if count == 0
+        return "0 #{many}"
+      elsif count % 10 == 1 && count % 100 != 11
+        return "#{count} #{one}"
+      elsif [2, 3, 4].include?(count % 10) && ![12, 13, 14].include?(count % 100)
+        return "#{count} #{few}"
+      else
+        return "#{count} #{many}"
       end
+    end
 end

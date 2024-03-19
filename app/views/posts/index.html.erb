@@ -1,13 +1,21 @@
 
 <p style="color: green"><%= notice %></p>
 <h1 class="A_Heading1">Лутки</h1>
+
+<% Post.tag_counts_on(:tags).each do |tag| %>
+  <%=link_to tagged_posts_path(tag.name), class:"A_Paragraph Antiqua A_Tag" do%>
+    <%= tag.name%> (<%=tag.taggings_count%>)
+  <% end %>
+<% end %>
+
+
  <div> 
   <%#= link_to "Выложить песню", new_post_path, class:"A_Paragraph" %>
 </div> 
-<div class="W_Posts">
+<div>
   <% @posts.each do |post| %>
     <%= link_to post do%>
-      <%= render partial: 'posts/post', locals: { post: post, show_email: true } %>
+      <%= render partial: 'posts/post-preview', locals: { post: post, show_email: true } %>
     <% end %>
   <% end %>
 </div>
