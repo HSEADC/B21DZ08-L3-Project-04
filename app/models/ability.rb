@@ -9,6 +9,7 @@ class Ability
     end
 
     if user
+      can :toggle_favourite, Post
       can :manage, Post, user_id: user.id
       can :manage, Comment, user_id: user.id
     end

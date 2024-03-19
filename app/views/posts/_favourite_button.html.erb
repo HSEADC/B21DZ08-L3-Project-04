@@ -1,0 +1,12 @@
+<%
+  post_user_ids = []
+
+  post.users.each do |user|
+    post_user_ids << user.id
+  end
+
+  favourite_link_text = post_user_ids.include?(current_user.id) ? '★' : '☆'
+%>
+<%= turbo_frame_tag dom_id(post) do %>
+  <%= link_to favourite_link_text, toggle_favourite_post_path(post), remote: true, data: { turbo_stream: true } %>
+<% end %>

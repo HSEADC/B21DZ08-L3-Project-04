@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
     def show
       @user = @profile.user
       @posts = @user.posts
+      @favourites = @profile.user.favourites
     end
   
     def edit

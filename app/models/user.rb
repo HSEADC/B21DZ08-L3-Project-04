@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :comments
   has_one :profile
 
+  has_and_belongs_to_many :favourites, class_name: 'Post', foreign_key: 'user_id'
+
   after_create :create_profile
 
   def create_profile

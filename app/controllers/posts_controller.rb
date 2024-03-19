@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy toggle_favourite ]
 
   # GET /posts or /posts.json
   def index
@@ -62,6 +62,26 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def toggle_favourite
+    post_user_ids = []
+
+    @post.users.each do |user|
+      post_user_ids << user.id
+    end
+
+    if post_user_ids.include?(current_user.id)
+      current_user.favourites.delete(@post)
+    else
+      current_user.favourites << @post
+    end
+
+    set_post
+
+    respond_to do |format|
+      format.turbo_stream
     end
   end
 

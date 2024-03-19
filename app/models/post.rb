@@ -5,6 +5,8 @@ class Post < ApplicationRecord
     has_rich_text :text
     acts_as_taggable_on :tags
 
+    has_and_belongs_to_many :users
+
     belongs_to :user
     def api_as_json
         {

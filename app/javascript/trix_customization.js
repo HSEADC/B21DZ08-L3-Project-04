@@ -17,7 +17,4 @@ document.addEventListener('trix-initialize', function (event) {
   `;
 });
 
-// Attach the Trix initialization event listener
-document.addEventListener('trix-initialize', function (event) {
-  // Your custom initialization code here
-});
+document.addEventListener('trix-initialize', function (event) {});

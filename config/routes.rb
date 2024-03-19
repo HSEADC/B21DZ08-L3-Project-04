@@ -21,7 +21,11 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
     get "/by_tag/:tag", to: "posts#by_tag", on: :collection, as: "tagged"
+    member do
+      get 'toggle_favourite', to: 'posts#toggle_favourite', as: 'toggle_favourite'
+    end
   end
+
   resources :comments
   resources :profiles, only: [:show, :edit, :update]
 
