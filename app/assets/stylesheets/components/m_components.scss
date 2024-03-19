@@ -103,16 +103,6 @@
       border-radius: 0;
       width: 350px;
     }
-    .Q_MockImage {
-      position: relative;
-      display: block;
-      width: 90px;
-      height: 90px;
-      border-radius: 100px;
-      &.NoImage {
-        background-color: var(--dark_gray);
-      }
-    }
   }
 }
 .C_TextEditorButtons {

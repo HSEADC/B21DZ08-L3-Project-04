@@ -31,9 +31,9 @@
     <%= link_to profile_path(current_user.profile), class: "M_ProfilePreview" do %>
       <div class="A_Avatar">
       <% if current_user.profile.avatar.present? %>
-        <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
+        <%= image_tag current_user.profile.avatar.url, class: "A_Avatar" %>
       <% else %>
-        <div class="Q_MockImage NoImage"></div>
+        <div class="A_Avatar NoImage"></div>
       <% end %>      
       </div>
         <div class="W_PreviewInfo">
