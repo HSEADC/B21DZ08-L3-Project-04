@@ -7,13 +7,13 @@
 
   counter = post_user_ids.count > 0 ? post_user_ids.count : ''
 
-  # if current_user
-  #   link_text = post_user_ids.include?(current_user.id) ? "♥ #{counter}" : "♡ #{counter}"
-  # else
-  #   link_text = "♡ #{counter}"
-  # end
+  if current_user
+    link_text = post_user_ids.include?(current_user.id) ? "♥ #{counter}" : "♡ #{counter}"
+  else
+    link_text = "♡ #{counter}"
+  end
 %>
 
 <%= turbo_frame_tag dom_id(post), class:"A_Button Grey", remote: true do %>
-  <%= link_to "прик", toggle_like_post_path(post) %>
+  <%= link_to link_text, toggle_like_post_path(post) %>
 <% end %> 

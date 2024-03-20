@@ -243,7 +243,8 @@ input[type='checkbox']:checked + label::before {
   height: 44px;
   border-radius: 100px;
   &.NoImage {
-    background-color: var(--dark_gray);
+    background-image: url('DefaultAvatars/1.png');
+    background-size: contain;
   }
 }
 .A_IconButton {

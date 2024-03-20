@@ -20,9 +20,4 @@ class User < ApplicationRecord
   has_many :likes
   has_many :posts_i_liked, through: :likes, source: 'post'
 
-  after_create :create_profile
-
-  def create_profile
-    Profile.create(user_id: id, username: 'Я кто', about: "Я антропологиня")
-  end
 end

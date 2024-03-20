@@ -29,11 +29,11 @@
   <div class="M_Dropdown NotActive">
   <% if user_signed_in? %>
     <%= link_to profile_path(current_user.profile), class: "M_ProfilePreview" do %>
-      <div class="A_Avatar">
+      <div class="A_Avatar NoImage">
       <% if current_user.profile.avatar.present? %>
         <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
       <% else %>
-        <div class="Q_MockImage NoImage"></div>
+        <div class="A_Avatar NoImage"></div>
       <% end %>      
       </div>
         <div class="W_PreviewInfo">
@@ -41,7 +41,7 @@
           <%= current_user.profile.username %>
           </div>
           <div class="A_Paragraph Grey">
-          <%= current_user.profile.username %>
+          <%= current_user.profile.login %>
           </div>
         </div>
         <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
