@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_post, only: %i[ show edit update destroy toggle_favourite ]
+  before_action :set_post, only: %i[ show edit update destroy toggle_favourite toggle_like liked_by_user ]
 
   # GET /posts or /posts.json
   def index
@@ -68,21 +68,33 @@ class PostsController < ApplicationController
   def toggle_favourite
     post_user_ids = []
 
-    @post.users.each do |user|
+    @post.users_who_favourited.each do |user|
       post_user_ids << user.id
     end
 
     if post_user_ids.include?(current_user.id)
-      current_user.favourites.delete(@post)
+      current_user.posts_i_favourited.delete(@post)
     else
-      current_user.favourites << @post
+      current_user.posts_i_favourited << @post
     end
 
     set_post
+  end
 
-    respond_to do |format|
-      format.turbo_stream
+  def toggle_like
+    post_user_ids = []
+
+    @post.users_who_liked.each do |user|
+      post_user_ids << user.id
     end
+
+    if post_user_ids.include?(current_user.id)
+      current_user.posts_i_liked.delete(@post)
+    else
+      current_user.posts_i_liked << @post
+    end
+
+    set_post
   end
 
   private

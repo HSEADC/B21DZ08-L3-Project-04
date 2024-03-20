@@ -10,6 +10,7 @@ class Ability
 
     if user
       can :toggle_favourite, Post
+      can :toggle_like, Post
       can :manage, Post, user_id: user.id
       can :manage, Comment, user_id: user.id
     end

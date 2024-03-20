@@ -32,8 +32,7 @@
 <div class="W_Posts">
   <% @posts.each do |post| %>
     <%= link_to post do%>
-      <%= render partial: 'posts/post', locals: { post: post, show_email: false, } %>
+      <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false, } %>
     <% end %>
   <% end %>
 </div>
-  <%= render @favourites %>

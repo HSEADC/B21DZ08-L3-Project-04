@@ -5,6 +5,12 @@ class Post < ApplicationRecord
     has_rich_text :text
     acts_as_taggable_on :tags
 
+    has_many :favourites
+    has_many :users_who_favourited, through: :favourites, source: 'user'
+
+    has_many :likes
+    has_many :users_who_liked, through: :likes, source: 'user'
+
     has_and_belongs_to_many :users
 
     belongs_to :user

@@ -94,7 +94,8 @@ blockquote {
 }
 .A_Button {
   position: relative;
-  display: block;
+  display: flex;
+  gap: 10px;
   padding: 10px 30px;
   width: fit-content;
   height: fit-content;
@@ -144,6 +145,19 @@ blockquote {
     padding: 0 0;
     opacity: 1;
   }
+  &.IconText {
+    background-position: 16px 9.5px;
+  }
+}
+.Q_Icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+.Unliked {
+  background-image: url('icons/Unliked.svg');
 }
 .A_Input {
   display: flex;
