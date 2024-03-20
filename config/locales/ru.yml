@@ -1,2 +1,9 @@
 ru:
   hello: 'Привет!'
+  activerecord:
+    errors:
+      models:
+        profile:
+          attributes:
+            username:
+              too_short: 'Слишком коротко'

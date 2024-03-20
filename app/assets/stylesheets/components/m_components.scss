@@ -278,3 +278,23 @@
     flex-wrap: wrap;
   }
 }
+.M_EditForm {
+  width: 660px;
+  margin: 0 auto;
+  textarea {
+    min-height: 335px;
+    padding: 16px 24px;
+  }
+  .W_FormHeader {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .A_Avatar {
+    height: 80px;
+    width: 80px;
+  }
+  .custom-file-input {
+    display: none; /* Hide the default file input */
+  }
+}

@@ -45,8 +45,8 @@
           </div>
         </div>
         <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
-        <%= link_to "Настройки", profile_path(current_user.profile), class: "A_Button Transparent" %>
-        <%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
+        <%= link_to "Настройки", edit_profile_url(current_user.profile), class: "A_Button Transparent" %>
+        <div class="A_Button Transparent">Язык</div>
         <%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>
         <%= link_to "Выйти", destroy_user_session_url, class: "A_Button Transparent" %>
     <% end %>

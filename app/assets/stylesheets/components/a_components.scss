@@ -34,6 +34,9 @@ blockquote {
   &.Blue {
     color: var(--dark_blue);
   }
+  &.Red {
+    color: var(--red);
+  }
   &.Bold {
     font-weight: 700;
   }
@@ -228,6 +231,7 @@ input[type='checkbox']:checked + label::before {
   width: 44px;
   height: 44px;
   border-radius: 100px;
+  object-fit: cover;
   &.NoImage {
     background-color: var(--dark_gray);
   }
