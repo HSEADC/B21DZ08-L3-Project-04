@@ -6,14 +6,9 @@
   end
 
   counter = post_user_ids.count > 0 ? post_user_ids.count : ''
-
-  if current_user
-    link_text = post_user_ids.include?(current_user.id) ? "♥ #{counter}" : "♡ #{counter}"
-  else
-    link_text = "♡ #{counter}"
-  end
 %>
 
-<%= turbo_frame_tag dom_id(post), class:"A_Button Grey", remote: true do %>
-  <%= link_to link_text, toggle_like_post_path(post) %>
-<% end %> 
+<%= turbo_frame_tag dom_id(post), remote: true do %>
+  <% link_class = post_user_ids.include?(current_user&.id) ? "Blue" : "Grey" %>
+  <%= link_to 'лайк!', toggle_like_post_path(post), class: "A_Button #{link_class}", data: { turbo_frame: "preview" } %>
+<% end %>

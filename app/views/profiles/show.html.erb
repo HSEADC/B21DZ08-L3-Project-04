@@ -16,7 +16,9 @@
 </div>
 </div>
 <div class="A_Button">
-<%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Paragraph'%>
+<%= turbo_frame_tag 'wow' do %>
+  <%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Paragraph'%>
+<% end %>
 </div>
 </div>
 

@@ -64,7 +64,7 @@ Rails.application.configure do
 
   config.assets.debug = true
 
-  config.assets.digest = false
+  config.assets.digest = true
   
   config.assets.raise_runtime_errors = true
   # Raises error for missing translations.
