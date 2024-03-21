@@ -1,31 +1,35 @@
 <div class="O_Account">
+<div class="M_ProfileInfo">
 <% if @profile.avatar? %>
   <%= image_tag @profile.avatar.url, class: "A_Icon"  %>
 <% else %>
   <div></div>
 <% end %>
-<div class="W_Account">
+
+
+<div class="W_ProfileInfo">
+
+<div class="W_ProfileName">
 <div class="A_Heading3">
 <%= @profile.username%>
 </div>
-<div class="A_Nickname">
+<div class="A_Paragraph Grey">
 <%= @profile.login%>
 </div>
-<div class="A_Text">
+<div class="A_Paragraph">
 <%= @profile.about%>
 </div>
 </div>
-<div class="A_Button">
-<%= turbo_frame_tag 'wow' do %>
-  <%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Paragraph'%>
-<% end %>
 </div>
-</div>
+  
+</div><%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue'%></div>
 
 
-
-<div class="M_Posts">
-<p>Публикации</p>
+<div class="O_Posts">
+<div class="M_Switcher">
+<p class="A_Link">Публикации</p>
+<p class="A_Paragraph">Подборки</p>
+<p class="A_Paragraph">Черновики</p>
 </div>
 
 
@@ -37,4 +41,5 @@
       <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false, } %>
     <% end %>
   <% end %>
+</div>
 </div>

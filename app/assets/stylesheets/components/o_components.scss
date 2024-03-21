@@ -85,6 +85,13 @@
         align-items: center;
         width: fit-content;
         height: fit-content;
+        .Q_MockImage {
+          position: relative;
+          display: block;
+          width: 44px;
+          height: 44px;
+          border-radius: 100px;
+        }
         .Q_Opener {
           width: 14px;
           height: 30px;
@@ -262,5 +269,91 @@
         background-color: var(--dark_gray);
       }
     }
+  }
+}
+.O_Account {
+  display: flex;
+  justify-content: space-between;
+  width: 1797px;
+  flex-direction: row;
+  margin-bottom: 48px;
+  .M_ProfileInfo {
+    display: flex;
+    width: 774px;
+    align-items: flex-start;
+    gap: 24px;
+    .W_ProfileInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      flex: 1 0 0;
+      .W_ProfileName {
+        display: flex;
+        height: 149px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+  }
+  .A_Icon {
+    height: 204px;
+    width: 204px;
+    border-radius: 200px;
+    object-fit: cover;
+  }
+}
+.S_PopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(168, 169, 169, 0.5);
+  align-items: center;
+  justify-content: center;
+  .O_PopUp {
+    display: flex;
+    height: fit-content;
+    padding: 28px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 30px;
+    background: var(--white);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    .A_Heading3 {
+      text-align: center;
+      width: 100%;
+    }
+    .C_Buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 18px;
+      align-self: stretch;
+      margin-top: 12px;
+    }
+    .M_InputWithLabel {
+      .A_Heading3 {
+        text-align: left;
+      }
+    }
+  }
+}
+.O_Posts {
+  display: flex;
+  gap: 48px;
+  flex-direction: column;
+  .W_Posts {
+    display: flex;
+    width: 1800px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
   }
 }
