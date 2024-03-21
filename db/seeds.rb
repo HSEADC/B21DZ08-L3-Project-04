@@ -10,10 +10,12 @@ def seed
   reset_db
   create_admin
   create_users
+  create_profiles
   create_posts(15)
   create_comments(2..8)
   create_comment_replies(300)
   create_attachments(10)
+  # create_likes(0..10)
 end
 
 def reset_db
@@ -35,6 +37,23 @@ def create_users
     puts "User created with id #{user.id}"
 
     i += 1
+  end
+end
+
+def create_profiles
+  avatars_directory = "app/assets/images/DefaultAvatars"
+  avatars = Dir.entries(avatars_directory).reject { |f| File.directory? File.join(avatars_directory, f) }
+
+  i = 0
+  User.all.each do |user|
+      random_avatar = avatars.sample
+      avatar_path = File.join(avatars_directory, random_avatar)
+
+      username = "user_#{i}"
+      nickname = "nickname_#{i}"
+      profile = Profile.create(username: username, about: create_mashup(3), user_id: user.id, login: nickname, avatar: avatar_path)
+      i +=1
+      puts "Профиль #{profile.id} для пользователя #{profile.user.id} создан"
   end
 end
 
@@ -111,6 +130,16 @@ def create_comments(quantity)
     end
   end
 end
+
+# def create_likes(quantity)
+#   Post.all.each do |post|
+#     quantity.to_a.sample.times do
+#       user = User.all.sample
+#       like = Like.create(post_id: post.id, user_id: user)
+#       puts "Лайк #{like.id} для поста #{like.post.id} создан"
+#     end
+#   end
+# end
 
 def create_comment_replies(quantity)
   quantity.times do

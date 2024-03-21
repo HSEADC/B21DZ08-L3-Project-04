@@ -82,3 +82,5 @@ gem "devise", "~> 4.9"
 gem "rack-cors"
 # gem "haml-rails", "~> 2.0"
 gem "trix"
+
+gem 'acts-as-taggable-on', '~> 9.0'

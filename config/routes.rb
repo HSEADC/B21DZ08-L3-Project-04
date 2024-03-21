@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'replies/new'
+  get 'replies/create'
 
   namespace :api do
     namespace :v1 do
@@ -13,26 +15,26 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :posts do
-      resources :comments, except: :show
-    end
-    resources :attachments, except: [:index, :show]
-    resources :suggested_translations
-    resources :comments
     resources :subscriptions
   end
 
-  resources :profiles, only: [:show, :edit, :update]
+  resources :posts do
+    member do
+      # get 'toggle_favourite', to: 'posts#toggle_favourite', as: 'toggle_favourite', defaults: { format: :turbo_stream }
+      get 'toggle_favourite', to: 'posts#toggle_favourite', as: 'toggle_favourite'
+      get 'toggle_like', to: 'posts#toggle_like', as: 'toggle_like'
+    end
 
-  # resources :posts do
-  #   resources :comments, except: :show
-  # end
+    resources :comments
+    get "/by_tag/:tag", to: "posts#by_tag", on: :collection, as: "tagged"
+  end
+
+  resources :comments
+  resources :profiles, only: [:show, :edit, :update]
 
   devise_for :users
 
   resources :subscriptions, only: [:create, :show]
-
-  # resources :subscriptions, only: [:create, :show]
 
   get 'welcome/index'
   get 'welcome/about'

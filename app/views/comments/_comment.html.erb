@@ -1,0 +1,39 @@
+<div data-controller="comment">
+  <div class="M_Comment" id="<%= dom_id comment %>">
+
+  <%= link_to profile_path(comment.user.profile) do %>
+    <% if comment.user.profile.avatar.present? %>
+        <%= image_tag comment.user.profile.avatar.url, class: "A_Avatar" %>
+    <% else %>
+      <div class="A_Avatar NoImage"></div>
+    <% end %> 
+    <% end %> 
+
+
+    <div class="W_AllTextParts">
+      <div class="W_NameAndBody">
+        <p class="A_Paragraph Bold"><%= comment.user.profile.username %></p>
+        <p class="A_Paragraph"><%= comment.body%></p>
+        <!-- <p class="A_Paragraph" style="color: red">id: <%= comment.id%></p>
+        <p class="A_Paragraph" style="color: red">reply_to_comment_id: <%= comment.reply_to_comment_id%></p> -->
+      </div>
+      <div class="W_BottomPart">
+        <div class="W_DateAndReplyButton">
+          <p class="A_Caption Gray"><%= formatted_date(comment.created_at)%></p>
+          <div class="A_Paragraph Blue">Ответить</div>
+          <% if can? :manage, comment%>
+            <%= link_to "Редактировать", edit_post_comment_path(comment.post, comment), class:"A_Paragraph" %>
+            <%#= button_to "Удалить", [post, comment], method: :delete %>
+          <% end%>
+        </div>
+        <!--<div class="A_Button Transparent" data-action="click->comment#toggleReplies"></div>-->
+      </div>
+      <%#= render "comments/reply_form", reply: Comment.new, parent_comment: comment %>
+    </div>
+  </div>
+  <div class="W_CommentReplies"  data-target="comment.replies">
+    <% comment.replies.each do |reply|%>
+    <%= render reply, partial: "comments/comment", comment: @reply, post: @post%>
+    <% end %>
+  </div>
+</div>

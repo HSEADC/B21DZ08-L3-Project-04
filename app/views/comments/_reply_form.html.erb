@@ -1,0 +1,15 @@
+<%= form_with(model: [parent_comment, reply], url: post_comment_replies_path(parent_comment.post, parent_comment), method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :reply_to_comment_id, value: parent_comment.id %>
+  <%= form.hidden_field :post_id, value: parent_comment.post.id %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

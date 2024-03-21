@@ -1,0 +1,97 @@
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .A_Heading1 {
+    font-size: 40px;
+  }
+  .A_Heading2 {
+    font-size: 32px;
+  }
+  .A_Heading3 {
+    font-size: 24px;
+  }
+  .A_Paragraph,
+  .A_Link,
+  .A_Button,
+  .A_Input {
+    font-size: 18px;
+  }
+  .A_Input {
+    padding: 16px 24px;
+  }
+  .Q_ChaoticLetters {
+    width: 775px;
+    height: 380px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .A_Heading1 {
+    font-size: 36px;
+    letter-spacing: 18px;
+  }
+  .A_Heading2 {
+    font-size: 28px;
+  }
+  .A_Heading3 {
+    font-size: 22px;
+  }
+  .A_Paragraph,
+  .A_Link,
+  .A_Button,
+  .A_Input {
+    font-size: 16px;
+  }
+  .A_Input {
+    padding: 14px 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .A_Heading1 {
+    font-size: 32px;
+    letter-spacing: 16px;
+  }
+  .A_Heading2 {
+    font-size: 28px;
+  }
+  .A_Heading3 {
+    font-size: 22px;
+  }
+  .A_Paragraph,
+  .A_Link,
+  .A_Button,
+  .A_Input {
+    font-size: 14px;
+  }
+  .A_Input {
+    width: 428px;
+    padding: 14px 20px;
+  }
+  .Q_ChaoticLetters {
+    // width: 475px;
+    // height: 232px;
+    display: none;
+  }
+}
+@media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+  .A_Heading1 {
+    font-size: 24px;
+    letter-spacing: 12px;
+  }
+  .A_Heading2 {
+    font-size: 24px;
+  }
+  .A_Heading3 {
+    font-size: 20px;
+  }
+  .A_Paragraph,
+  .A_Link,
+  .A_Button,
+  .A_Input {
+    font-size: 14px;
+  }
+  .A_Input {
+    width: 324px;
+    padding: 14px 20px;
+  }
+  .Q_ChaoticLetters {
+    display: none;
+  }
+}
