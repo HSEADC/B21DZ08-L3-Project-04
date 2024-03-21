@@ -1,6 +1,6 @@
 <div class="O_Header">
     <div class="W_Menu">
-      <%= link_to "", posts_url, class:"A_Logo" %>
+      <%= link_to "", welcome_index_url, class:"A_Logo" %>
       <!--<div class="W_MenuBarCenter">
         <p> Скоро тут будет поиск :) </p>
       </div> -->
@@ -10,13 +10,16 @@
         <% end %>
         <% if user_signed_in? %>
         <div class="A_AvatarHeaderButton">
+        <%= link_to profile_path(current_user.profile) do %>
             <% if current_user.profile.avatar.present? %>
                 <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
             <% else %>
               <div class="A_Avatar NoImage"></div>
             <% end %> 
+            <% end %> 
             <div class="Q_Opener Q_DropOpener"></div>    
             </div>      
+            
         
         <% else %>
           <%= link_to "Войти", new_user_session_path, class: "A_Button Black" %>
@@ -45,8 +48,8 @@
           </div>
         </div>
         <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
-        <%= link_to "Настройки", profile_path(current_user.profile), class: "A_Button Transparent" %>
-        <%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
+        <%= link_to "Настройки", edit_profile_url(current_user.profile), class: "A_Button Transparent" %>
+        <div class="A_Button Transparent">Язык</div>
         <%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>
         <%= link_to "Выйти", destroy_user_session_url, class: "A_Button Transparent" %>
     <% end %>
@@ -64,17 +67,17 @@
     <div></div>
     <div></div> 
   </div>
-  <%= link_to "", posts_url, class:"A_Logo" %>
+  <%= link_to "", welcome_index_url, class:"A_Logo" %>
   <div class="Q_Search"> </div>
   </div>
 
 <div class="M_Dropdown NotActive">
 <% if user_signed_in? %>
-      <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
-      <%= link_to "Настройки", profile_path(current_user.profile), class: "A_Button Transparent" %>
-      <%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
-      <%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>
-      <%= link_to "Выйти", destroy_user_session_url, class: "A_Button Transparent" %>
+<%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
+<%= link_to "Настройки", edit_profile_url(current_user.profile), class: "A_Button Transparent" %>
+<div class="A_Button Transparent">Язык</div>
+<%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>
+<%= link_to "Выйти", destroy_user_session_url, class: "A_Button Transparent" %>
 <% else %>
 <%= link_to "Язык", welcome_about_url, class: "A_Button Transparent" %>
 <%= link_to "Поддержка", support_index_url, class: "A_Button Transparent" %>

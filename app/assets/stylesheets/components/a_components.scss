@@ -12,8 +12,12 @@
   &.White {
     color: var(--white);
   }
+
   &.Blue {
     color: var(--dark_blue);
+  }
+  &.Red {
+    color: var(--red);
   }
   &.Bold {
     font-weight: 700;
@@ -72,6 +76,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: 115%;
+  &.Link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 .A_Button {
   position: relative;
@@ -103,6 +111,10 @@
   }
   &.Black {
     background-color: var(--black);
+    color: var(--white);
+  }
+  &.Red {
+    background-color: var(--red);
     color: var(--white);
   }
   &.Transparent {
@@ -223,6 +235,7 @@ input[type='checkbox']:checked + label::before {
   width: 44px;
   height: 44px;
   border-radius: 100px;
+  object-fit: cover;
   &.NoImage {
     background-image: url('DefaultAvatars/1.png');
     background-size: contain;

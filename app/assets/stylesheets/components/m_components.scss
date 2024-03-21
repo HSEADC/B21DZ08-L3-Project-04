@@ -2,11 +2,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   gap: 16px;
   .A_Heading3 {
-    width: 774px;
+    width: 100%;
   }
 }
 .W_SubRegisterButton {
@@ -42,7 +42,6 @@
   gap: 16px;
   width: fit-content;
   height: fit-content;
-  margin-top: 64px;
 }
 .W_FormButton {
   position: relative;
@@ -50,15 +49,14 @@
   flex-direction: column;
   width: fit-content;
   height: fit-content;
-  margin-top: 64px;
   gap: 16px;
 }
 .W_FormAdditionalInfo {
   position: relative;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: start;
-  width: fit-content;
   height: fit-content;
   margin-top: 32px;
   gap: 16px;
@@ -278,5 +276,99 @@
     gap: 5px;
     align-self: stretch;
     flex-wrap: wrap;
+  }
+}
+.M_EditForm {
+  width: 660px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  .M_ProfilePreview {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: start;
+  }
+  .A_Heading3 {
+    margin-bottom: 8px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  textarea {
+    min-height: 335px;
+    padding: 16px 24px;
+  }
+  .W_FormHeader {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .A_Avatar {
+    height: 80px;
+    width: 80px;
+  }
+  .custom-file-input {
+    display: none; /* Hide the default file input */
+  }
+}
+.M_Switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.M_Search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+  .A_Logo {
+    width: 706px;
+    height: 173.42px;
+    display: block;
+    background-image: url('A_LogoSurqhuri.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+.M_Banner {
+  width: 1116px;
+  height: 176px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--gray);
+
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .W_Banner {
+    display: flex;
+    width: 569px;
+    height: 176px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .A_Heading2 {
+    width: 100%;
+  }
+  .A_Image {
+    display: flex;
+    align-self: stretch;
+    height: 176px;
+    width: 100%;
+    background-color: var(--blue);
   }
 }

@@ -1,1 +1,59 @@
-сюда жестко надо красиво заверсттать
+<div class="M_Search">
+<%= link_to "", welcome_index_url, class:"A_Logo" %>
+</div>
+
+<div class="S_IndexContent">
+
+
+<div class="O_Banners">
+  <% random_posts = Post.order("RANDOM()").limit(1) %>
+  <% random_posts.each do |post| %>
+    <%= link_to post do %>
+      <%= render partial: 'posts/banner', locals: { post: post, show_email: false } %>
+    <% end %>
+  <% end %>
+</div>
+</div>
+
+
+
+<div class="O_Posts">
+<div class = "A_Heading3">Интересное</div>
+<div class="W_Posts">
+  <% random_posts = Post.order("RANDOM()").limit(8) %>
+  <% random_posts.each do |post| %>
+    <%= link_to post do %>
+      <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false } %>
+    <% end %>
+  <% end %>
+</div></div>
+
+
+
+<div class="O_Posts">
+<div class = "A_Heading3">Новое в подписках</div>
+<div class="W_Posts">
+  <% random_posts = Post.order("RANDOM()").limit(4) %>
+  <% random_posts.each do |post| %>
+    <%= link_to post do %>
+      <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false } %>
+    <% end %>
+  <% end %>
+</div></div>
+
+<div class="O_Banners">
+  <% random_posts = Post.order("RANDOM()").limit(1) %>
+  <% random_posts.each do |post| %>
+    <%= link_to post do %>
+      <%= render partial: 'posts/banner', locals: { post: post, show_email: false } %>
+    <% end %>
+  <% end %>
+</div>
+</div>
+
+
+
+</div>
+
+
+

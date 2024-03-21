@@ -7,7 +7,17 @@
     <div class="W_AuthorAndDate">
       <div class="M_PostAuthor">
         <% if local_assigns[:show_email] %>
-          <div class="A_Avatar NoImage"><%= post.user.profile.avatar %></div>
+
+        <%= link_to profile_path(post.user.profile) do %>
+          <% if post.user.profile.avatar.present? %>
+              <%= image_tag post.user.profile.avatar.url, class: "A_Avatar" %>
+          <% else %>
+            <div class="A_Avatar NoImage"></div>
+          <% end %> 
+          <% end %> 
+
+
+        
           <div class="W_NameAndNick">
             <div class="A_Paragraph Bold"><%= post.user.profile.username %></div>
             <div class="A_Paragraph Grey">@FolkloreIsSuper</div>

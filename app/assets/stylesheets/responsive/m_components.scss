@@ -33,6 +33,18 @@
       gap: 12px;
     }
   }
+  .M_Banner {
+    width: 983px;
+    .W_Banner {
+      width: 569px;
+    }
+  }
+  .M_Search {
+    .A_Logo {
+      width: 539px;
+      height: 132px;
+    }
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .W_Dropdown {
@@ -73,6 +85,18 @@
       gap: 12px;
     }
   }
+  .M_Banner {
+    width: 643px;
+    .W_Banner {
+      width: 399px;
+    }
+  }
+  .M_Search {
+    .A_Logo {
+      width: 428px;
+      height: 105px;
+    }
+  }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
   .M_FormHeader {
@@ -101,6 +125,27 @@
     height: 211px;
     .W_PostPreview {
       gap: 12px;
+    }
+  }
+  .M_Banner {
+    width: 324px;
+    height: 270px;
+    a {
+      flex-direction: column;
+    }
+
+    .W_Banner {
+      width: 324px;
+      height: 101px;
+    }
+    .A_Image {
+      align-self: stretch;
+      width: 100%;
+    }
+  }
+  .M_Search {
+    .A_Logo {
+      display: none;
     }
   }
 }

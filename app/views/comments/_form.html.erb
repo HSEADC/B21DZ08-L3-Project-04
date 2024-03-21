@@ -10,7 +10,11 @@
       </ul>
     </div>
   <% end %>
-  <div class="A_Avatar NoImage"><%= current_user.profile.avatar %></div>
+  <% if current_user.profile.avatar.present? %>
+        <%= image_tag current_user.profile.avatar.url, class: "A_Avatar" %>
+      <% else %>
+        <div class="A_Avatar NoImage"></div>
+      <% end %>  
   <%= form.text_field :body, placeholder: "Оставить комментарий", class: "A_Input", id:"CommentInput" %>
   <%= form.submit "", class: "A_Button Icon Grey", id:"CommentButton", disabled: true %>
 <% end %>
