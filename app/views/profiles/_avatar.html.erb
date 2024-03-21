@@ -1,0 +1,6 @@
+<% if profile.avatar.present? %>
+  <%= image_tag profile.avatar.url, class: "A_Avatar" %>
+<% else %>
+  <div class="A_Avatar NoImage"></div>
+<% end %>
+

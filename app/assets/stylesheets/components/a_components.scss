@@ -94,6 +94,10 @@ blockquote {
   font-style: normal;
   font-weight: 400;
   line-height: 115%;
+  &.Link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 .A_Button {
   position: relative;
@@ -124,6 +128,10 @@ blockquote {
   }
   &.Black {
     background-color: var(--black);
+    color: var(--white);
+  }
+  &.Red {
+    background-color: var(--red);
     color: var(--white);
   }
   &.Transparent {

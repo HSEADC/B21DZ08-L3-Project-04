@@ -6,7 +6,7 @@
     <% if @profile.errors.any? %>
       <div style="color: red">
         <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this post from being saved:</h2>
-
+  
         <ul>
           <% @profile.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -15,40 +15,35 @@
       </div>
     <% end %>
     <div>
-    
-<div class="A_Heading3">Фотография профиля</div>
-    <div class="M_ProfilePreview">
-      <div class="A_Avatar">
-      <% if current_user.profile.avatar.present? %>
-        <%= image_tag current_user.profile.avatar.url, class: "A_Avatar" %>
-      <% else %>
-        <div class="A_Avatar NoImage"></div>
-      <% end %>     
-      </div> 
-      <%= form.file_field :avatar, id: "avatar-input", class: "custom-file-input", accept: "image/*" %>
-      <label for="avatar-input" class="A_Button Blue">Изменить аватар</label>
-    </div>
-
+      <div class="A_Heading3">Фотография профиля</div>
+      <div class="M_ProfilePreview">
+        <div class="A_Avatar">
+          <%= render partial: 'profiles/avatar', locals: { profile: @profile } %>
+        </div> 
+        <%= form.file_field :avatar, id: "avatar-input", class: "custom-file-input", accept: "image/*", data: { turbo_frame: 'avatar_frame' } %>
+        <label for="avatar-input" class="A_Button Blue">Изменить аватар</label>
+      </div></div>
     <div>
-      <%= form.label :login, "Имя", class: "A_Heading3" %>
-      <%= form.text_field :login, placeholder: "Гульнара Иванова", class: "A_Input" %>
+    <div class="W_FormHeader">
+      <%= form.label :username, "Имя", class: "A_Heading3" %>
+      </div>
+      <%= form.text_field :username, placeholder: "Гульнара Иванова", class: "A_Input" %>
     </div>
     <div>
      <div class="W_FormHeader">
-       <%= form.label :username, "Никнейм", class: "A_Heading3" %>
+       <%= form.label :login, "Никнейм", class: "A_Heading3" %>
        <div class="A_Paragraph Red">
-       <%= form.object.errors[:username].first if form.object.errors[:username].any? %>
+       <%= form.object.errors[:login].first if form.object.errors[:login].any? %>
        </div>
      </div>
-    <%= form.text_field :username, placeholder: "gulnara_ivanova", class: "A_Input" %>
+    <%= form.text_field :login, placeholder: "gulnara_ivanova", class: "A_Input" %>
     <div class="A_Paragraph Grey">Латиница, более 6 символов</div>
-    
-
-
     </div>
 
     <div>
+    <div class="W_FormHeader">
       <%= form.label :about, "Описание", class: "A_Heading3" %>
+      </div>
       <%= form.text_area :about, placeholder: "Расскажите, чем занимаетесь, каков Ваш профессиональный интерес", class: "A_Input" %>
     </div>
 
@@ -56,9 +51,9 @@
       <%= form.submit "Сохранить изменения", class: "A_Button Blue" %>
     </div>
   <% end %>
+  <div class="A_Caption">***</div>
 </div>
 
-<div class="W_Body">
 
   <%= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: current_user %>

@@ -10,10 +10,12 @@
         <% end %>
         <% if user_signed_in? %>
         <div class="A_AvatarHeaderButton">
+        <%= link_to profile_path(current_user.profile) do %>
             <% if current_user.profile.avatar.present? %>
                 <%= image_tag current_user.profile.avatar.url, class: "Q_MockImage" %>
             <% else %>
               <div class="A_Avatar NoImage"></div>
+            <% end %> 
             <% end %> 
             <div class="Q_Opener Q_DropOpener"></div>    
             </div>      
@@ -41,7 +43,7 @@
           <%= current_user.profile.username %>
           </div>
           <div class="A_Paragraph Grey">
-          <%= current_user.profile.username %>
+          <%= current_user.profile.login %>
           </div>
         </div>
         <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>

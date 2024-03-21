@@ -2,11 +2,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   gap: 16px;
   .A_Heading3 {
-    width: 774px;
+    width: 100%;
   }
 }
 .W_SubRegisterButton {
@@ -39,10 +39,9 @@
 .W_InputsColumn {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   width: fit-content;
   height: fit-content;
-  margin-top: 64px;
 }
 .W_FormButton {
   position: relative;
@@ -57,7 +56,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   width: fit-content;
   height: fit-content;
   margin-top: 32px;
@@ -91,11 +90,10 @@
       gap: 16px;
       width: 350px;
       align-items: start;
-      padding-left: 8px;
       .W_PreviewInfo {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 4px;
       }
     }
     .A_Button {
@@ -281,9 +279,16 @@
 .M_EditForm {
   width: 660px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   textarea {
     min-height: 335px;
     padding: 16px 24px;
+  }
+  .A_Heading3 {
+    margin-bottom: 8px;
   }
   .W_FormHeader {
     display: flex;
@@ -296,5 +301,13 @@
   }
   .custom-file-input {
     display: none; /* Hide the default file input */
+  }
+  .M_ProfilePreview {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 27px;
+    margin-top: 12px;
   }
 }

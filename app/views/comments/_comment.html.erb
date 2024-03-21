@@ -1,6 +1,10 @@
 <div data-controller="comment">
   <div class="M_Comment" id="<%= dom_id comment %>">
-    <div class="A_Avatar NoImage"><%= comment.user.profile.avatar %></div>
+  <% if comment.user.profile.avatar.present? %>
+  <%= image_tag comment.user.profile.avatar.url, class: "A_Avatar" %>
+<% else %>
+  <div class="A_Avatar NoImage"></div>
+<% end %>  
     <div class="W_AllTextParts">
       <div class="W_NameAndBody">
         <p class="A_Paragraph Bold"><%= comment.user.profile.username %></p>
