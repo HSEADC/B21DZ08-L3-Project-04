@@ -3,7 +3,7 @@
 
   <%= link_to profile_path(comment.user.profile) do %>
     <% if comment.user.profile.avatar.present? %>
-        <%= image_tag comment.user.profile.avatar.url, class: "Q_MockImage" %>
+        <%= image_tag comment.user.profile.avatar.url, class: "A_Avatar" %>
     <% else %>
       <div class="A_Avatar NoImage"></div>
     <% end %> 

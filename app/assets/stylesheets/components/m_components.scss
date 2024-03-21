@@ -322,3 +322,53 @@
   justify-content: center;
   gap: 24px;
 }
+.M_Search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+  .A_Logo {
+    width: 706px;
+    height: 173.42px;
+    display: block;
+    background-image: url('A_LogoSurqhuri.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+.M_Banner {
+  width: 1116px;
+  height: 176px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--gray);
+
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .W_Banner {
+    display: flex;
+    width: 569px;
+    height: 176px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .A_Heading2 {
+    width: 100%;
+  }
+  .A_Image {
+    display: flex;
+    align-self: stretch;
+    height: 176px;
+    width: 100%;
+    background-color: var(--blue);
+  }
+}

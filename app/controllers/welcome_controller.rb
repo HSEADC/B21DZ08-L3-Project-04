@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
 
   def index
     @subscription = Subscription.new
+    @posts = Post.all
   end
 
   def about

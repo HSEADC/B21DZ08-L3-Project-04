@@ -274,7 +274,7 @@
 .O_Account {
   display: flex;
   justify-content: space-between;
-  width: 1797px;
+  width: 100%;
   flex-direction: row;
   margin-bottom: 48px;
   .M_ProfileInfo {
@@ -292,7 +292,8 @@
         display: flex;
         height: 149px;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
         align-items: flex-start;
       }
     }
@@ -346,14 +347,27 @@
 }
 .O_Posts {
   display: flex;
-  gap: 48px;
+  gap: 24px;
   flex-direction: column;
+  width: 100%;
+  .A_Heading3 {
+    width: 100%;
+    text-align: center;
+  }
   .W_Posts {
+    .A_Heading3 {
+      text-align: left;
+    }
     display: flex;
-    width: 1800px;
     align-items: flex-start;
     align-content: flex-start;
     gap: 24px;
     flex-wrap: wrap;
   }
+}
+.S_IndexContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
 }
