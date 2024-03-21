@@ -1,0 +1,14 @@
+<%
+  post_user_ids = []
+
+  post.users_who_liked.each do |user|
+    post_user_ids << user.id
+  end
+
+  counter = post_user_ids.count > 0 ? post_user_ids.count : ''
+%>
+
+<%= turbo_frame_tag dom_id(post), remote: true do %>
+  <% link_class = post_user_ids.include?(current_user&.id) ? "Blue" : "Grey" %>
+  <%= link_to 'лайк!', toggle_like_post_path(post), class: "A_Button #{link_class}", data: { turbo_frame: "preview" } %>
+<% end %>

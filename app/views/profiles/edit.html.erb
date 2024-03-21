@@ -1,12 +1,17 @@
+<%= turbo_frame_tag 'wow' do %>
 <div class="M_EditForm">
-  <div class="A_Heading1">
-    ../Настройки
-  </div>
+<div class="Q_ChaoticLetters"></div>
+<div class="M_Heading">
+../профиль
+</div>
+<div class="A_Heading2">
+Отредактируй профиль
+</div>
   <%= form_with(model: @profile) do |form| %>
     <% if @profile.errors.any? %>
       <div style="color: red">
         <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this post from being saved:</h2>
-  
+
         <ul>
           <% @profile.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -15,82 +20,32 @@
       </div>
     <% end %>
     <div>
-      <div class="A_Heading3">Фотография профиля</div>
-      <div class="M_ProfilePreview">
-        <div class="A_Avatar">
-          <%= render partial: 'profiles/avatar', locals: { profile: @profile } %>
-        </div> 
-        <%= form.file_field :avatar, id: "avatar-input", class: "custom-file-input", accept: "image/*", data: { turbo_frame: 'avatar_frame' } %>
-        <label for="avatar-input" class="A_Button Blue">Изменить аватар</label>
-      </div></div>
-    <div>
-    <div class="W_FormHeader">
-      <%= form.label :username, "Имя", class: "A_Heading3" %>
-      </div>
-      <%= form.text_field :username, placeholder: "Гульнара Иванова", class: "A_Input" %>
-    </div>
-    <div>
-     <div class="W_FormHeader">
-       <%= form.label :login, "Никнейм", class: "A_Heading3" %>
-       <div class="A_Paragraph Red">
-       <%= form.object.errors[:login].first if form.object.errors[:login].any? %>
-       </div>
-     </div>
-    <%= form.text_field :login, placeholder: "gulnara_ivanova", class: "A_Input" %>
-    <div class="A_Paragraph Grey">Латиница, более 6 символов</div>
+    <div class="custom-file-upload">
+
+      <%= form.file_field :avatar, id: "avatar-input"  %>
+      <%= label :avatar, 'Загрузить аватар', class: 'file-label' %>
+  </div>
     </div>
 
     <div>
-    <div class="W_FormHeader">
-      <%= form.label :about, "Описание", class: "A_Heading3" %>
-      </div>
-      <%= form.text_area :about, placeholder: "Расскажите, чем занимаетесь, каков Ваш профессиональный интерес", class: "A_Input" %>
+      <%= form.label :login, style: "display: block; margin-bottom: 16px;", class: "A_Heading3" %>
+      <%= form.text_field :login, class: "A_Input"%>
     </div>
 
     <div>
-      <%= form.submit "Сохранить изменения", class: "A_Button Blue" %>
-    </div>
-  <% end %>
-  <div class="A_Caption">***</div>
-</div>
-
-
-  <%= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: current_user %>
-
-    <div class="W_InputsColumn">
-      <div class="M_InputWithLabel">
-        <%= f.label :email, "Email", class:"A_Heading3" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Введите email", class: "A_Input" %>
-      </div>
-
-      <div class="M_InputWithLabel">
-        <div class="W_InputLabel">
-          <%= f.label :password, "Новый пароль", class:"A_Heading3" %> 
-          <% if @minimum_password_length %>
-            <p class="A_Paragraph Grey"><%= @minimum_password_length %> знаков минимум</p>
-          <% end %>
-        </div>
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Введите новый пароль", class: "A_Input" %>
-      </div>
-
-      <div class="M_InputWithLabel">
-        <%= f.label :password_confirmation, "Повторите новый пароль", class:"A_Heading3" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Введите новый пароль еще раз", class: "A_Input" %>
-      </div>
-
-      <div class="M_InputWithLabel">
-        <%= f.label :current_password, "Текущий пароль", class:"A_Heading3" %> 
-        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Введите текущий пароль", class: "A_Input" %>
-      </div>
+      <%= form.label :username, style: "display: block; margin-bottom: 16px;", class: "A_Heading3" %>
+      <%= form.text_field :username, class: "A_Input" %>
     </div>
 
-    <div class="W_FormButton">
-      <%= f.submit "Обновить", class:"A_Button Blue" %>
+    <div>
+      <%= form.label :about, style: "display: block; margin-bottom: 16px;", class: "A_Heading3" %>
+      <%= form.text_area :about, class: "A_Input" %>
+    </div>
+
+    <div>
+    <%= form.submit class: "A_Button" %>
     </div>
   <% end %>
 
-  <p class="A_Heading3">Удалить аккаунт</p>
-
-  <div>Недовольны лутком? :( <%= button_to "Удалить аккаунт", registration_path(current_user), data: { confirm: "Вы уверены?", turbo_confirm: "Вы уверены" }, method: :delete, class:"A_Button Black" %></div>
 </div>
+<% end %>

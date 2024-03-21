@@ -19,9 +19,16 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
+    member do
+      # get 'toggle_favourite', to: 'posts#toggle_favourite', as: 'toggle_favourite', defaults: { format: :turbo_stream }
+      get 'toggle_favourite', to: 'posts#toggle_favourite', as: 'toggle_favourite'
+      get 'toggle_like', to: 'posts#toggle_like', as: 'toggle_like'
+    end
+
     resources :comments
     get "/by_tag/:tag", to: "posts#by_tag", on: :collection, as: "tagged"
   end
+
   resources :comments
   resources :profiles, only: [:show, :edit, :update]
 

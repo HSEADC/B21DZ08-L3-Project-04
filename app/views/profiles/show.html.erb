@@ -15,15 +15,26 @@
 <%= @profile.about%>
 </div>
 </div>
-<%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue'%>
+<div class="A_Button">
+<%= turbo_frame_tag 'wow' do %>
+  <%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Paragraph'%>
+<% end %>
 </div>
+</div>
+
+
+
 <div class="M_Posts">
 <p>Публикации</p>
 </div>
+
+
+
+
 <div class="W_Posts">
   <% @posts.each do |post| %>
     <%= link_to post do%>
-      <%= render partial: 'posts/post', locals: { post: post, show_email: false, } %>
+      <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false, } %>
     <% end %>
   <% end %>
 </div>

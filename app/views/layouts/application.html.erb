@@ -21,7 +21,9 @@
 
   </head>
   <body>
-    <%= render partial: 'menubar', locals: { profile: @profile } %>
+    <% unless request.path == '/posts/new' %>
+      <%= render partial: 'menubar', locals: { profile: @profile } %>
+    <% end %>
     <div class="W_Body">
       <%= yield %>
     </div>

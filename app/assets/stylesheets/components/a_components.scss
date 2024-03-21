@@ -101,7 +101,8 @@ blockquote {
 }
 .A_Button {
   position: relative;
-  display: block;
+  display: flex;
+  gap: 10px;
   padding: 10px 30px;
   width: fit-content;
   height: fit-content;
@@ -155,6 +156,19 @@ blockquote {
     padding: 0 0;
     opacity: 1;
   }
+  &.IconText {
+    background-position: 16px 9.5px;
+  }
+}
+.Q_Icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+.Unliked {
+  background-image: url('icons/Unliked.svg');
 }
 .A_Input {
   display: flex;
@@ -241,7 +255,8 @@ input[type='checkbox']:checked + label::before {
   border-radius: 100px;
   object-fit: cover;
   &.NoImage {
-    background-color: var(--dark_gray);
+    background-image: url('DefaultAvatars/1.png');
+    background-size: contain;
   }
 }
 .A_IconButton {
@@ -283,4 +298,36 @@ input[type='checkbox']:checked + label::before {
   justify-content: center;
   align-items: center;
   background: var(--blue);
+}
+.A_PostEditorInput::placeholder {
+  color: var(--dark_gray);
+}
+.O_CustomTrixEditor {
+  .C_TextEditorButtons {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+  .trix-content {
+    display: flex;
+    width: 888px;
+    height: fit-content;
+    min-height: 60vh;
+    padding: 16px 24px;
+    align-items: center;
+    font-family: 'Noto Sans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    color: var(--black);
+    background: var(--gray);
+    border-radius: 30px;
+    text-decoration: none;
+    border: 0px;
+    overflow: visible;
+  }
 }

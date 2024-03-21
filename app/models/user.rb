@@ -12,9 +12,12 @@ class User < ApplicationRecord
   has_many :comments
   has_one :profile
 
-  after_create :create_profile
+  has_and_belongs_to_many :favourites, class_name: 'Post', foreign_key: 'user_id'
 
-  def create_profile
-    Profile.create(user_id: id, username: 'Я кто', about: "Я антропологиня")
-  end
+  has_many :favourites
+  has_many :posts_i_favourited, through: :favourites, source: 'post'
+
+  has_many :likes
+  has_many :posts_i_liked, through: :likes, source: 'post'
+
 end

@@ -1,5 +1,4 @@
-<div class="W_Body">
-    <%= form_with(model: post) do |form| %>
+<%= form_with(model: post) do |form| %>
       <% if post.errors.any? %>
         <div style="color: red">
           <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -12,23 +11,19 @@
         </div>
       <% end %>
 
-      <div>
-        <%= form.label :title, "Заголовок", style: "display: block", class: "A_Heading3" %>
-        <%= form.text_field :title, class: "A_Input"%>
+      <!--<div>
+        <%#= form.label :title, "Заголовок", style: "display: block", class: "A_Heading3" %>
+        <%#= form.text_field :title, class: "A_Input"%>
+      </div>-->
+      <div class="O_CustomTrixEditor">
+        <%= form.rich_text_area :text, data: { controller: "trix" }%>
       </div>
-
-      <div>
-        <%= form.label :text, "Основной текст", style: "display: block", class: "A_Heading3" %>
-        <%= form.rich_text_area :text , class: "A_Input"%>
-      </div>
-
-      <div>
+      <!--<div>
         <%= form.label :tag_list, "Добавить теги", style: "display: block", class: "A_Heading3" %>
         <%= form.text_field :tag_list, value: post.tag_list.join(', '), class: "A_Input"%>
-      </div>
+      </div>-->
 
-      <div>
+    <div>
       <%= form.submit "Опубликовать", class:"A_Button Blue" %>
-      </div>
-    <% end %>
-</div>
+    </div>
+<% end %>
