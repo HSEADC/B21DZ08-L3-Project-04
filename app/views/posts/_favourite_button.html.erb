@@ -5,7 +5,10 @@
     post_user_ids << user.id
   end
 %>
-<%= turbo_frame_tag dom_id(post), remote: true do %>
-  <% link_class = post_user_ids.include?(current_user&.id) ? "Blue" : "Grey" %>
-  <%= link_to 'любимое!', toggle_favourite_post_path(post), class: "A_Button #{link_class}", data: { turbo_frame: "preview" } %>
+
+<%= turbo_frame_tag dom_id(post) do %>
+  <% favourite_image = post_user_ids.include?(current_user&.id) ? "Icons/Favourite.svg" : "Icons/NotFavourite.svg" %>
+  <%= link_to toggle_favourite_post_path(post), class: "A_Button Grey", data: { turbo_stream: true } do %>
+    <%= image_tag favourite_image %>
+  <% end %>
 <% end %>

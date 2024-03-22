@@ -5,10 +5,15 @@
     post_user_ids << user.id
   end
 
-  counter = post_user_ids.count > 0 ? post_user_ids.count : ''
+  counter = post_user_ids.count > 0 ? post_user_ids.count : nil
 %>
 
 <%= turbo_frame_tag dom_id(post), remote: true do %>
-  <% link_class = post_user_ids.include?(current_user&.id) ? "Blue" : "Grey" %>
-  <%= link_to 'лайк!', toggle_like_post_path(post), class: "A_Button #{link_class}", data: { turbo_frame: "preview" } %>
+  <% like_image = post_user_ids.include?(current_user&.id) ? "Icons/Liked.svg" : "Icons/Unliked.svg" %>
+  <%= link_to toggle_like_post_path(post), class: "A_Button Grey", data: { turbo_frame: true } do %>
+    <%= image_tag like_image %>
+    <div class="<%= counter.to_i.zero? ? 'A_Paragraph hidden' : 'A_Paragraph' %>">
+      <%= counter %>
+    </div>
+  <% end %>
 <% end %>

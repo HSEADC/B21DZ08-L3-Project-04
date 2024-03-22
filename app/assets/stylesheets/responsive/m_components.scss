@@ -9,6 +9,15 @@
       }
     }
   }
+  .W_PostPage {
+    width: 1116px;
+  }
+  .M_PostActions {
+    margin-top: 64px;
+    .W_ButtonGroup {
+      gap: 12px;
+    }
+  }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .W_Dropdown {
@@ -43,6 +52,21 @@
     .A_Logo {
       width: 539px;
       height: 132px;
+    }
+  }
+  .W_PostPage {
+    width: 983px;
+  }
+  .M_PostHeading {
+    gap: 24px;
+  }
+  .C_TagCollection {
+    max-width: 679px;
+  }
+  .M_PostActions {
+    margin-top: 64px;
+    .W_ButtonGroup {
+      gap: 8px;
     }
   }
 }
@@ -97,6 +121,21 @@
       height: 105px;
     }
   }
+  .W_PostPage {
+    width: 650px;
+  }
+  .M_PostHeading {
+    gap: 24px;
+  }
+  .C_TagCollection {
+    max-width: 650px;
+  }
+  .M_PostActions {
+    margin-top: 48px;
+    .W_ButtonGroup {
+      gap: 8px;
+    }
+  }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
   .M_FormHeader {
@@ -146,6 +185,21 @@
   .M_Search {
     .A_Logo {
       display: none;
+    }
+  }
+  .W_PostPage {
+    width: 324px;
+  }
+  .M_PostHeading {
+    gap: 24px;
+  }
+  .C_TagCollection {
+    max-width: 324px;
+  }
+  .M_PostActions {
+    margin-top: 48px;
+    .W_ButtonGroup {
+      gap: 4px;
     }
   }
 }

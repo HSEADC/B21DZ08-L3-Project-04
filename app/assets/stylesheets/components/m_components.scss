@@ -113,10 +113,28 @@
     }
   }
 }
+.W_PostPage {
+  position: relative;
+  display: block;
+  width: 1344px;
+  margin: 0 auto;
+}
+.M_PostHeading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  .A_Heading1 {
+    width: 100%;
+    height: fit-content;
+  }
+}
 .C_TagCollection {
   position: relative;
   display: flex;
-  width: 828px;
+  width: fit-content;
+  max-width: 828px;
   height: fit-content;
   align-items: flex-start;
   align-content: flex-start;
@@ -200,18 +218,26 @@
     align-items: flex-start;
   }
 }
-.W_PostPage {
-  position: relative;
-  display: block;
-  width: 1344px;
-  margin: 0 auto;
-}
-.M_PostHeading {
+.M_PostActions {
   position: relative;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 32px;
+  margin-top: 64px;
+  .W_ButtonGroup {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .A_Button {
+    padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 }
 .W_CommentReplies {
   position: relative;

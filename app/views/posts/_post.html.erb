@@ -2,7 +2,9 @@
   <div class="M_PostHeading">
     <p class="A_Heading1"><%= post.title.html_safe %></p>
     <div class="C_TagCollection">
-      <div class="A_Paragraph Antiqua A_Tag"><%=post.tag_list%></div>
+      <% post.tag_list.each do |tag| %>
+        <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
+      <% end %>
     </div>
     <div class="W_AuthorAndDate">
       <div class="M_PostAuthor">
@@ -14,10 +16,7 @@
           <% else %>
             <div class="A_Avatar NoImage"></div>
           <% end %> 
-          <% end %> 
-
-
-        
+        <% end %> 
           <div class="W_NameAndNick">
             <div class="A_Paragraph Bold"><%= post.user.profile.username %></div>
             <div class="A_Paragraph Grey">@FolkloreIsSuper</div>
@@ -26,10 +25,16 @@
       </div>
       <div class="A_Paragraph"><%= formatted_date(post.created_at)%></div>
     </div>
-    <%= render 'posts/favourite_button', post: post %>
-    <%= render 'posts/like_button', post: post %>
+  </div>
+  <div class="M_PostActions">
+    <div class="W_ButtonGroup">
+      <%= render 'posts/favourite_button', post: post %>
+      <%= render 'posts/like_button', post: post %>
+    </div>
+    <div class="W_ButtonGroup">
+    </div>
   </div>
 
-  <p class="A_Paragraph"><%= post.text %></p>
+  <!--<p class="A_Paragraph"><%= post.text %></p>-->
   
 </div>
