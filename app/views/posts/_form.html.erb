@@ -13,7 +13,7 @@
 
         <div class="O_CustomTrixEditor">
           <%= form.rich_text_area :text%>
-          <div>
+          <div id="test">
             <%= form.label :title, "Заголовок", style: "display: block", class: "A_Heading3" %>
             <%= form.text_field :title, class: "A_Input"%>
           </div>
@@ -23,7 +23,5 @@
           <%= form.text_field :tag_list, value: post.tag_list.join(', '), class: "A_Input"%>
         </div>-->
 
-      <div>
         <%= form.submit "Опубликовать", class:"A_Button Blue" %>
-      </div>
   <% end %>
