@@ -1,0 +1,15 @@
+<div class="W_MoreDropdown" data-controller="dropdown">
+    <div class="A_Button Grey" data-action="mouseenter->dropdown#open mouseenter->dropdown#cancelClose mouseleave->dropdown#resumeClose">
+        <div class="Q_Icon More"></div>
+    </div>
+    <div class="M_Dropdown hidden" data-dropdown-target="openedDropdown" data-action="mouseenter->dropdown#cancelClose mouseleave->dropdown#resumeClose">
+        <%= link_to edit_post_path(post), class: "A_Button Transparent" do %>
+            <div class="Q_Icon Edit"></div>
+            <div class="A_Paragraph">Редактировать</div>
+        <% end %>
+        <%= button_to post, method: :delete, class: "A_Button Transparent" do %>
+            <div class="Q_Icon Delete"></div>
+            <div class="A_Paragraph">Удалить</div>
+        <% end %>
+    </div>
+</div>

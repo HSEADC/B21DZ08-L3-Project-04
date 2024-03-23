@@ -136,6 +136,9 @@
       gap: 8px;
     }
   }
+  .M_Dropdown {
+    padding: 12px;
+  }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
   .M_FormHeader {
@@ -200,6 +203,12 @@
     margin-top: 48px;
     .W_ButtonGroup {
       gap: 4px;
+      p {
+        display: none;
+      }
     }
+  }
+  .M_Dropdown {
+    padding: 12px;
   }
 }

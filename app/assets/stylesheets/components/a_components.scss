@@ -121,12 +121,12 @@
     color: var(--white);
   }
   &.Transparent {
-    background-color: none;
+    background-color: transparent;
     color: var(--black);
     padding: 8px 0px;
   }
   &.Underlined {
-    background-color: none;
+    background-color: transparent;
     color: var(--black);
     text-decoration: underline;
   }
@@ -151,9 +151,21 @@
   height: 24px;
   background-repeat: no-repeat;
   background-position: cover;
-}
-.Unliked {
-  background-image: url('icons/Unliked.svg');
+  &.More {
+    background-image: url('icons/More.svg');
+  }
+  &.Share {
+    background-image: url('icons/Share.svg');
+  }
+  &.Add {
+    background-image: url('icons/Add.svg');
+  }
+  &.Edit {
+    background-image: url('icons/Edit.svg');
+  }
+  &.Delete {
+    background-image: url('icons/Delete.svg');
+  }
 }
 .A_Input {
   display: flex;
