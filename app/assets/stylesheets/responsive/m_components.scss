@@ -18,6 +18,30 @@
       gap: 12px;
     }
   }
+  .M_Comment {
+    gap: 8px;
+    padding: 12px;
+    width: 888px;
+    .W_AllTextParts {
+      gap: 12px;
+      .W_NameAndBody {
+        gap: 6px;
+      }
+      .W_BottomPart {
+        .W_DateAndReplyButton {
+          gap: 8px;
+        }
+      }
+    }
+    .M_EditCommentForm {
+      .A_Input {
+        height: 124px;
+      }
+    }
+  }
+  .M_InputWithAvatar {
+    gap: 8px;
+  }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .W_Dropdown {
@@ -68,6 +92,30 @@
     .W_ButtonGroup {
       gap: 8px;
     }
+  }
+  .M_Comment {
+    gap: 8px;
+    padding: 12px;
+    width: 761px;
+    .W_AllTextParts {
+      gap: 12px;
+      .W_NameAndBody {
+        gap: 6px;
+      }
+      .W_BottomPart {
+        .W_DateAndReplyButton {
+          gap: 8px;
+        }
+      }
+    }
+    .M_EditCommentForm {
+      .A_Input {
+        height: 124px;
+      }
+    }
+  }
+  .M_InputWithAvatar {
+    gap: 8px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -138,6 +186,30 @@
   }
   .M_Dropdown {
     padding: 12px;
+  }
+  .M_Comment {
+    gap: 8px;
+    padding: 8px;
+    width: 650px;
+    .W_AllTextParts {
+      gap: 12px;
+      .W_NameAndBody {
+        gap: 6px;
+      }
+      .W_BottomPart {
+        .W_DateAndReplyButton {
+          gap: 8px;
+        }
+      }
+    }
+    .M_EditCommentForm {
+      .A_Input {
+        height: 124px;
+      }
+    }
+  }
+  .M_InputWithAvatar {
+    gap: 8px;
   }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
@@ -210,5 +282,32 @@
   }
   .M_Dropdown {
     padding: 12px;
+  }
+  .M_Comment {
+    gap: 8px;
+    padding: 8px;
+    width: 324px;
+    .W_AllTextParts {
+      gap: 12px;
+      .W_NameAndBody {
+        gap: 6px;
+      }
+      .W_BottomPart {
+        .W_DateAndReplyButton {
+          gap: 8px;
+        }
+      }
+    }
+    .M_EditCommentForm {
+      .A_Input {
+        height: 124px;
+      }
+    }
+  }
+  .M_InputWithAvatar {
+    gap: 8px;
+    .A_Input {
+      width: 220px;
+    }
   }
 }

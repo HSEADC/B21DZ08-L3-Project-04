@@ -3,7 +3,7 @@
   display: block;
   font-family: 'Noto Sans';
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 115%;
   color: var(--black);
   &.Grey {
@@ -165,6 +165,12 @@
   }
   &.Delete {
     background-image: url('icons/Delete.svg');
+  }
+  &.Tick {
+    background-image: url('icons/Tick.svg');
+  }
+  &.Cross {
+    background-image: url('icons/Cross.svg');
   }
 }
 .A_Input {

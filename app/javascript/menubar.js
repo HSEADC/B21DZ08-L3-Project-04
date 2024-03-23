@@ -45,3 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+//Это абсолютно безумно я обещаю я сделаю по-человечески... но позже...
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   let button = document.getElementById('submitButton');
+//   let container = document.getElementById('W_DateAndReplyButton');
+//   container.appendChild(button);
+// });
