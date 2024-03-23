@@ -7,13 +7,13 @@
     <% else %>
       <div class="A_Avatar NoImage"></div>
     <% end %> 
-    <% end %> 
+  <% end %> 
 
 
     <div class="W_AllTextParts">
       <div class="W_NameAndBody">
         <p class="A_Paragraph Bold"><%= comment.user.profile.username %></p>
-        <p class="A_Paragraph"><%= comment.body%></p>
+          <p class="A_Paragraph" id="comment-body-<%=comment.id%>"><%= comment.body%></p>
         <!-- <p class="A_Paragraph" style="color: red">id: <%= comment.id%></p>
         <p class="A_Paragraph" style="color: red">reply_to_comment_id: <%= comment.reply_to_comment_id%></p> -->
       </div>
@@ -21,12 +21,21 @@
         <div class="W_DateAndReplyButton">
           <p class="A_Caption Gray"><%= formatted_date(comment.created_at)%></p>
           <div class="A_Paragraph Blue">Ответить</div>
+          <% if current_user.id == comment.user.id%>
+            <%= link_to "Редактировать", nil, class:"A_Paragraph", 
+            data: { controller: "comments", 
+            action: "comments#toggleEditForm", 
+            comments_editform_param: "edit-form-#{comment.id}",
+            comments_body_param: "comment-body-#{comment.id}" } %>
+          <% end%>
           <% if can? :manage, comment%>
-            <%= link_to "Редактировать", edit_post_comment_path(comment.post, comment), class:"A_Paragraph" %>
-            <%#= button_to "Удалить", [post, comment], method: :delete %>
+            <%= button_to "Удалить", [post, comment], method: :delete, id:"button" %>
           <% end%>
         </div>
         <!--<div class="A_Button Transparent" data-action="click->comment#toggleReplies"></div>-->
+      </div>
+      <div id="edit-form-<%=comment.id%>" class="hidden">
+        <%= render "comments/form", post: @post, comment: comment %>
       </div>
       <%#= render "comments/reply_form", reply: Comment.new, parent_comment: comment %>
     </div>

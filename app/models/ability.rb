@@ -6,6 +6,7 @@ class Ability
   def initialize(user)
     if user && user.admin == true
       can :manage, :all
+      cannot :edit, Comment, user_id: !user.id
     end
 
     if user
