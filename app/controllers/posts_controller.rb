@@ -67,7 +67,7 @@ class PostsController < ApplicationController
   end
 
   def toggle_favourite
-    puts "============================"
+    
     post_user_ids = []
 
     @post.users_who_favourited.each do |user|
@@ -82,9 +82,6 @@ class PostsController < ApplicationController
 
     set_post
 
-    # respond_to do |format|
-    #   format.turbo_stream { render 'favourite_button' }
-    # end
   end
 
   def toggle_like

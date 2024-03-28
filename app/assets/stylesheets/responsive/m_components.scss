@@ -117,6 +117,9 @@
   .M_InputWithAvatar {
     gap: 8px;
   }
+  .M_EditForm {
+    width: 539px;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .W_Dropdown {
@@ -129,10 +132,13 @@
       }
     }
   }
+  .M_EditForm {
+    width: 428px;
+  }
   .M_FormHeader {
     gap: 12px;
     .A_Heading3 {
-      width: 539px;
+      width: 428px;
     }
   }
   .M_InputWithLabel {
@@ -140,10 +146,10 @@
   }
   .W_InputsColumn {
     gap: 12px;
-    margin-top: 48px;
+    margin-top: 0px;
   }
   .W_FormButton {
-    margin-top: 48px;
+    margin-top: 0px;
     gap: 12px;
   }
   .W_FormAdditionalInfo {
@@ -224,10 +230,10 @@
   }
   .W_InputsColumn {
     gap: 12px;
-    margin-top: 48px;
+    margin-top: 0px;
   }
   .W_FormButton {
-    margin-top: 48px;
+    margin-top: 0px;
     gap: 12px;
   }
   .W_FormAdditionalInfo {
@@ -309,5 +315,8 @@
     .A_Input {
       width: 220px;
     }
+  }
+  .M_EditForm {
+    width: 324px;
   }
 }

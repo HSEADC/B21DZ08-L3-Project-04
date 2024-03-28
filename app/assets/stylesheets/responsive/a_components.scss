@@ -41,6 +41,7 @@
   }
   .A_Input {
     padding: 14px 20px;
+    width: 539px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -63,6 +64,9 @@
   .A_Input {
     width: 428px;
     padding: 14px 20px;
+  }
+  .A_Input {
+    width: 428px;
   }
   .Q_ChaoticLetters {
     // width: 475px;
@@ -93,5 +97,8 @@
   }
   .Q_ChaoticLetters {
     display: none;
+  }
+  .A_Input {
+    width: 324px;
   }
 }

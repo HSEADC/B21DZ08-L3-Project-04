@@ -1,26 +1,24 @@
-<div class="W_Body">
-  <div class="M_FormHeader">
-    <div class="A_Heading1">Забыли пароль?</div>
-    <div class="A_Heading3">Мы вышлем вам инструкцию по его восстановлению</div>
-  </div>
+<div class="M_EditForm">
+    <div class="M_FormHeader">
+      <div class="A_Heading1">Забыли пароль?</div>
+      <div class="A_Heading3">Мы вышлем вам инструкцию по его восстановлению</div>
+    </div>
 
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="W_InputsColumn">
-      <div class="M_InputWithLabel">
-        <%= f.label :email, "Email", class:"A_Heading3" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Введите email", class: "A_Input" %>
+      <div class="W_InputsColumn">
+        <div class="M_InputWithLabel">
+          <%= f.label :email, "Email", class:"A_Heading3" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Введите email", class: "A_Input" %>
+        </div>
       </div>
-    </div>
 
-    <div class="W_FormButton">
-      <%= f.submit "Получить инструкцию",  class:"A_Button Blue"  %>
-    </div>
-  <% end %>
+      <div class="W_FormButton">
+        <%= f.submit "Получить инструкцию",  class:"A_Button Blue"  %>
+      </div>
+    <% end %>
 
-    <%= render "devise/shared/links" %>
-
-    <div class="Q_ChaoticLetters"></div>
+      <%= render "devise/shared/links" %>
 
 </div>

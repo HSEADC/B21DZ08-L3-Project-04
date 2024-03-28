@@ -6,6 +6,7 @@
 
 @title_adj = ["Волшебная", "Крутая", "Невероятная", "Лучшая", "Супер", "Amazing", "Вау", "Чудесная", "Добрая", "Хорошая"]
 
+@tags = [""]
 def seed
   reset_db
   create_admin
@@ -14,8 +15,8 @@ def seed
   create_posts(15)
   create_comments(2..8)
   create_comment_replies(300)
-  create_attachments(10)
-  # create_likes(0..10)
+  create_likes(3..10)
+  create_tags(2..7)
 end
 
 def reset_db
@@ -34,7 +35,7 @@ def create_users
     }
 
     user = User.create!(user_data)
-    puts "User created with id #{user.id}"
+    puts "Пользователь с id #{user.id} создан"
 
     i += 1
   end
@@ -42,18 +43,21 @@ end
 
 def create_profiles
   avatars_directory = "app/assets/images/DefaultAvatars"
-  avatars = Dir.entries(avatars_directory).reject { |f| File.directory? File.join(avatars_directory, f) }
+  avatars = Dir.entries(avatars_directory).reject { |f| File.directory? File.join(avatars_directory, f) || !f.match(/\.(png|jpg|jpeg|gif)$/i) }
 
   i = 0
   User.all.each do |user|
       random_avatar = avatars.sample
       avatar_path = File.join(avatars_directory, random_avatar)
-
-      username = "user_#{i}"
+      username = "user#{i}"
       nickname = "nickname_#{i}"
       profile = Profile.create(username: username, about: create_mashup(3), user_id: user.id, login: nickname, avatar: avatar_path)
       i +=1
-      puts "Профиль #{profile.id} для пользователя #{profile.user.id} создан"
+      if profile.valid?
+        puts "Профиль #{profile.id} для пользователя #{profile.user.id} создан"
+      else
+        puts "Ошибка при создании профиля для пользователя #{user.id}: #{profile.errors.full_messages.join(', ')}"
+      end
   end
 end
 
@@ -66,14 +70,7 @@ def create_admin
     }
 
     user = User.create!(user_data)
-    puts "Admin created with id #{user.id}"
-
-    profile_data = {
-      user_id: user.id,
-      username: "Ваша Манурина",
-      about: "Антропологиня класс"
-    }
-
+    puts "Админ с id пользователя #{user.id} создан"
 
 end
 
@@ -101,12 +98,6 @@ def create_mashup(how_many_lines)
  return @mashup
 end
 
-# def upload_random_image
-#     uploader = PostImageUploader.new(Post.new, :post_image)
-#     uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/autoupload/posts', '*')).sample))
-#     uploader
-# end
-
 def create_posts(quantity)
   quantity.times do
     user = User.all.sample
@@ -114,12 +105,6 @@ def create_posts(quantity)
     puts "Пост #{post.id} создан"
   end
 end
-
-# def create_attachments (quantity)
-#   quantity.times do
-#     attachment.url=
-#   end
-# end
 
 def create_comments(quantity)
   Post.all.each do |post|
@@ -131,15 +116,15 @@ def create_comments(quantity)
   end
 end
 
-# def create_likes(quantity)
-#   Post.all.each do |post|
-#     quantity.to_a.sample.times do
-#       user = User.all.sample
-#       like = Like.create(post_id: post.id, user_id: user)
-#       puts "Лайк #{like.id} для поста #{like.post.id} создан"
-#     end
-#   end
-# end
+def create_likes(quantity)
+  Post.all.each do |post|
+    quantity.to_a.sample.times do
+      user = User.all.sample
+      like = Like.create(post_id: post.id, user_id: user.id)
+      puts "Лайк #{like.id} для поста #{like.post.id} создан"
+    end
+  end
+end
 
 def create_comment_replies(quantity)
   quantity.times do
@@ -150,12 +135,25 @@ def create_comment_replies(quantity)
   end
 end
 
-def create_attachments(quantity)
+# def create_attachments(quantity)
+#   Post.all.each do |post|
+#     rand(quantity).times do
+#       attachment = Attachment.create(post_id: post.id, url: "уррраааа работает")
+#       puts "Вложение #{attachment.id} для поста #{attachment.post.id} создано"
+#     end
+#   end
+# end
+
+def create_tags(quantity)
+  i=0
   Post.all.each do |post|
     rand(quantity).times do
-      attachment = Attachment.create(post_id: post.id, url: "уррраааа работает")
-      puts "Вложение #{attachment.id} для поста #{attachment.post.id} создано"
+      tag_name = "тег#{i}"
+      post.tag_list.add(tag_name)
+      post.save
+      i+=1
     end
+    puts "Теги для поста #{post.id} созданы: #{post.tag_list.join(', ')}"
   end
 end
 
