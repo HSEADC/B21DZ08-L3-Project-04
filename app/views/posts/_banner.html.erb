@@ -2,8 +2,10 @@
     <div class="W_Banner">
         <p class="A_Heading2"><%= post.title %></p>
         <div class="C_Tags">
-        <div class="A_Tag A_Paragraph Antiqua"><%= post.tag_list %></div>
-    </div>
+            <% post.tag_list.each do |tag| %>
+            <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
+            <% end %>
+        </div>
     </div>
     <div class = "A_Image"></div>
     <div>

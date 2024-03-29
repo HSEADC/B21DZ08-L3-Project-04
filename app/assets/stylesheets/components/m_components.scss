@@ -135,9 +135,12 @@
 }
 .W_PostPage {
   position: relative;
-  display: block;
-  width: 1344px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  .A_Caption {
+    margin: 0 auto;
+  }
 }
 .M_PostHeading {
   position: relative;
@@ -441,5 +444,14 @@
     height: 176px;
     width: 100%;
     background-color: var(--blue);
+  }
+  .C_Tags {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end;
+    gap: 5px;
+    align-self: stretch;
+    flex-wrap: wrap;
   }
 }
