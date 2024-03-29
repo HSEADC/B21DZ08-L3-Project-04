@@ -10,9 +10,9 @@
             </ul>
           </div>
         <% end %>
-        <div class="M_InputWithLabel", style="margin:0 auto;">
-        <%= form.label :title, "Заголовок", style: "display: block", class: "A_Heading3" %>
-        <%= form.text_field :title, class: "A_Input"%>
+        <div class="M_InputWithLabel">
+        <%= form.label :title, "Название", style: "display: block; color: var(--dark_gray);", class: "A_Caption" %>
+        <%= form.text_field :title, class: "A_Heading1", style: "width: 1116px;"%>
         </div>
         <div class="M_InputWithLabel", style="margin:0 auto;">
           <%= form.label :tag_list, "Добавить теги", style: "display: block", class: "A_Heading3" %>

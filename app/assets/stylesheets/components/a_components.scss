@@ -68,6 +68,13 @@
   top: -8px;
   left: -12px;
 }
+input {
+  outline: none;
+  border: none;
+  .Heading1 {
+    outline: none;
+  }
+}
 .A_Heading2 {
   font-family: 'Noto Serif';
   color: var(--black);
