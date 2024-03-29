@@ -81,6 +81,42 @@
   .W_Body {
     width: 650px;
   }
+  .O_Account {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 41px;
+
+    .M_ProfileInfo {
+      display: flex;
+      width: 324px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      .A_Icon {
+        height: 158px;
+        width: 158px;
+      }
+      .W_ProfileInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+        .W_ProfileName {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          height: auto;
+        }
+        .A_Paragraph {
+          text-align: center;
+        }
+      }
+    }
+  }
   .O_Header {
     .W_Menu {
       width: 650px;
@@ -120,6 +156,41 @@
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
   .W_Body {
     width: 324px;
+  }
+  .O_Account {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 29px;
+    .M_ProfileInfo {
+      display: flex;
+      width: 324px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      .A_Icon {
+        height: 158px;
+        width: 158px;
+      }
+      .W_ProfileInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+        .W_ProfileName {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          height: auto;
+          .A_Paragraph {
+            text-align: center;
+          }
+        }
+      }
+    }
   }
   .O_Header {
     display: none;

@@ -3,7 +3,7 @@
 <% if @profile.avatar? %>
   <%= image_tag @profile.avatar.url, class: "A_Icon"  %>
 <% else %>
-  <div></div>
+<div class="A_Icon NoImage"></div>
 <% end %>
 
 
@@ -22,7 +22,9 @@
 </div>
 </div>
   
-</div><%=link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue'%></div>
+</div><% if current_user && current_user == @profile.user %>
+<%= link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue' %>
+<% end %></div>
 
 
 <div class="O_Posts">

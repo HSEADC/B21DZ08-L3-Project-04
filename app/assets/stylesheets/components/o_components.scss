@@ -315,6 +315,10 @@
     width: 204px;
     border-radius: 200px;
     object-fit: cover;
+    &.NoImage {
+      background-image: url('DefaultAvatars/1.png');
+      background-size: contain;
+    }
   }
 }
 .S_PopUp {
