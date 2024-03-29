@@ -374,6 +374,9 @@
     .A_Heading3 {
       text-align: left;
     }
+    &.Hidden {
+      display: none;
+    }
     display: flex;
     align-items: flex-start;
     align-content: flex-start;
