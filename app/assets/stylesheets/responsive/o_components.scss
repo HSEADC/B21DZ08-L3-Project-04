@@ -35,7 +35,6 @@
     width: 1116px;
     .W_PostBody {
       width: 908px;
-      margin: 64px auto;
     }
   }
 }
@@ -75,7 +74,6 @@
     width: 983px;
     .W_PostBody {
       width: 761px;
-      margin: 64px auto;
     }
   }
 }
@@ -116,7 +114,6 @@
     width: 650px;
     .W_PostBody {
       width: 650px;
-      margin: 64px auto;
     }
   }
 }
@@ -168,7 +165,19 @@
     width: 324px;
     .W_PostBody {
       width: 324px;
-      margin: 32px auto;
+      margin: 32px auto 0 auto;
+    }
+  }
+  .W_PostBody {
+    blockquote {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+  .O_CustomTrixEditor {
+    blockquote {
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 }
