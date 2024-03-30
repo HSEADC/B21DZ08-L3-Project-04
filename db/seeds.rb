@@ -100,7 +100,7 @@ end
 def create_posts(quantity)
   quantity.times do
     user = User.all.sample
-    post = Post.create(title: "#{@title_adj.sample} народная песня", text: create_mashup(rand(4..8)), user_id: user.id)
+    post = Post.create(title: "#{@title_adj.sample} народная песня", text: create_mashup(24), user_id: user.id)
     puts "Пост #{post.id} создан"
   end
 end

@@ -29,7 +29,7 @@
           </div>
           <div class="M_InputWithLabel">
             <%= form.label :tag_list, "Добавить теги", style: "display: block; color: var(--dark_gray);", class: "A_Caption" %>
-            <%= form.text_field :tag_list, value: post.tag_list.join(' '), class: "A_Input"%>
+            <%= form.text_field :tag_list, value: post.tag_list.join(', '), class: "A_Input"%>
           </div>
         </div>
         <div class="O_CustomTrixEditor">
