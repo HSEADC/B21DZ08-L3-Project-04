@@ -312,7 +312,7 @@ input[type='checkbox']:checked + label::before {
   padding: 4px 8px;
   justify-content: center;
   align-items: center;
-  background: var(--pink);
+  background: var(--dark_gray);
   &.Nation {
     background: var(--yellow);
   }
