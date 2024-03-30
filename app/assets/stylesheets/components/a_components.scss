@@ -58,6 +58,9 @@
   letter-spacing: 22px;
   text-transform: uppercase;
 }
+.A_Heading1::placeholder {
+  color: var(--gray);
+}
 .A_Heading1::before {
   content: '';
   background-image: url('M_Heading.svg');
