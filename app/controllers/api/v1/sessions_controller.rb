@@ -44,7 +44,7 @@ class Api::V1::SessionsController < Devise::SessionsController
   private
 
   def sign_in_params
-    params.require(:user).permit :email, :password
+    params.require(:user).permit(:email, :password)
   end
 
   def load_user
