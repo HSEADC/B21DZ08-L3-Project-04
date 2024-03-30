@@ -45,21 +45,20 @@ def create_profiles
   avatars_directory = "app/assets/images/DefaultAvatars"
   avatars = Dir.entries(avatars_directory).reject { |f| File.directory? File.join(avatars_directory, f) || !f.match(/\.(png|jpg|jpeg|gif)$/i) }
 
-  i = 0
-  User.all.each do |user|
-      random_avatar = avatars.sample
-      avatar_path = File.join(avatars_directory, random_avatar)
-      username = "user#{i}"
-      nickname = "nickname_#{i}"
-      profile = Profile.create(username: username, about: create_mashup(3), user_id: user.id, login: nickname, avatar: avatar_path)
-      i +=1
-      if profile.valid?
-        puts "Профиль #{profile.id} для пользователя #{profile.user.id} создан"
-      else
-        puts "Ошибка при создании профиля для пользователя #{user.id}: #{profile.errors.full_messages.join(', ')}"
-      end
+  User.all.each_with_index do |user, index|
+    random_avatar = avatars.sample
+    avatar_path = File.join(avatars_directory, random_avatar)
+    username = "user_#{index}"
+    nickname = "nickname_#{index}"
+    profile = Profile.create(username: username, about: create_mashup(3), user_id: user.id, login: nickname, avatar: File.open(avatar_path))
+    if profile.valid?
+      puts "Profile #{profile.id} for user #{profile.user.id} created"
+    else
+      puts "Error creating profile for user #{user.id}: #{profile.errors.full_messages.join(', ')}"
+    end
   end
 end
+
 
 def create_admin
 

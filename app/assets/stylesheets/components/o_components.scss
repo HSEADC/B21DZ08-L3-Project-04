@@ -315,6 +315,10 @@
     width: 204px;
     border-radius: 200px;
     object-fit: cover;
+    &.NoImage {
+      background-image: url('DefaultAvatars/1.png');
+      background-size: contain;
+    }
   }
 }
 .S_PopUp {
@@ -369,6 +373,9 @@
   .W_Posts {
     .A_Heading3 {
       text-align: left;
+    }
+    &.Hidden {
+      display: none;
     }
     display: flex;
     align-items: flex-start;

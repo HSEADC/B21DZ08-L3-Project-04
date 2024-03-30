@@ -53,11 +53,6 @@
       }
     }
   }
-  .M_FormHeader {
-    .A_Heading3 {
-      width: 650px;
-    }
-  }
   .M_PostPreview {
     width: 317px;
     height: 221px;
@@ -253,11 +248,15 @@
 
     .W_Banner {
       width: 324px;
-      height: 101px;
+      height: auto;
     }
     .A_Image {
       align-self: stretch;
       width: 100%;
+      &.NoImage {
+        background-image: url('DefaultAvatars/1.png');
+        background-size: contain;
+      }
     }
   }
   .M_Search {
