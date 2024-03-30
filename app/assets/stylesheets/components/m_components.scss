@@ -138,6 +138,7 @@
   display: flex;
   flex-direction: column;
   gap: 64px;
+  justify-content: flex-start;
   .A_Caption {
     margin: 0 auto;
   }
@@ -163,6 +164,15 @@
   align-content: flex-start;
   gap: 8px;
   flex-wrap: wrap;
+  & > :first-child {
+    background-color: var(--blue);
+  }
+  & > :nth-child(2) {
+    background-color: var(--yellow);
+  }
+  & > :nth-child(3) {
+    background-color: var(--pink);
+  }
 }
 .M_Comment {
   position: relative;
@@ -314,7 +324,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 8px;
     align-self: stretch;
     overflow: hidden;
     height: fit-content;
@@ -350,6 +360,15 @@
     gap: 5px;
     align-self: stretch;
     flex-wrap: wrap;
+    & > :first-child {
+      background-color: var(--blue);
+    }
+    & > :nth-child(2) {
+      background-color: var(--yellow);
+    }
+    & > :nth-child(3) {
+      background-color: var(--pink);
+    }
   }
 }
 .M_EditForm {
@@ -395,6 +414,12 @@
   align-items: center;
   justify-content: center;
   gap: 24px;
+  .A_Paragraph {
+    cursor: pointer;
+    &.A_Link {
+      cursor: default;
+    }
+  }
 }
 .M_Search {
   display: flex;
@@ -444,6 +469,9 @@
     height: 176px;
     width: 100%;
     background-color: var(--blue);
+    background-image: url('field.jpg');
+    background-size: cover;
+    background-position: center;
   }
   .C_Tags {
     position: relative;
@@ -453,6 +481,15 @@
     gap: 5px;
     align-self: stretch;
     flex-wrap: wrap;
+    & > :first-child {
+      background-color: var(--blue);
+    }
+    & > :nth-child(2) {
+      background-color: var(--yellow);
+    }
+    & > :nth-child(3) {
+      background-color: var(--pink);
+    }
   }
 }
 .W_EditorHeader {
