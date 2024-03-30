@@ -138,6 +138,7 @@
   display: flex;
   flex-direction: column;
   gap: 64px;
+  justify-content: flex-start;
   .A_Caption {
     margin: 0 auto;
   }

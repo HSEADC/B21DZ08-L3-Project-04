@@ -231,9 +231,16 @@
   }
   .O_CommentsSection {
     width: 324px;
+    .W_CommentReplies {
+      margin-left: 52px;
+      .M_Comment {
+        width: 272px;
+      }
+    }
   }
   .O_Post {
     width: 324px;
+
     .W_PostBody {
       width: 324px;
       margin: 32px auto 0 auto;

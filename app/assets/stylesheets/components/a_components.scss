@@ -312,7 +312,19 @@ input[type='checkbox']:checked + label::before {
   padding: 4px 8px;
   justify-content: center;
   align-items: center;
-  background: var(--blue);
+  background: var(--pink);
+  &.Nation {
+    background: var(--yellow);
+  }
+  &.Genre {
+    background: var(--blue);
+  }
+  &.Language {
+    background: var(--pink);
+  }
+  &.Tag {
+    background: var(--dark_gray);
+  }
 }
 .A_PostEditorInput::placeholder {
   color: var(--dark_gray);
