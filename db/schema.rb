@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_20_085423) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_24_201726) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,14 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_085423) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-  end
-
-  create_table "attachments", force: :cascade do |t|
-    t.string "type"
-    t.integer "post_id"
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -117,15 +109,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_085423) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "suggested_translations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.string "language"
-    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
