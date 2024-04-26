@@ -360,15 +360,6 @@
     gap: 5px;
     align-self: stretch;
     flex-wrap: wrap;
-    & > :first-child {
-      background-color: var(--blue);
-    }
-    & > :nth-child(2) {
-      background-color: var(--yellow);
-    }
-    & > :nth-child(3) {
-      background-color: var(--pink);
-    }
   }
 }
 .M_EditForm {
@@ -481,15 +472,6 @@
     gap: 5px;
     align-self: stretch;
     flex-wrap: wrap;
-    & > :first-child {
-      background-color: var(--blue);
-    }
-    & > :nth-child(2) {
-      background-color: var(--yellow);
-    }
-    & > :nth-child(3) {
-      background-color: var(--pink);
-    }
   }
 }
 .W_EditorHeader {

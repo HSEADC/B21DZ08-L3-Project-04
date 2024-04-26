@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  include PgSearch::Model
+  multisearchable against: [:title, :text]
+
   has_many :comments
   has_many :attachments
   mount_uploader :post_image, PostImageUploader
