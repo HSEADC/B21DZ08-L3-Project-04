@@ -1,0 +1,9 @@
+<div class= "O_SearchBox">
+    <%= form_with url: welcome_search_url, method: :get do |f| %>
+        <div class="A_Input">
+            <div class="Q_Icon Search Small"></div>
+            <%= f.text_field :search, placeholder: "Введите название или текст", class:"A_Paragraph"%>
+        </div>
+        <%= f.submit "Найти", class:"A_Button Blue" %>
+    <% end %>
+</div>

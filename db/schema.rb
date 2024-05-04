@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_20_085423) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_25_105644) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,14 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_085423) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "attachments", force: :cascade do |t|
-    t.string "type"
-    t.integer "post_id"
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "post_id"
@@ -84,6 +79,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_085423) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -118,15 +122,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_085423) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "suggested_translations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.string "language"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "supports", force: :cascade do |t|
     t.string "email"
     t.text "body"
@@ -135,11 +130,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_085423) do
   end
 
   create_table "taggings", force: :cascade do |t|
-    t.integer "tag_id"
+    t.bigint "tag_id"
     t.string "taggable_type"
-    t.integer "taggable_id"
+    t.bigint "taggable_id"
     t.string "tagger_type"
-    t.integer "tagger_id"
+    t.bigint "tagger_id"
     t.string "context", limit: 128
     t.datetime "created_at", precision: nil
     t.string "tenant", limit: 128

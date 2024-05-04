@@ -1,0 +1,4 @@
+<%= render partial: 'application/searchform' %>
+<%= @items.each do |item| %>
+    <%= render item.searchable %>
+<% end %>

@@ -3,6 +3,8 @@ import '@hotwired/turbo-rails';
 import '@hotwired/stimulus';
 import 'controllers';
 import './menubar';
+import './toggleprofile';
+import './doodle';
 // import './trix_customization';
 import 'trix';
 import '@rails/actiontext';

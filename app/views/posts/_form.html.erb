@@ -10,18 +10,30 @@
             </ul>
           </div>
         <% end %>
-        <div class="M_InputWithLabel">
-        <%= form.label :title, "Название", style: "display: block; color: var(--dark_gray);", class: "A_Caption" %>
-        <%= form.text_field :title, class: "A_Heading1", style: "width: 1116px;"%>
+        <div class="W_EditorHeader">
+        <div class="M_EditorHeader">
+            <%= form.submit "Сохранить", class:"A_Button Black" %>
+            <%= link_to profile_path(current_user.profile) do %>
+              <% if current_user.profile.avatar.present? %>
+                  <%= image_tag current_user.profile.avatar.url, class: "A_Avatar" %>
+              <% else %>
+                <div class="A_Avatar NoImage"></div>
+              <% end %> 
+            <% end %>
+          </div>
         </div>
-        <div class="M_InputWithLabel", style="margin:0 auto;">
-          <%= form.label :tag_list, "Добавить теги", style: "display: block", class: "A_Heading3" %>
-          <%= form.text_field :tag_list, value: post.tag_list.join(' '), class: "A_Input"%>
+        <div class="W_EditorInputs">
+          <div class="M_InputWithLabel">
+          <%= form.label :title, "Название", style: "display: block; color: var(--dark_gray);", class: "A_Caption" %>
+          <%= form.text_field :title, placeholder: "Название", class: "A_Heading1", style: "width: 1116px;"%>
+          </div>
+          <div class="M_InputWithLabel">
+            <%= form.label :tag_list, "Добавить теги", style: "display: block; color: var(--dark_gray);", class: "A_Caption" %>
+            <%= form.text_field :tag_list, value: post.genre_list.join(', '), class: "A_Input"%>
+          </div>
         </div>
-
         <div class="O_CustomTrixEditor">
+        <p class="A_Paragraph">Луток</p>
           <%= form.rich_text_area :text, data: { controller: "trix" }%>
         </div>
-
-        <%= form.submit "Опубликовать", class:"A_Button Blue" %>
   <% end %>

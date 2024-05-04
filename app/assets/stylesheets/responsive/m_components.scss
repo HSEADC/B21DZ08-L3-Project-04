@@ -9,8 +9,6 @@
       }
     }
   }
-  .W_PostPage {
-  }
   .M_PostActions {
     margin-top: 64px;
     .W_ButtonGroup {
@@ -53,11 +51,6 @@
       }
     }
   }
-  .M_FormHeader {
-    .A_Heading3 {
-      width: 650px;
-    }
-  }
   .M_PostPreview {
     width: 317px;
     height: 221px;
@@ -76,8 +69,6 @@
       width: 539px;
       height: 132px;
     }
-  }
-  .W_PostPage {
   }
   .M_PostHeading {
     gap: 24px;
@@ -173,8 +164,6 @@
       height: 105px;
     }
   }
-  .W_PostPage {
-  }
   .M_PostHeading {
     gap: 24px;
   }
@@ -253,19 +242,21 @@
 
     .W_Banner {
       width: 324px;
-      height: 101px;
+      height: auto;
     }
     .A_Image {
       align-self: stretch;
       width: 100%;
+      &.NoImage {
+        background-image: url('DefaultAvatars/1.png');
+        background-size: contain;
+      }
     }
   }
   .M_Search {
     .A_Logo {
       display: none;
     }
-  }
-  .W_PostPage {
   }
   .M_PostHeading {
     gap: 24px;

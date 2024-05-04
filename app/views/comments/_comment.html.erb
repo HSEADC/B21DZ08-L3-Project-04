@@ -17,10 +17,10 @@
       </div>
       <div class="W_BottomPart">
         <div class="W_DateAndReplyButton" id="W_DateAndReplyButton">
-          <p class="A_Caption Gray"><%= formatted_date(comment.created_at)%></p>
+          <p class="A_Paragraph Gray"><%= formatted_date(comment.created_at)%></p>
           <div class="A_Paragraph Blue">Ответить</div>
           <% if current_user.id == comment.user.id%>
-            <%= link_to "Редактировать", nil, class:"A_Paragraph", id: 'EditButton', 
+            <%= link_to "Ред.", nil, class:"A_Paragraph", id: 'EditButton', 
             data: { controller: "comments", 
             action: "comments#toggleEditForm", 
             comments_editform_param: "edit-form-#{comment.id}",

@@ -45,21 +45,20 @@ def create_profiles
   avatars_directory = "app/assets/images/DefaultAvatars"
   avatars = Dir.entries(avatars_directory).reject { |f| File.directory? File.join(avatars_directory, f) || !f.match(/\.(png|jpg|jpeg|gif)$/i) }
 
-  i = 0
-  User.all.each do |user|
-      random_avatar = avatars.sample
-      avatar_path = File.join(avatars_directory, random_avatar)
-      username = "user#{i}"
-      nickname = "nickname_#{i}"
-      profile = Profile.create(username: username, about: create_mashup(3), user_id: user.id, login: nickname, avatar: avatar_path)
-      i +=1
-      if profile.valid?
-        puts "Профиль #{profile.id} для пользователя #{profile.user.id} создан"
-      else
-        puts "Ошибка при создании профиля для пользователя #{user.id}: #{profile.errors.full_messages.join(', ')}"
-      end
+  User.all.each_with_index do |user, index|
+    random_avatar = avatars.sample
+    avatar_path = File.join(avatars_directory, random_avatar)
+    username = "user_#{index}"
+    nickname = "nickname_#{index}"
+    profile = Profile.create(username: username, about: create_mashup(3), user_id: user.id, login: nickname, avatar: File.open(avatar_path))
+    if profile.valid?
+      puts "Profile #{profile.id} for user #{profile.user.id} created"
+    else
+      puts "Error creating profile for user #{user.id}: #{profile.errors.full_messages.join(', ')}"
+    end
   end
 end
+
 
 def create_admin
 
@@ -101,7 +100,7 @@ end
 def create_posts(quantity)
   quantity.times do
     user = User.all.sample
-    post = Post.create(title: "#{@title_adj.sample} народная песня", text: create_mashup(rand(4..8)), user_id: user.id)
+    post = Post.create(title: "#{@title_adj.sample} народная песня", text: create_mashup(24), user_id: user.id)
     puts "Пост #{post.id} создан"
   end
 end
@@ -149,11 +148,38 @@ def create_tags(quantity)
   Post.all.each do |post|
     rand(quantity).times do
       tag_name = "тег#{i}"
-      post.tag_list.add(tag_name)
+      post.genre_list.add(tag_name)
       post.save
       i+=1
     end
-    puts "Теги для поста #{post.id} созданы: #{post.tag_list.join(', ')}"
+    puts "Теги жанров для поста #{post.id} созданы"
+  end
+  Post.all.each do |post|
+    rand(quantity).times do
+      tag_name = "тег#{i}"
+      post.theme_list.add(tag_name)
+      post.save
+      i+=1
+    end
+    puts "Теги тем для поста #{post.id} созданы"
+  end
+  Post.all.each do |post|
+    rand(quantity).times do
+      tag_name = "тег#{i}"
+      post.language_list.add(tag_name)
+      post.save
+      i+=1
+    end
+    puts "Теги языков для поста #{post.id} созданы"
+  end
+  Post.all.each do |post|
+    rand(quantity).times do
+      tag_name = "тег#{i}"
+      post.nationality_list.add(tag_name)
+      post.save
+      i+=1
+    end
+    puts "Теги национальностей для поста #{post.id} созданы"
   end
 end
 

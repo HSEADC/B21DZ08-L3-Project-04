@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  layout "post-editor", only: [:new]
+  layout "post-editor", only: [:new, :edit]
   load_and_authorize_resource
   before_action :set_post, only: %i[ show edit update destroy toggle_favourite toggle_like liked_by_user ]
 

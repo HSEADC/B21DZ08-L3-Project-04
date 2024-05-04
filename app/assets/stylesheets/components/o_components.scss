@@ -315,6 +315,10 @@
     width: 204px;
     border-radius: 200px;
     object-fit: cover;
+    &.NoImage {
+      background-image: url('DefaultAvatars/1.png');
+      background-size: contain;
+    }
   }
 }
 .S_PopUp {
@@ -370,6 +374,9 @@
     .A_Heading3 {
       text-align: left;
     }
+    &.Hidden {
+      display: none;
+    }
     display: flex;
     align-items: flex-start;
     align-content: flex-start;
@@ -382,4 +389,26 @@
   flex-direction: column;
   align-items: center;
   gap: 64px;
+}
+.W_EditorInputs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.O_SearchBox {
+  .A_Input {
+    width: 1116px;
+    height: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    .A_Paragraph {
+      background: none;
+      width: 1072px;
+      height: 40px;
+    }
+  }
 }
