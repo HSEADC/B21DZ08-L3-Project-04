@@ -1,0 +1,12 @@
+<div class="M_Banner" id="<%= dom_id post %>">
+    <div class="W_Banner">
+        <p class="A_Heading2"><%= post.title %></p>
+        <div class="C_Tags">
+            <% post.tag_list.each do |tag| %>
+            <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
+            <% end %>
+        </div>
+    </div>
+    <div class = "A_Image"></div>
+    <div>
+</div>

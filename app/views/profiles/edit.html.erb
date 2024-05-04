@@ -1,17 +1,11 @@
-<%= turbo_frame_tag 'wow' do %>
 <div class="M_EditForm">
-<div class="Q_ChaoticLetters"></div>
-<div class="M_Heading">
-../профиль
-</div>
-<div class="A_Heading2">
-Отредактируй профиль
-</div>
+  <div class="A_Heading1">
+    ../Настройки
+  </div>
   <%= form_with(model: @profile) do |form| %>
     <% if @profile.errors.any? %>
       <div style="color: red">
         <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this post from being saved:</h2>
-
         <ul>
           <% @profile.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -20,32 +14,65 @@
       </div>
     <% end %>
     <div>
-    <div class="custom-file-upload">
+    <div class="A_Heading3">Фотография профиля</div>
+    <div class="M_ProfilePreview">
 
-      <%= form.file_field :avatar, id: "avatar-input"  %>
-      <%= label :avatar, 'Загрузить аватар', class: 'file-label' %>
+    <% if current_user.profile.avatar.present? %>
+    <%= image_tag current_user.profile.avatar.url, class: "A_Avatar" %>
+      <% else %>
+    <div class="A_Avatar NoImage"></div>
+    <% end %> 
+      
+    
+      <%= form.file_field :avatar, id: "avatar-input", class: "custom-file-input", accept: "image/*", data: { turbo_frame: 'avatar_frame' } %>
+      <label for="avatar-input" class="A_Button Blue">Изменить аватар</label>
+    </div></div> 
+  <div>
+  <div class="W_FormHeader">
+  <%= form.label :username, "Имя", class: "A_Heading3" %>
   </div>
-    </div>
-
-    <div>
-      <%= form.label :login, style: "display: block; margin-bottom: 16px;", class: "A_Heading3" %>
-      <%= form.text_field :login, class: "A_Input"%>
-    </div>
-
-    <div>
-      <%= form.label :username, style: "display: block; margin-bottom: 16px;", class: "A_Heading3" %>
-      <%= form.text_field :username, class: "A_Input" %>
-    </div>
-
-    <div>
-      <%= form.label :about, style: "display: block; margin-bottom: 16px;", class: "A_Heading3" %>
-      <%= form.text_area :about, class: "A_Input" %>
-    </div>
-
-    <div>
-    <%= form.submit class: "A_Button" %>
-    </div>
-  <% end %>
-
+  <%= form.text_field :username, placeholder: "Гульнара Иванова", class: "A_Input" %>
 </div>
+<div>
+ <div class="W_FormHeader">
+ <%= form.label :login, "Никнейм", class: "A_Heading3" %>
+       <div class="A_Paragraph Red">
+       <%= form.object.errors[:login].first if form.object.errors[:login].any? %>
+       </div>
+     </div>
+     <%= form.text_field :login, placeholder: "gulnara_ivanova", class: "A_Input" %>
+     <div class="A_Paragraph Grey">Латиница, более 6 символов</div>
+     </div>
+
+     <div>
+     <div class="W_FormHeader">
+       <%= form.label :about, "Описание", class: "A_Heading3" %>
+       </div>
+       <%= form.text_area :about, placeholder: "Расскажите, чем занимаетесь, каков Ваш профессиональный интерес", class: "A_Input" %>
+     </div>
+ 
+     <div>
+       <%= form.submit "Сохранить изменения", class: "A_Button Blue" %>
+     </div>
+   <% end %>
+   <p class="A_Caption">***</p>
+  <p class="A_Heading3">Сменить пароль</p>
+  <p class="A_Caption">***</p>
+  <p class="A_Heading3">Вы можете <span class="A_Heading3 Link">удалить аккаунт</span></p>
+
+ </div>
+
+
+
+
+ <%= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: current_user %>
 <% end %>
+</div>
+
+
+
+
+
+<%#= render partial: 'profiles/password', locals: { profile: @profile } %>
+<%#= render partial: 'profiles/destroy', locals: { profile: @profile } %>

@@ -3,15 +3,43 @@
     .M_Dropdown {
       width: 352;
       margin-left: 992px;
+      .Q_MockImage {
+        width: 80px;
+        height: 80px;
+      }
     }
   }
-  .M_EditForm {
-    width: 660px;
-    margin: 0 auto;
-    textarea {
-      min-height: 335px;
-      padding: 16px 24px;
+  .W_PostPage {
+  }
+  .M_PostActions {
+    margin-top: 64px;
+    .W_ButtonGroup {
+      gap: 12px;
     }
+  }
+  .M_Comment {
+    gap: 8px;
+    padding: 12px;
+    width: 888px;
+    .W_AllTextParts {
+      gap: 12px;
+      .W_NameAndBody {
+        gap: 6px;
+      }
+      .W_BottomPart {
+        .W_DateAndReplyButton {
+          gap: 8px;
+        }
+      }
+    }
+    .M_EditCommentForm {
+      .A_Input {
+        height: 124px;
+      }
+    }
+  }
+  .M_InputWithAvatar {
+    gap: 8px;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
@@ -19,6 +47,10 @@
     .M_Dropdown {
       width: 317;
       margin-left: 666px;
+      .Q_MockImage {
+        width: 72px;
+        height: 72px;
+      }
     }
   }
   .M_FormHeader {
@@ -33,13 +65,58 @@
       gap: 12px;
     }
   }
+  .M_Banner {
+    width: 983px;
+    .W_Banner {
+      width: 569px;
+    }
+  }
+  .M_Search {
+    .A_Logo {
+      width: 539px;
+      height: 132px;
+    }
+  }
+  .W_PostPage {
+  }
+  .M_PostHeading {
+    gap: 24px;
+  }
+  .C_TagCollection {
+    max-width: 679px;
+  }
+  .M_PostActions {
+    margin-top: 64px;
+    .W_ButtonGroup {
+      gap: 8px;
+    }
+  }
+  .M_Comment {
+    gap: 8px;
+    padding: 12px;
+    width: 761px;
+    .W_AllTextParts {
+      gap: 12px;
+      .W_NameAndBody {
+        gap: 6px;
+      }
+      .W_BottomPart {
+        .W_DateAndReplyButton {
+          gap: 8px;
+        }
+      }
+    }
+    .M_EditCommentForm {
+      .A_Input {
+        height: 124px;
+      }
+    }
+  }
+  .M_InputWithAvatar {
+    gap: 8px;
+  }
   .M_EditForm {
     width: 539px;
-    margin: 0 auto;
-    textarea {
-      min-height: 335px;
-      padding: 16px 24px;
-    }
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -47,12 +124,19 @@
     .M_Dropdown {
       width: 294;
       margin-left: 256px;
+      .Q_MockImage {
+        width: 64px;
+        height: 64px;
+      }
     }
+  }
+  .M_EditForm {
+    width: 428px;
   }
   .M_FormHeader {
     gap: 12px;
     .A_Heading3 {
-      width: 539px;
+      width: 428px;
     }
   }
   .M_InputWithLabel {
@@ -60,10 +144,10 @@
   }
   .W_InputsColumn {
     gap: 12px;
-    margin-top: 48px;
+    margin-top: 0px;
   }
   .W_FormButton {
-    margin-top: 48px;
+    margin-top: 0px;
     gap: 12px;
   }
   .W_FormAdditionalInfo {
@@ -77,13 +161,58 @@
       gap: 12px;
     }
   }
-  .M_EditForm {
-    width: 428px;
-    margin: 0 auto;
-    textarea {
-      min-height: 335px;
-      padding: 16px 24px;
+  .M_Banner {
+    width: 643px;
+    .W_Banner {
+      width: 399px;
     }
+  }
+  .M_Search {
+    .A_Logo {
+      width: 428px;
+      height: 105px;
+    }
+  }
+  .W_PostPage {
+  }
+  .M_PostHeading {
+    gap: 24px;
+  }
+  .C_TagCollection {
+    max-width: 650px;
+  }
+  .M_PostActions {
+    margin-top: 48px;
+    .W_ButtonGroup {
+      gap: 8px;
+    }
+  }
+  .M_Dropdown {
+    padding: 12px;
+  }
+  .M_Comment {
+    gap: 8px;
+    padding: 8px;
+    width: 650px;
+    .W_AllTextParts {
+      gap: 12px;
+      .W_NameAndBody {
+        gap: 6px;
+      }
+      .W_BottomPart {
+        .W_DateAndReplyButton {
+          gap: 8px;
+        }
+      }
+    }
+    .M_EditCommentForm {
+      .A_Input {
+        height: 124px;
+      }
+    }
+  }
+  .M_InputWithAvatar {
+    gap: 8px;
   }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
@@ -98,10 +227,10 @@
   }
   .W_InputsColumn {
     gap: 12px;
-    margin-top: 48px;
+    margin-top: 0px;
   }
   .W_FormButton {
-    margin-top: 48px;
+    margin-top: 0px;
     gap: 12px;
   }
   .W_FormAdditionalInfo {
@@ -115,12 +244,75 @@
       gap: 12px;
     }
   }
-  .M_EditForm {
-    width: 325px;
-    margin: 0 auto;
-    textarea {
-      min-height: 335px;
-      padding: 16px 24px;
+  .M_Banner {
+    width: 324px;
+    height: 270px;
+    a {
+      flex-direction: column;
     }
+
+    .W_Banner {
+      width: 324px;
+      height: 101px;
+    }
+    .A_Image {
+      align-self: stretch;
+      width: 100%;
+    }
+  }
+  .M_Search {
+    .A_Logo {
+      display: none;
+    }
+  }
+  .W_PostPage {
+  }
+  .M_PostHeading {
+    gap: 24px;
+  }
+  .C_TagCollection {
+    max-width: 324px;
+  }
+  .M_PostActions {
+    margin-top: 48px;
+    .W_ButtonGroup {
+      gap: 4px;
+      p {
+        display: none;
+      }
+    }
+  }
+  .M_Dropdown {
+    padding: 12px;
+  }
+  .M_Comment {
+    gap: 8px;
+    padding: 8px;
+    width: 324px;
+    .W_AllTextParts {
+      gap: 12px;
+      .W_NameAndBody {
+        gap: 6px;
+      }
+      .W_BottomPart {
+        .W_DateAndReplyButton {
+          gap: 8px;
+        }
+      }
+    }
+    .M_EditCommentForm {
+      .A_Input {
+        height: 124px;
+      }
+    }
+  }
+  .M_InputWithAvatar {
+    gap: 8px;
+    .A_Input {
+      width: 220px;
+    }
+  }
+  .M_EditForm {
+    width: 324px;
   }
 }

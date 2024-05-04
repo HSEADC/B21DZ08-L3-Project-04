@@ -1,4 +1,4 @@
-<div class="W_Body">
+<div class="M_EditForm">
   <p class="A_Heading1">Настройки аккаунта <%= resource_name.to_s.humanize %></p>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -44,7 +44,6 @@
 
   <div>Недовольны лутком? :( <%= button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы уверены?", turbo_confirm: "Вы уверены" }, method: :delete, class:"A_Button Black" %></div>
 
-  <div class="Q_ChaoticLetters"></div>
 
   <%#= link_to "Обратно", :back, class:"A_Button White" %>
 </div>

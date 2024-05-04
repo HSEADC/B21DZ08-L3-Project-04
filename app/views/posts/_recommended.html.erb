@@ -1,0 +1,9 @@
+<div class="O_Posts">
+  <p class="A_Heading3"><%=heading%></p>
+  <div class="W_Posts">
+  <% count.times do %>
+    <% post = Post.offset(rand(Post.count)).first %>
+    <%= render partial: 'posts/post-preview', locals: { post: post } %>
+  <% end %>
+  </div>
+</div>

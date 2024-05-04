@@ -1,28 +1,9 @@
-//трикс приколы, временно тут
-strong {
-  font-weight: 700;
-}
-
-em {
-  font-style: italic;
-}
-
-blockquote {
-  text-align: right;
-  font-style: italic;
-  &::before {
-    content: '«';
-  }
-  &::after {
-    content: '»';
-  }
-}
 .A_Paragraph {
   position: relative;
   display: block;
   font-family: 'Noto Sans';
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 115%;
   color: var(--black);
   &.Grey {
@@ -31,6 +12,7 @@ blockquote {
   &.White {
     color: var(--white);
   }
+
   &.Blue {
     color: var(--dark_blue);
   }
@@ -43,13 +25,16 @@ blockquote {
   &.Antiqua {
     font-family: 'Noto Serif';
   }
+  &.hidden {
+    display: none;
+  }
 }
 .A_Link {
   position: relative;
   display: block;
   font-family: 'Noto Sans';
   font-weight: normal;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 115%;
   text-decoration: underline;
   color: var(--black);
@@ -73,11 +58,22 @@ blockquote {
   text-transform: uppercase;
 }
 .A_Heading1::before {
-  content: url('M_Heading.svg');
+  content: '';
+  background-image: url('M_Heading.svg');
+  background-size: 100%;
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: -10px;
+  position: absolute;
+  width: 312px;
+  height: 68px;
+  top: -8px;
+  left: -12px;
+}
+input {
+  outline: none;
+  border: none;
+  .Heading1 {
+    outline: none;
+  }
 }
 .A_Heading2 {
   font-family: 'Noto Serif';
@@ -136,12 +132,12 @@ blockquote {
     color: var(--white);
   }
   &.Transparent {
-    background-color: none;
+    background-color: transparent;
     color: var(--black);
     padding: 8px 0px;
   }
   &.Underlined {
-    background-color: none;
+    background-color: transparent;
     color: var(--black);
     text-decoration: underline;
   }
@@ -166,9 +162,27 @@ blockquote {
   height: 24px;
   background-repeat: no-repeat;
   background-position: cover;
-}
-.Unliked {
-  background-image: url('icons/Unliked.svg');
+  &.More {
+    background-image: url('icons/More.svg');
+  }
+  &.Share {
+    background-image: url('icons/Share.svg');
+  }
+  &.Add {
+    background-image: url('icons/Add.svg');
+  }
+  &.Edit {
+    background-image: url('icons/Edit.svg');
+  }
+  &.Delete {
+    background-image: url('icons/Delete.svg');
+  }
+  &.Tick {
+    background-image: url('icons/Tick.svg');
+  }
+  &.Cross {
+    background-image: url('icons/Cross.svg');
+  }
 }
 .A_Input {
   display: flex;
@@ -301,33 +315,4 @@ input[type='checkbox']:checked + label::before {
 }
 .A_PostEditorInput::placeholder {
   color: var(--dark_gray);
-}
-.O_CustomTrixEditor {
-  .C_TextEditorButtons {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-  }
-  .trix-content {
-    display: flex;
-    width: 888px;
-    height: fit-content;
-    min-height: 60vh;
-    padding: 16px 24px;
-    align-items: center;
-    font-family: 'Noto Sans';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 115%;
-    color: var(--black);
-    background: var(--gray);
-    border-radius: 30px;
-    text-decoration: none;
-    border: 0px;
-    overflow: visible;
-  }
 }

@@ -1,7 +1,5 @@
-console.log('menubar');
 document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function (event) {
-    console.log(event);
     var dropdowns = document.querySelectorAll('.M_Dropdown');
     dropdowns.forEach(function (dropdown) {
       if (dropdown.classList.contains('NotActive')) {
@@ -47,3 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+//Это абсолютно безумно я обещаю я сделаю по-человечески... но позже...
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   let button = document.getElementById('submitButton');
+//   let container = document.getElementById('W_DateAndReplyButton');
+//   container.appendChild(button);
+// });

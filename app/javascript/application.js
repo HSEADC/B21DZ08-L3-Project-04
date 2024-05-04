@@ -2,7 +2,7 @@
 import '@hotwired/turbo-rails';
 import '@hotwired/stimulus';
 import 'controllers';
+import './menubar';
+// import './trix_customization';
 import 'trix';
 import '@rails/actiontext';
-import './menubar';
-import './trix_customization';

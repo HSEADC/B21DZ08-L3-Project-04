@@ -1,33 +1,30 @@
 import { Controller } from '@hotwired/stimulus';
 
-export default class extends Controller {
+export default class TrixController extends Controller {
+  static TOOLBAR_BUTTON_ICONS = [
+    {
+      identifier: '.trix-button--icon-bold',
+      text: 'Жирный',
+    },
+    {
+      identifier: '.trix-button--icon-italic',
+      text: 'Курсив',
+    },
+  ];
+
   connect() {
-    console.log('Контроллер подключен');
+    console.log('Контроллер подключен!');
+    addEventListener(
+      'trix-initialize',
+      function (event) {
+        console.log('im inititalized!');
+        TrixController.TOOLBAR_BUTTON_ICONS.forEach((group) => {
+          console.log('пиу');
+          document.querySelector(group.identifier).innerHTML =
+            group.text;
+        });
+      },
+      true
+    );
   }
 }
-
-// export default class TrixController extends Controller {
-//   connect() {
-//     addEventListener(
-//       'trix-initialize',
-//       function (event) {
-//         console.log('im inititalized!');
-//         // ...
-//         // add underline code
-//         // remove buttons code
-//         // add custom icons code here
-//         // ...
-//       },
-//       true
-//     );
-
-//     // remove file upload handling
-//     addEventListener(
-//       'trix-file-accept',
-//       function (event) {
-//         event.preventDefault();
-//       },
-//       true
-//     );
-//   }
-// }

@@ -6,7 +6,7 @@
 }
 .O_Footer {
   position: relative;
-  width: 100vw;
+  width: 100%;
   margin-top: 100px;
   height: fit-content;
   background-color: var(--white);
@@ -111,8 +111,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 1344px;
+  margin: 0 auto;
+  height: fit-content;
   gap: 32px;
   .W_Comments {
     position: relative;
@@ -127,7 +128,8 @@
 .O_Post {
   position: relative;
   display: block;
-  width: 100%;
+  width: 1344px;
+  margin: 0 auto;
   .A_Heading1 {
     width: 100%;
     height: fit-content;
@@ -139,6 +141,16 @@
     justify-content: space-between;
     align-items: flex-end;
     align-self: stretch;
+  }
+  .W_PostBody {
+    position: relative;
+    width: 908px;
+    height: fit-content;
+    margin: 64px auto 0 auto;
+    .trix-content {
+      position: relative;
+      width: 100%;
+    }
   }
 }
 .O_HeaderMobile {
@@ -272,10 +284,102 @@
   }
 }
 .O_Account {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 48px;
+  .M_ProfileInfo {
+    display: flex;
+    width: 774px;
+    align-items: flex-start;
+    gap: 24px;
+    .W_ProfileInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      flex: 1 0 0;
+      .W_ProfileName {
+        display: flex;
+        height: 149px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-items: flex-start;
+      }
+    }
+  }
   .A_Icon {
     height: 204px;
     width: 204px;
     border-radius: 200px;
     object-fit: cover;
   }
+}
+.S_PopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(168, 169, 169, 0.5);
+  align-items: center;
+  justify-content: center;
+  .O_PopUp {
+    display: flex;
+    height: fit-content;
+    padding: 28px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 30px;
+    background: var(--white);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    .A_Heading3 {
+      text-align: center;
+      width: 100%;
+    }
+    .C_Buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 18px;
+      align-self: stretch;
+      margin-top: 12px;
+    }
+    .M_InputWithLabel {
+      .A_Heading3 {
+        text-align: left;
+      }
+    }
+  }
+}
+.O_Posts {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  width: 100%;
+  .A_Heading3 {
+    width: 100%;
+    text-align: center;
+  }
+  .W_Posts {
+    .A_Heading3 {
+      text-align: left;
+    }
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+}
+.S_IndexContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
 }

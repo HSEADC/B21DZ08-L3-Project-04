@@ -2,6 +2,13 @@
   .A_Heading1 {
     font-size: 40px;
   }
+  .A_Heading1:before {
+    width: 283px;
+    height: 62px;
+  }
+  .A_Heading2 {
+    font-size: 32px;
+  }
   .A_Heading3 {
     font-size: 24px;
   }
@@ -25,6 +32,15 @@
     font-size: 36px;
     letter-spacing: 18px;
   }
+  .A_Heading1:before {
+    width: 257px;
+    height: 56px;
+    top: -3px;
+    left: -20px;
+  }
+  .A_Heading2 {
+    font-size: 28px;
+  }
   .A_Heading3 {
     font-size: 22px;
   }
@@ -36,12 +52,20 @@
   }
   .A_Input {
     padding: 14px 20px;
+    width: 539px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .A_Heading1 {
     font-size: 32px;
     letter-spacing: 16px;
+  }
+  .A_Heading1:before {
+    width: 226px;
+    height: 50px;
+  }
+  .A_Heading2 {
+    font-size: 28px;
   }
   .A_Heading3 {
     font-size: 22px;
@@ -56,6 +80,9 @@
     width: 428px;
     padding: 14px 20px;
   }
+  .A_Input {
+    width: 428px;
+  }
   .Q_ChaoticLetters {
     // width: 475px;
     // height: 232px;
@@ -66,6 +93,15 @@
   .A_Heading1 {
     font-size: 24px;
     letter-spacing: 12px;
+  }
+  .A_Heading1:before {
+    width: 171px;
+    height: 37px;
+    top: -3px;
+    left: -20px;
+  }
+  .A_Heading2 {
+    font-size: 24px;
   }
   .A_Heading3 {
     font-size: 20px;
@@ -82,5 +118,8 @@
   }
   .Q_ChaoticLetters {
     display: none;
+  }
+  .A_Input {
+    width: 324px;
   }
 }

@@ -1,0 +1,272 @@
+.W_PostEditor {
+  padding-top: 32px;
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
+}
+.O_CustomTrixEditor {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  .trix-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 888px;
+    height: fit-content;
+    min-height: 60vh;
+    margin: 0 auto;
+    padding: 24px 0 0 0;
+    font-family: 'Noto Sans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    color: var(--black);
+    background: var(--white);
+    border-radius: 30px;
+    text-decoration: none;
+    border: 0px;
+    overflow: visible;
+    div {
+      position: relative;
+      display: block;
+      font-family: 'Noto Sans';
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 115%;
+      color: var(--black);
+      text-indent: 120px;
+    }
+    strong {
+      font-weight: 700;
+      em {
+        font-weight: 700;
+      }
+    }
+    em {
+      font-style: italic;
+    }
+    a {
+      text-decoration: underline;
+      color: var(--blue);
+    }
+    h1 {
+      font-family: 'Noto Serif';
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 115%;
+    }
+    blockquote {
+      border: none;
+      border-left-width: 0;
+      margin-left: 0;
+      padding-left: 114px;
+      padding-right: 114px;
+      font-style: italic;
+    }
+    blockquote:before {
+      content: '«';
+    }
+    blockquote:after {
+      content: '»';
+    }
+  }
+  trix-toolbar .trix-button-group:not(:first-child) {
+    margin: 0;
+  }
+  trix-toolbar .trix-button:not(:first-child) {
+    border-left: 0;
+  }
+  trix-toolbar .trix-button-group {
+    display: flex;
+    margin-bottom: 0;
+    border: none;
+    border-top-color: #ccc;
+    border-bottom-color: #888;
+    border-radius: 3px;
+  }
+  trix-toolbar .trix-button-row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0px;
+  }
+  trix-toolbar {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    // overflow-y: hidden;
+  }
+  .trix-button {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+    width: fit-content;
+    height: 40px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: 'Noto Sans';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 115%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--black);
+    color: var(--white);
+    max-width: none;
+    text-indent: 0;
+    opacity: 1;
+    border: none;
+    align-items: center;
+    &.underlined {
+      text-decoration: underline;
+    }
+  }
+  trix-toolbar .trix-button.trix-active {
+    background-color: var(--blue);
+    color: var(--white);
+    transition: 0.2s;
+  }
+  .trix-button-group-spacer {
+    display: none;
+  }
+  trix-toolbar .trix-button:disabled {
+    background-color: var(--gray);
+    color: var(--white);
+  }
+  trix-toolbar .trix-button--icon-bold::before,
+  trix-toolbar .trix-button--icon-italic::before,
+  trix-toolbar .trix-button--icon-link::before,
+  trix-toolbar .trix-button--icon-quote::before,
+  trix-toolbar .trix-button--icon-bullet-list::before,
+  trix-toolbar .trix-button--icon-number-list::before,
+  trix-toolbar .trix-button--icon-heading-1::before {
+    background-image: none;
+  }
+  trix-toolbar .trix-button--icon-attach {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-color: var(--dark_blue);
+  }
+  .trix-button--icon-attach:hover {
+    background-color: var(--pink);
+    transition: 0.2s;
+  }
+  trix-toolbar .trix-button--icon-attach::before {
+    background-image: url('Icons/Attachment.svg');
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+    background-size: 16px 24px;
+  }
+
+  .trix-button--icon-strike,
+  .trix-button--icon-code,
+  .trix-button--icon-decrease-nesting-level,
+  .trix-button--icon-increase-nesting-level,
+  trix-toolbar .trix-button-group--history-tools {
+    display: none;
+  }
+  trix-toolbar {
+    .trix-button-row {
+      gap: 12px;
+      // overflow-y: hidden;
+    }
+    .trix-button-group {
+      gap: 12px;
+    }
+  }
+}
+.W_PostBody {
+  .trix-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 888px;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Noto Sans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    color: var(--black);
+    background: var(--white);
+    border-radius: 30px;
+    text-decoration: none;
+    border: 0px;
+    overflow: visible;
+    div {
+      position: relative;
+      display: block;
+      font-family: 'Noto Sans';
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 115%;
+      color: var(--black);
+      text-indent: 120px;
+    }
+    strong {
+      font-weight: 700;
+      em {
+        font-weight: 700;
+      }
+    }
+    em {
+      font-style: italic;
+    }
+    a {
+      text-decoration: underline;
+      color: var(--blue);
+    }
+    h1 {
+      font-family: 'Noto Serif';
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 115%;
+    }
+    blockquote {
+      border: none;
+      border-left-width: 0;
+      margin-left: 0;
+      padding-left: 114px;
+      padding-right: 114px;
+      font-style: italic;
+    }
+    blockquote:before {
+      content: '«';
+    }
+    blockquote:after {
+      content: '»';
+    }
+  }
+}
+@media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+  .O_Post {
+    .W_PostBody {
+      blockquote {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  }
+  .O_CustomTrixEditor {
+    blockquote {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}

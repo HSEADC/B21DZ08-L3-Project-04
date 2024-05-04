@@ -20,6 +20,23 @@
       width: 287px;
     }
   }
+  .O_Posts {
+    .W_Posts {
+      gap: 24px;
+    }
+    // .W_Posts > *:nth-child(3n) {
+    //   display: none;
+    // }
+  }
+  .O_CommentsSection {
+    width: 1116px;
+  }
+  .O_Post {
+    width: 1116px;
+    .W_PostBody {
+      width: 908px;
+    }
+  }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .W_Body {
@@ -40,6 +57,23 @@
     }
     .A_Caption {
       width: 287px;
+    }
+  }
+  .O_Posts {
+    .W_Posts {
+      gap: 16px;
+    }
+    // .W_Posts > *:nth-child(3n) {
+    //   display: none;
+    // }
+  }
+  .O_CommentsSection {
+    width: 983px;
+  }
+  .O_Post {
+    width: 983px;
+    .W_PostBody {
+      width: 761px;
     }
   }
 }
@@ -63,6 +97,23 @@
     .A_Caption {
       width: 287px;
       color: var(--dark_gray);
+    }
+  }
+  .O_Posts {
+    .W_Posts {
+      gap: 8px;
+    }
+    // .W_Posts > *:nth-child(2n) {
+    //   display: none;
+    // }
+  }
+  .O_CommentsSection {
+    width: 650px;
+  }
+  .O_Post {
+    width: 650px;
+    .W_PostBody {
+      width: 650px;
     }
   }
 }
@@ -97,6 +148,36 @@
       top: 30px;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+  }
+  .O_Posts {
+    .W_Posts {
+      gap: 8px;
+    }
+    // .W_Posts > *:nth-child(2n) {
+    //   display: none;
+    // }
+  }
+  .O_CommentsSection {
+    width: 324px;
+  }
+  .O_Post {
+    width: 324px;
+    .W_PostBody {
+      width: 324px;
+      margin: 32px auto 0 auto;
+    }
+  }
+  .W_PostBody {
+    blockquote {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+  .O_CustomTrixEditor {
+    blockquote {
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 }

@@ -1,13 +1,14 @@
-<div class="O_Popup">
-<%= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
-    <p class="A_Heading3">Удалить аккаунт</p>
-    <p class="A_Paragraph">Это действие необратимо. Подтвердите, что уверены</p>
-    <div class="C_Buttons">
-    <div class="A_Button Black">Отменить</div>
-    <%= button_to "Удалить аккаунт", registration_path(current_user), data: { confirm: "Вы уверены?", turbo_confirm: "Вы уверены" }, method: :delete, class:"A_Button Red" %>
-    
-    </div>
-    <% end %>
-</div>
+<div class="S_PopUp">
+<div class="O_PopUp">
+<p class="A_Heading3">Покидаете луток?</p>
+<p class="A_Paragraph">Это действие нельзя обратить. Подтвердите, что уверены</p>
 
+<div class="C_Buttons">
+<div class="A_Button Grey">Отмена</div>
+<%= button_to "Удалить аккаунт", registration_path(current_user),
+data: { confirm: "Вы уверены?", turbo_confirm: "Вы уверены" }, method:
+:delete, class:"A_Button Red" %> 
+  </div>
+</div>
+</div>
 

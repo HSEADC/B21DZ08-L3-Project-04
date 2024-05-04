@@ -1,0 +1,15 @@
+<%= form_with(model: [post, comment], class:"M_EditCommentForm hidden", id: "edit-form-#{comment.id}") do |form| %>
+  <% if comment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+        <% comment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.text_area :body, placeholder: "Оставить комментарий", class: "A_Input", id:"CommentInput" %>
+  <%= form.submit "", class: "A_Button Transparent Q_Icon Tick" %>
+<% end %>
