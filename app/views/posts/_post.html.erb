@@ -2,7 +2,7 @@
   <div class="M_PostHeading">
     <p class="A_Heading1"><%= post.title.html_safe %></p>
     <div class="C_TagCollection">
-      <% post.tag_list.each do |tag| %>
+      <% post.genre_list.each do |tag| %>
         <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
       <% end %>
     </div>

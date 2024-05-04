@@ -166,6 +166,11 @@ input {
   height: 24px;
   background-repeat: no-repeat;
   background-position: cover;
+  overflow: visible;
+  &.Small {
+    width: 16px;
+    height: 16px;
+  }
   &.More {
     background-image: url('icons/More.svg');
   }
@@ -186,6 +191,9 @@ input {
   }
   &.Cross {
     background-image: url('icons/Cross.svg');
+  }
+  &.Search {
+    background-image: url('icons/Search.svg');
   }
 }
 .A_Input {

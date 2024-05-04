@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   mount_uploader :post_image, PostImageUploader
   has_rich_text :text
 
-  acts_as_taggable_on :tags
+  # acts_as_taggable_on :tags
 
   has_many :favourites
   has_many :users_who_favourited, through: :favourites, source: 'user'
@@ -16,6 +16,11 @@ class Post < ApplicationRecord
   has_many :users_who_liked, through: :likes, source: 'user'
 
   has_and_belongs_to_many :users
+
+  acts_as_taggable_on :genre
+  acts_as_taggable_on :theme
+  acts_as_taggable_on :language
+  acts_as_taggable_on :nationality
 
   belongs_to :user
 

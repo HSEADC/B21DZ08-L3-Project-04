@@ -397,3 +397,18 @@
   gap: 16px;
   margin-bottom: 32px;
 }
+.O_SearchBox {
+  .A_Input {
+    width: 1116px;
+    height: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    .A_Paragraph {
+      background: none;
+      width: 1072px;
+      height: 40px;
+    }
+  }
+}
