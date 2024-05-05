@@ -164,15 +164,15 @@
   align-content: flex-start;
   gap: 8px;
   flex-wrap: wrap;
-  & > :first-child {
-    background-color: var(--blue);
-  }
-  & > :nth-child(2) {
-    background-color: var(--yellow);
-  }
-  & > :nth-child(3) {
-    background-color: var(--pink);
-  }
+  // & > :first-child {
+  //   background-color: var(--blue);
+  // }
+  // & > :nth-child(2) {
+  //   background-color: var(--yellow);
+  // }
+  // & > :nth-child(3) {
+  //   background-color: var(--pink);
+  // }
 }
 .M_Comment {
   position: relative;
