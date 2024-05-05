@@ -36,65 +36,81 @@
             </div>
           </div>
           <div class="W_EditorInputs">
-            <div class="O_TagsPicker" data-controller="tags">
-              <div class="M_TagsSearchUnit">
-                <div class="W_TopSearchPart">
-                  <div class="A_Paragraph Antiqua">Жанр</div>
-                  <div class="A_SearchInput">
-                  <div class="Q_Icon SearchGray Small"></div>
-                  <%= form.text_field :genre_list, placeholder: "Я хочу найти…", value: post.genre_list.join(', '), class: "A_Paragraph", data: {action: "input->tags#filter", tags_target:"searchInput"} %>
-                  </div>
-                </div>
-                <div class="C_TagCollection" data-tags-target="tagContainer">
+            <div class="W_TagsSelection" data-controller="tags">
+              <div class="A_Heading3">Теги</div>
+              <div class="C_TagCollection" data-tags-target="selectedTagsContainer">
                   <% ActsAsTaggableOn::Tagging.where(context: 'genre').distinct.pluck(:tag_id).each do |tag_id| %>
                     <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
-                    <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag", data: { tags_target: "tag" } %>
+                    <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag None", data: 
+                    { tags_target: "selectedTag", 
+                      action: "click->tags#handleTagClick", 
+                      tag_id: "tag-#{tag.id}" } %>
                   <% end %>
-                </div>
               </div>
-              <div class="M_TagsSearchUnit">
-                <div class="W_TopSearchPart">
-                  <div class="A_Paragraph Antiqua">Тема</div>
-                  <div class="A_SearchInput">
-                  <div class="Q_Icon SearchGray Small"></div>
-                  <%= form.text_field :genre_list, placeholder: "Я хочу найти…", value: post.genre_list.join(', '), class: "A_Paragraph"%>
+              <div class="O_TagsPicker">
+                <div class="M_TagsSearchUnit">
+                  <div class="W_TopSearchPart">
+                    <div class="A_Paragraph Antiqua">Жанр</div>
+                    <div class="A_SearchInput">
+                      <div class="Q_Icon SearchGray Small"></div>
+                      <%= tag.input type: "text", placeholder: "Я хочу найти…", class: "A_Paragraph", data: {action: "input->tags#filter", tags_target:"searchInput"} %>
+                      <%= form.hidden_field :genre_list, value: post.genre_list.join(', '), class: "A_Paragraph", data: {tags_target:"postTagsForm"} %>
+                    </div>
+                  </div>
+                  <div class="C_TagCollection" data-tags-target="tagContainer">
+                    <% ActsAsTaggableOn::Tagging.where(context: 'genre').distinct.pluck(:tag_id).each do |tag_id| %>
+                      <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
+                      <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag", 
+                      data: { tags_target: "tag", 
+                              action: "click->tags#handleTagClick", 
+                              tag_id: "tag-#{tag.id}" } %>
+                    <% end %>
                   </div>
                 </div>
-                <div class="C_TagCollection">
-                  <% ActsAsTaggableOn::Tagging.where(context: 'theme').distinct.pluck(:tag_id).each do |tag_id| %>
-                    <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
-                    <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag" %>
-                  <% end %>
-                </div>
-              </div>
-              <div class="M_TagsSearchUnit">
-                <div class="W_TopSearchPart">
-                  <div class="A_Paragraph Antiqua">Язык, диалект</div>
-                  <div class="A_SearchInput">
-                  <div class="Q_Icon SearchGray Small"></div>
-                  <%= form.text_field :genre_list, placeholder: "Я хочу найти…", value: post.genre_list.join(', '), class: "A_Paragraph"%>
+                <div class="M_TagsSearchUnit">
+                  <div class="W_TopSearchPart">
+                    <div class="A_Paragraph Antiqua">Тема</div>
+                    <div class="A_SearchInput">
+                    <div class="Q_Icon SearchGray Small"></div>
+                    <%= form.text_field :genre_list, placeholder: "Я хочу найти…", value: post.genre_list.join(', '), class: "A_Paragraph"%>
+                    </div>
+                  </div>
+                  <div class="C_TagCollection">
+                    <% ActsAsTaggableOn::Tagging.where(context: 'theme').distinct.pluck(:tag_id).each do |tag_id| %>
+                      <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
+                      <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag" %>
+                    <% end %>
                   </div>
                 </div>
-                <div class="C_TagCollection">
-                  <% ActsAsTaggableOn::Tagging.where(context: 'language').distinct.pluck(:tag_id).each do |tag_id| %>
-                    <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
-                    <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag" %>
-                  <% end %>
-                </div>
-              </div>
-              <div class="M_TagsSearchUnit">
-                <div class="W_TopSearchPart">
-                  <div class="A_Paragraph Antiqua">Народность</div>
-                  <div class="A_SearchInput">
-                  <div class="Q_Icon SearchGray Small"></div>
-                  <%= form.text_field :genre_list, placeholder: "Я хочу найти…", value: post.genre_list.join(', '), class: "A_Paragraph"%>
+                <div class="M_TagsSearchUnit">
+                  <div class="W_TopSearchPart">
+                    <div class="A_Paragraph Antiqua">Язык, диалект</div>
+                    <div class="A_SearchInput">
+                    <div class="Q_Icon SearchGray Small"></div>
+                    <%= form.text_field :genre_list, placeholder: "Я хочу найти…", value: post.genre_list.join(', '), class: "A_Paragraph"%>
+                    </div>
+                  </div>
+                  <div class="C_TagCollection">
+                    <% ActsAsTaggableOn::Tagging.where(context: 'language').distinct.pluck(:tag_id).each do |tag_id| %>
+                      <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
+                      <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag" %>
+                    <% end %>
                   </div>
                 </div>
-                <div class="C_TagCollection">
-                  <% ActsAsTaggableOn::Tagging.where(context: 'nationality').distinct.pluck(:tag_id).each do |tag_id| %>
-                    <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
-                    <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag" %>
-                  <% end %>
+                <div class="M_TagsSearchUnit">
+                  <div class="W_TopSearchPart">
+                    <div class="A_Paragraph Antiqua">Народность</div>
+                    <div class="A_SearchInput">
+                    <div class="Q_Icon SearchGray Small"></div>
+                    <%= form.text_field :genre_list, placeholder: "Я хочу найти…", value: post.genre_list.join(', '), class: "A_Paragraph"%>
+                    </div>
+                  </div>
+                  <div class="C_TagCollection">
+                    <% ActsAsTaggableOn::Tagging.where(context: 'nationality').distinct.pluck(:tag_id).each do |tag_id| %>
+                      <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
+                      <%= content_tag :span, tag.name, class: "A_Paragraph Antiqua A_Tag" %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
