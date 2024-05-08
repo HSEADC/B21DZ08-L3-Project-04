@@ -39,25 +39,8 @@ export default class extends Controller {
       );
       if (originalTag) {
         originalTag.classList.remove('Selected');
-      } else if (tag.dataset.tagsTarget === 'newTag') {
-        // Handling click on newTag
-        // Add newTag to selectedTagsContainer
-        const selectedTagsContainer =
-          this.selectedTagsContainerTarget;
-        selectedTagsContainer.appendChild(tag);
-
-        // Hide newTag from previous container
-        tag.classList.add('None');
-        console.log(tag);
-
-        // Clear the input
-        this.searchInputTarget.value = '';
       }
     }
-
-    // 1. if tag.dataset.tagsTarget === 'newTag', I want newTag to be added to the container "selectedTagsContainer",
-    // and disappear from the previous containter + input should become empty.
-    // 2. when I click on 'newTag' in "selectedTagsContainer", it should disappear.
   }
 
   filter() {
@@ -109,7 +92,6 @@ export default class extends Controller {
         'A_Tag',
         'newTag'
       );
-      //   newTag.dataset.tagId = '';
       newTag.dataset.tagsTarget = 'newTag';
       newTag.dataset.action = 'click->tags#handleTagClick';
       newTag.textContent = inputValue;
@@ -117,58 +99,3 @@ export default class extends Controller {
     }
   }
 }
-
-//   filter() {
-//     const inputValue = this.searchInputTarget.value
-//       .trim()
-//       .toLowerCase();
-//     const matchedTags = this.tagTargets.filter((tag) =>
-//       tag.textContent.trim().toLowerCase().includes(inputValue)
-//     );
-
-//     if (inputValue === '') {
-//       this.deleteNewTag();
-//       this.tagTargets.forEach((tag) => tag.classList.remove('None'));
-//     } else if (matchedTags.length === 0) {
-//       this.hideAllTagsExceptNewTag(inputValue);
-//     } else if (matchedTags.length === 1) {
-//       this.deleteNewTag();
-//     } else {
-//       this.tagTargets.forEach((tag) => {
-//         const tagText = tag.textContent.trim().toLowerCase();
-//         if (tagText.includes(inputValue)) {
-//           tag.classList.remove('None');
-//         } else {
-//           tag.classList.add('None');
-//         }
-//       });
-//     }
-//   }
-
-// hideAllTagsExceptNewTag(tagText) {
-//     this.tagTargets.forEach((tag) => tag.classList.add('None'));
-//     const tagContainer = this.tagContainerTarget;
-//     let newTag = tagContainer.querySelector('.new-tag');
-//     if (!newTag) {
-//       newTag = document.createElement('div');
-//       newTag.classList.add(
-//         'A_Paragraph',
-//         'Antiqua',
-//         'A_Tag',
-//         'new-tag'
-//       );
-//       newTag.dataset.tagsTarget = 'tag';
-//       newTag.dataset.action = 'click->tags#handleTagClick';
-//       tagContainer.appendChild(newTag);
-//     }
-//     newTag.textContent = tagText;
-//     newTag.classList.remove('None');
-//   }
-
-//   deleteNewTag() {
-//     const tagContainer = this.tagContainerTarget;
-//     const newTag = tagContainer.querySelector('.new-tag');
-//     if (newTag) {
-//       tagContainer.removeChild(newTag);
-//     }
-//   }

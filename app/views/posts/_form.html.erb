@@ -54,7 +54,7 @@
                     <div class="A_SearchInput">
                       <div class="Q_Icon SearchGray Small"></div>
                       <%= tag.input type: "text", placeholder: "Я хочу найти…", class: "A_Paragraph", data: {action: "input->tags#filter", tags_target:"searchInput"} %>
-                      <%= form.hidden_field :genre_list, value: post.genre_list.join(', '), class: "A_Paragraph", data: {tags_target:"postTagsForm"} %>
+                      <%= form.hidden_field :genre_list, value: post.genre_list.join(', '), data: { tags_target: "postTagsForm" } %>
                     </div>
                   </div>
                   <div class="C_TagCollection" data-tags-target="tagContainer">
