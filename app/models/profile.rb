@@ -6,7 +6,7 @@ class Profile < ApplicationRecord
     private
     def login_unique
         if Profile.exists?(login: login) && Profile.find_by(login: login).id != self.id
-          errors.add(:login, "Ник занят")
+          errors.add(:login, "Ник Уайльд занят")
         end
     end
   end

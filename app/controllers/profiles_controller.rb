@@ -1,11 +1,13 @@
 class ProfilesController < ApplicationController
     # load_and_authorize_resource
-  before_action :set_profile, only: %i[ show edit update destroy ]
+  before_action :set_profile, only: %i[ show edit update destroy follow ]
 
   def show
     @user = @profile.user
     @posts = @user.posts
     @user_favourited_posts = @user.posts_i_favourited
+    @all_follows = Follow.where(followed_id: @user.id)
+    @my_follow = Follow.where(follower_id: current_user.id)
   end
 
   def edit
@@ -29,7 +31,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to profile_url(@profile), notice: "Profile was successfully created." }
+        format.html { redirect_to profile_url(@profile), notice: "Профиль высрался!!!" }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new, status: :unprocessable_entity }
