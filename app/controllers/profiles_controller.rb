@@ -6,8 +6,9 @@ class ProfilesController < ApplicationController
     @user = @profile.user
     @posts = @user.posts
     @user_favourited_posts = @user.posts_i_favourited
+
     @all_follows = Follow.where(followed_id: @user.id)
-    @my_follow = Follow.where(follower_id: current_user.id)
+    @my_follow = Follow.where(followed_id: @user.id, follower_id: current_user.id)[0]
   end
 
   def edit

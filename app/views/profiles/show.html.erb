@@ -26,9 +26,12 @@
   <% if current_user && current_user == @profile.user %>
     <%= link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue' %>
   <% else %>
-    <%= link_to "Follow User", follows_path(follow: { followed_id: @profile.user.id, follower_id: current_user.id }), method: :post, class: 'A_Button Blue' %>
-    <%= link_to "UnFollow User", follows_path(@my_follow), method: :delete, class: 'A_Button Blue' %>
+    <%= button_to "Follow User", follows_path(follow: { followed_id: @profile.user.id, follower_id: current_user.id }), method: :post, class: 'A_Button Blue' %>
     
+    # должно отправлятьь delete, отправляет post
+    <%= button_to "Unfollow User", follows_path({ id: @my_follow&.id }), method: :delete, class: 'A_Button Blue' %>
+    
+    <%= @my_follow&.id %>
     <%= @all_follows.count %>
 
   <% end %>

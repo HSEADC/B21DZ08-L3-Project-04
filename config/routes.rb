@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :profiles, only: [:show, :edit, :update]
 
+  resources :follows, only: [:create, :destroy]
+
   devise_for :users
 
   resources :subscriptions, only: [:create, :show]
@@ -39,9 +41,6 @@ Rails.application.routes.draw do
   get 'support/index'
   get 'change_locale', to: 'welcome#change_locale', as: 'change_locale'
   post 'support/request_support'
-  # спросить у захара почему ничего не работает если сделать post
-  get '/follows', to: 'follows#create'
-  
   get 'welcome/search'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
