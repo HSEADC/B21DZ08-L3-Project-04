@@ -1,0 +1,14 @@
+<div class="C_TagCollection">
+      <% post.kind_list.each do |tag| %>
+        <%= content_tag :span, tag, class: "A_Tag kind" %>
+      <% end %>
+      <% post.theme_list.each do |tag| %>
+        <%= content_tag :span, tag, class: "A_Tag theme" %>
+      <% end %>
+      <% post.language_list.each do |tag| %>
+        <%= content_tag :span, tag, class: "A_Tag language" %>
+      <% end %>
+      <% post.nationality_list.each do |tag| %>
+        <%= content_tag :span, tag, class: "A_Tag nationality" %>
+      <% end %>
+</div>

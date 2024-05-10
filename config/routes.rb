@@ -25,7 +25,6 @@ Rails.application.routes.draw do
     end
 
     resources :comments
-    get "/by_tag/:tag", to: "posts#by_tag", on: :collection, as: "tagged"
   end
 
   resources :comments

@@ -412,3 +412,51 @@
     }
   }
 }
+.SO_EditorSection {
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+  padding: 24px 48px 200px 48px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  .W_EditorInputs {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .W_TagsSelection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .C_TagCollection {
+      width: 660px;
+    }
+  }
+}
+.O_TagsPicker {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 16px;
+  background: var(--gray);
+  .M_TagsSearchUnit {
+    .C_TagCollection {
+      width: 100%;
+    }
+  }
+}

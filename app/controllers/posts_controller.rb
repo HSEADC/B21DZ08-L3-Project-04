@@ -8,10 +8,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def by_tag
-    @posts = Post.tagged_with(params[:tag])
-    render :index
-  end
+  # def by_tag
+  #   @posts = Post.tagged_with(params[:tag])
+  #   render :index
+  # end
 
   # GET /posts/1 or /posts/1.json
   def show
@@ -108,6 +108,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :text, :tag_list).merge(user_id: current_user.id)
+      params.require(:post).permit(:title, :text, :kind_list, :language_list, :nationality_list, :theme_list,).merge(user_id: current_user.id)
     end
 end

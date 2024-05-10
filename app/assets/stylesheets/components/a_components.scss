@@ -12,7 +12,6 @@
   &.White {
     color: var(--white);
   }
-
   &.Blue {
     color: var(--dark_blue);
   }
@@ -61,17 +60,17 @@
 .A_Heading1::placeholder {
   color: var(--gray);
 }
-.A_Heading1::before {
-  content: '';
-  background-image: url('M_Heading.svg');
-  background-size: 100%;
-  display: inline-block;
-  position: absolute;
-  width: 312px;
-  height: 68px;
-  top: -8px;
-  left: -12px;
-}
+// .A_Heading1::before {
+//   content: '';
+//   background-image: url('M_Heading.svg');
+//   background-size: 100%;
+//   display: inline-block;
+//   position: absolute;
+//   width: 312px;
+//   height: 68px;
+//   top: -8px;
+//   left: -12px;
+// }
 input {
   outline: none;
   border: none;
@@ -165,7 +164,7 @@ input {
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
-  background-position: cover;
+  background-size: cover;
   overflow: visible;
   &.Small {
     width: 16px;
@@ -194,6 +193,21 @@ input {
   }
   &.Search {
     background-image: url('icons/Search.svg');
+  }
+  &.SearchGray {
+    background-image: url('icons/SearchGray.svg');
+  }
+  &.ArrowUp {
+    background-image: url('icons/ArrowUpInCircle.svg');
+  }
+  &.ArrowDown {
+    background-image: url('icons/ArrowDownInCircle.svg');
+  }
+  &.ArrowRight {
+    background-image: url('icons/ArrowRightInCircle.svg');
+  }
+  &.ArrowLeft {
+    background-image: url('icons/ArrowLeftInCircle.svg');
   }
 }
 .A_Input {
@@ -323,19 +337,44 @@ input[type='checkbox']:checked + label::before {
   padding: 4px 8px;
   justify-content: center;
   align-items: center;
-  background: var(--blue);
-  // &.Nation {
-  //   background: var(--yellow);
-  // }
-  // &.Genre {
-  //   background: var(--blue);
-  // }
-  // &.Language {
-  //   background: var(--pink);
-  // }
-  // &.Tag {
-  //   background: var(--dark_gray);
-  // }
+  font-family: 'Noto Serif';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 115%;
+  color: var(--black);
+  &.kind {
+    background: var(--blue);
+  }
+  &.theme {
+    background: var(--pink);
+  }
+  &.language {
+    background: var(--yellow);
+  }
+  &.nationality {
+    background: var(--dark_gray);
+  }
+  &.Selected {
+    color: var(--white);
+    background-color: var(--dark_blue);
+  }
+  &.None {
+    display: none;
+  }
+  &.newTag {
+    cursor: pointer;
+  }
+  &.newTag:hover {
+    color: var(--white);
+    background-color: var(--dark_blue);
+  }
+  &.existing {
+    cursor: pointer;
+  }
+  &.existing:hover {
+    color: var(--white);
+    background-color: var(--dark_blue);
+  }
 }
 .A_PostEditorInput::placeholder {
   color: var(--dark_gray);
@@ -351,4 +390,49 @@ input[type='checkbox']:checked + label::before {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
   z-index: 9999;
   font-family: 'Noto Sans';
+}
+.M_SectionName {
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  .A_Paragraph {
+    height: fit-content;
+    width: fit-content;
+  }
+  .W_Captions {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    top: 38px;
+    .A_Caption {
+      width: 318px;
+      height: fit-content;
+    }
+  }
+}
+.A_SearchInput {
+  position: relative;
+  width: 384px;
+  height: 32px;
+  border-bottom: 2px solid var(--dark_gray);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  .A_Paragraph {
+    height: fit-content;
+    background: none;
+    padding: none;
+    overflow: visible;
+    border: 0;
+    padding-bottom: 2px;
+  }
+  .A_Paragraph::placeholder {
+    color: var(--dark_gray);
+  }
 }

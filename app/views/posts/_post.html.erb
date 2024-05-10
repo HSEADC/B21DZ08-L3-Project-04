@@ -1,12 +1,7 @@
 <div class="O_Post">
   <div class="M_PostHeading">
     <p class="A_Heading1"><%= post.title.html_safe %></p>
-    <div class="C_TagCollection">
-      <% post.genre_list.each do |tag| %>
-        <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
-      <% end %>
-    </div>
-    <%#= post %>
+    <%= render 'posts/tags_collection', post: post %>
     <div class="W_AuthorAndDate">
       <div class="M_PostAuthor">
         <% if local_assigns[:show_email] %>

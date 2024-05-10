@@ -11,7 +11,7 @@
           </div>
         <% end %>
         <div class="W_EditorHeader">
-        <div class="M_EditorHeader">
+          <div class="M_EditorHeader">
             <%= form.submit "Сохранить", class:"A_Button Black" %>
             <%= link_to profile_path(current_user.profile) do %>
               <% if current_user.profile.avatar.present? %>
@@ -21,19 +21,120 @@
               <% end %> 
             <% end %>
           </div>
-        </div>
-        <div class="W_EditorInputs">
-          <div class="M_InputWithLabel">
+        </div>          
+        <div class="M_InputWithLabel">
           <%= form.label :title, "Название", style: "display: block; color: var(--dark_gray);", class: "A_Caption" %>
           <%= form.text_field :title, placeholder: "Название", class: "A_Heading1", style: "width: 1116px;"%>
+        </div>
+        <div class="SO_EditorSection">
+          <div class="M_SectionName">
+            <div class="Q_Icon ArrowUp"></div>
+            <div class="A_Paragraph">Фольклорный паспорт</div>
+            <div class="W_Captions">
+              <div class="A_Caption Gray">Заполнение этих полей обязательно для любой фольклорной единицы.</div>
+              <div class="A_Caption Gray">А&nbsp;еще другим исследователям так будет проще найти ваш материал (ведь все мы&nbsp;хотим быть найденными)</div>
+            </div>
           </div>
-          <div class="M_InputWithLabel">
-            <%= form.label :tag_list, "Добавить теги", style: "display: block; color: var(--dark_gray);", class: "A_Caption" %>
-            <%= form.text_field :tag_list, value: post.genre_list.join(', '), class: "A_Input"%>
+          <div class="W_EditorInputs">
+            <div class="W_TagsSelection" data-controller="tags">
+              <div class="A_Heading3">Теги</div>
+              <div class="C_TagCollection" data-tags-target="selectedTagsContainer">
+              </div>
+              <%= form.hidden_field :kind_list, value: post.kind_list.join(", "), id: "kind", data: { tags_target: "postTagsForm", type: "kind"} %>
+              <%= form.hidden_field :nationality_list, value: post.nationality_list.join(", "), id: "nationality", data: { tags_target: "postTagsForm", type: "nationality" } %>
+              <%= form.hidden_field :theme_list, value: post.theme_list.join(", "), id: "theme", data: { tags_target: "postTagsForm", type: "theme" } %>
+              <%= form.hidden_field :language_list, value: post.language_list.join(", "), id: "language", data: { tags_target: "postTagsForm", type: "language"  } %>
+              <div class="O_TagsPicker">
+                <div class="M_TagsSearchUnit">
+                  <div class="W_TopSearchPart">
+                    <div class="A_Paragraph Antiqua">Жанр</div>
+                    <div class="A_SearchInput">
+                      <div class="Q_Icon SearchGray Small"></div>
+                      <%= tag.input type: "text", placeholder: "Я хочу найти…", class: "A_Paragraph", id: "kind", 
+                      data: { action: "input->tags#filter", 
+                              tags_target: "searchInput",
+                              type: "kind" } %>
+                    </div>
+                  </div>
+                  <div class="C_TagCollection" data-tags-target="tagContainer" id="kind" data-type="kind">
+                    <% ActsAsTaggableOn::Tagging.where(context: 'kinds').distinct.pluck(:tag_id).each do |tag_id| %>
+                      <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
+                      <%= content_tag :span, tag.name, class: "A_Tag existing kind",
+                          data: { tags_target: "tag", 
+                                  action: "click->tags#handleTagClick",
+                                  type: "kind"} %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="M_TagsSearchUnit">
+                  <div class="W_TopSearchPart">
+                    <div class="A_Paragraph Antiqua">Тема</div>
+                    <div class="A_SearchInput">
+                    <div class="Q_Icon SearchGray Small"></div>
+                    <%= tag.input type: "text", placeholder: "Я хочу найти…", class: "A_Paragraph", id: "theme", 
+                        data: { action: "input->tags#filter", 
+                                tags_target: "searchInput",
+                                type: "theme" } %>
+                    </div>
+                  </div>
+                  <div class="C_TagCollection" data-tags-target="tagContainer" id="theme" data-type="theme">
+                    <% ActsAsTaggableOn::Tagging.where(context: 'themes').distinct.pluck(:tag_id).each do |tag_id| %>
+                      <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
+                      <%= content_tag :span, tag.name, class: "A_Tag existing theme", 
+                      data: { tags_target: "tag", 
+                              action: "click->tags#handleTagClick",
+                              type: "theme" } %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="M_TagsSearchUnit">
+                  <div class="W_TopSearchPart">
+                    <div class="A_Paragraph Antiqua">Язык, диалект</div>
+                    <div class="A_SearchInput">
+                    <div class="Q_Icon SearchGray Small"></div>
+                    <%= tag.input type: "text", placeholder: "Я хочу найти…", class: "A_Paragraph", id: "language", 
+                        data: { action: "input->tags#filter", 
+                                tags_target: "searchInput",
+                                type: "language" } %>
+                    </div>
+                  </div>
+                  <div class="C_TagCollection" data-tags-target="tagContainer" id="language" data-type="language">
+                    <% ActsAsTaggableOn::Tagging.where(context: 'languages').distinct.pluck(:tag_id).each do |tag_id| %>
+                      <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
+                      <%= content_tag :span, tag.name, class: "A_Tag existing language", 
+                      data: { tags_target: "tag", 
+                              action: "click->tags#handleTagClick",
+                              type: "language" } %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="M_TagsSearchUnit">
+                  <div class="W_TopSearchPart">
+                    <div class="A_Paragraph Antiqua">Народность</div>
+                    <div class="A_SearchInput">
+                    <div class="Q_Icon SearchGray Small"></div>
+                   <%= tag.input type: "text", placeholder: "Я хочу найти…", class: "A_Paragraph", id: "nationality", 
+                        data: { action: "input->tags#filter", 
+                                tags_target: "searchInput",
+                                type: "nationality" } %>
+                    </div>
+                  </div>
+                  <div class="C_TagCollection" data-tags-target="tagContainer" id="nationality" data-type="nationality">
+                    <% ActsAsTaggableOn::Tagging.where(context: 'nationalities').distinct.pluck(:tag_id).each do |tag_id| %>
+                      <% tag = ActsAsTaggableOn::Tag.find(tag_id) %>
+                      <%= content_tag :span, tag.name, class: "A_Tag existing nationality", 
+                      data: { tags_target: "tag",
+                              action: "click->tags#handleTagClick",
+                              type: "nationality" } %>
+                    <% end %>
+                  </div>
+                </div> 
+              </div>
+            </div>
           </div>
         </div>
         <div class="O_CustomTrixEditor">
-        <p class="A_Paragraph">Луток</p>
+          <p class="A_Paragraph">Луток</p>
           <%= form.rich_text_area :text, data: { controller: "trix" }%>
         </div>
-  <% end %>
+<% end %>
