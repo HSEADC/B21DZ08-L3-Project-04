@@ -38,6 +38,7 @@
   gap: 8px;
   width: fit-content;
   height: fit-content;
+  z-index: 0;
 }
 .W_InputsColumn {
   display: flex;
@@ -478,11 +479,32 @@
   position: fixed;
   right: 48px;
   top: 8px;
+  z-index: 10;
   .M_EditorHeader {
     position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
+  }
+}
+.M_TagsSearchUnit {
+  position: relative;
+  width: 612px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .W_TopSearchPart {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    .Antiqua {
+      padding-bottom: 5px;
+    }
   }
 }

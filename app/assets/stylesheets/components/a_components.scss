@@ -60,17 +60,17 @@
 .A_Heading1::placeholder {
   color: var(--gray);
 }
-.A_Heading1::before {
-  content: '';
-  background-image: url('M_Heading.svg');
-  background-size: 100%;
-  display: inline-block;
-  position: absolute;
-  width: 312px;
-  height: 68px;
-  top: -8px;
-  left: -12px;
-}
+// .A_Heading1::before {
+//   content: '';
+//   background-image: url('M_Heading.svg');
+//   background-size: 100%;
+//   display: inline-block;
+//   position: absolute;
+//   width: 312px;
+//   height: 68px;
+//   top: -8px;
+//   left: -12px;
+// }
 input {
   outline: none;
   border: none;
@@ -355,10 +355,25 @@ input[type='checkbox']:checked + label::before {
     background: var(--dark_gray);
   }
   &.Selected {
-    background: var(--gray);
+    color: var(--white);
+    background-color: var(--dark_blue);
   }
   &.None {
     display: none;
+  }
+  &.newTag {
+    cursor: pointer;
+  }
+  &.newTag:hover {
+    color: var(--white);
+    background-color: var(--dark_blue);
+  }
+  &.existing {
+    cursor: pointer;
+  }
+  &.existing:hover {
+    color: var(--white);
+    background-color: var(--dark_blue);
   }
 }
 .A_PostEditorInput::placeholder {
@@ -419,28 +434,5 @@ input[type='checkbox']:checked + label::before {
   }
   .A_Paragraph::placeholder {
     color: var(--dark_gray);
-  }
-}
-.M_TagsSearchUnit {
-  position: relative;
-  width: 612px;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  .W_TopSearchPart {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    width: fit-content;
-    height: fit-content;
-    align-items: center;
-    .Antiqua {
-      padding-bottom: 5px;
-    }
-  }
-  .C_TagCollection {
-    width: 100%;
   }
 }

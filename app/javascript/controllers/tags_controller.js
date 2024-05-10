@@ -199,7 +199,6 @@ export default class extends Controller {
     newTag.dataset.tagsTarget = tagTarget;
     newTag.dataset.action = 'click->tags#handleTagClick';
     newTag.dataset.type = tagType;
-    // newTag.dataset.status = tagStatus;
     newTag.textContent = tagContent;
     container.appendChild(newTag);
   }
