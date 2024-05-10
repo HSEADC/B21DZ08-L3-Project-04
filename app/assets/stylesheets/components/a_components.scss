@@ -337,26 +337,29 @@ input[type='checkbox']:checked + label::before {
   padding: 4px 8px;
   justify-content: center;
   align-items: center;
-  background: var(--blue);
+  font-family: 'Noto Serif';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 115%;
+  color: var(--black);
+  &.kind {
+    background: var(--blue);
+  }
+  &.theme {
+    background: var(--pink);
+  }
+  &.language {
+    background: var(--yellow);
+  }
+  &.nationality {
+    background: var(--dark_gray);
+  }
+  &.Selected {
+    background: var(--gray);
+  }
   &.None {
     display: none;
   }
-  &.Selected {
-    background: var(--pink);
-  }
-
-  // &.Nation {
-  //   background: var(--yellow);
-  // }
-  // &.Genre {
-  //   background: var(--blue);
-  // }
-  // &.Language {
-  //   background: var(--pink);
-  // }
-  // &.Tag {
-  //   background: var(--dark_gray);
-  // }
 }
 .A_PostEditorInput::placeholder {
   color: var(--dark_gray);

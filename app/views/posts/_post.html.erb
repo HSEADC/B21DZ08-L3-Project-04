@@ -2,11 +2,19 @@
   <div class="M_PostHeading">
     <p class="A_Heading1"><%= post.title.html_safe %></p>
     <div class="C_TagCollection">
-      <% post.genre_list.each do |tag| %>
+      <% post.kind_list.each do |tag| %>
+        <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
+      <% end %>
+      <% post.theme_list.each do |tag| %>
+        <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
+      <% end %>
+      <% post.language_list.each do |tag| %>
+        <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
+      <% end %>
+      <% post.nationality_list.each do |tag| %>
         <%= content_tag :span, tag, class: "A_Paragraph Antiqua A_Tag" %>
       <% end %>
     </div>
-    <%#= post %>
     <div class="W_AuthorAndDate">
       <div class="M_PostAuthor">
         <% if local_assigns[:show_email] %>

@@ -17,10 +17,8 @@ class Post < ApplicationRecord
 
   has_and_belongs_to_many :users
 
-  acts_as_taggable_on :genre
-  acts_as_taggable_on :theme
-  acts_as_taggable_on :language
-  acts_as_taggable_on :nationality
+  acts_as_taggable
+  acts_as_taggable_on :kinds, :themes, :languages, :nationalities
 
   belongs_to :user
 
