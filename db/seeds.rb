@@ -16,7 +16,8 @@ def seed
   create_comments(2..8)
   create_comment_replies(300)
   create_likes(3..10)
-  create_tags(2..7)
+  # create_tags(2..7)
+  create_followings(40)
 end
 
 def reset_db
@@ -133,6 +134,21 @@ def create_comment_replies(quantity)
     puts "Ответ на комментарий #{reply.id} для комментария #{comment.id} создан"
   end
 end
+
+def create_followings(quantity)
+  quantity.times do
+    puts "бля"
+    followed = User.all.sample
+    follower = User.all.sample
+
+    following = Following.new(follower_id: follower.id, followed_id: followed.id)
+    if following.save
+      puts "Пользователь #{follower.id} подписан на #{followed.id}"
+    else
+    end
+  end
+end
+
 
 # def create_attachments(quantity)
 #   Post.all.each do |post|

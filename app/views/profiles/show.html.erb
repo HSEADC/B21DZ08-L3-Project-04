@@ -19,12 +19,46 @@
 <div class="A_Paragraph">
 <%= @profile.about%>
 </div>
+<div>
+Подписчиков:
+<%= @profile.user.followings_as_follower.count%>
+</div>
+<div>
+Подписок:
+<%= @profile.user.followings_as_followed.count%>
 </div>
 </div>
+</div>
+</div>
+
+
+
+<% if current_user %>
+  <% if current_user == @profile.user %>
+    <%= link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue' %>
+
+  <% else %>
+кого фолловлю я
+  <% current_user.followings_as_follower.each do |following| %>
+    <%= "User #{following.followed_id}" %>
+  <% end %>
+  <br>
+меня фолловят
+  <% current_user.followings_as_followed.each do |following| %>
+    <%= "User #{following.follower_id}" %>
+  <% end %>
   
-</div><% if current_user && current_user == @profile.user %>
-<%= link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue' %>
-<% end %></div>
+  <% if current_user.followings_as_follower.pluck(:followed_id).include?(@profile.user.id) %>
+    <%= button_to 'Отписаться', unfollow_user_path(@profile.user, user_id: @user.id, current_user_id: current_user.id), method: :delete, class: 'A_Button Black' %>
+    <% else %>
+      <%= button_to 'Подписаться', follow_user_path(@profile.user, user_id: @user.id, current_user_id: current_user.id), method: :post, class: 'A_Button Blue' %>
+
+    <% end %>
+  <% end %>
+<% end %>
+
+
+</div>
 
 
 <div class="O_Posts">

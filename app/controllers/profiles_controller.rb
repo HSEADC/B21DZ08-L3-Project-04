@@ -6,6 +6,8 @@ class ProfilesController < ApplicationController
     @user = @profile.user
     @posts = @user.posts
     @user_favourited_posts = @user.posts_i_favourited
+    @followers = @profile.user.followings_as_follower
+    @followeds = @profile.user.followings_as_followed
   end
 
   def edit
@@ -37,6 +39,20 @@ class ProfilesController < ApplicationController
       end
     end
   end
+
+
+  def follow
+    @user = @profile.user
+    current_user.follow(@user)
+    redirect_to @profile, notice: 'You are now following this user.'
+  end
+
+  def unfollow
+    @user = @profile.user
+    current_user.unfollow(@user)
+    redirect_to @profile, notice: 'You have unfollowed this user.'
+  end
+
 
   private
 

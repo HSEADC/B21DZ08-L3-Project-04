@@ -31,6 +31,14 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
 
   devise_for :users
+  
+  resources :users do
+    member do
+      post 'follow'
+      delete 'unfollow'
+    end
+  end
+  
 
   resources :subscriptions, only: [:create, :show]
 
