@@ -1,5 +1,4 @@
-<div class="O_Post">
-  <div class="M_PostHeading">
+<div class="M_PostHeading">
     <p class="A_Heading1"><%= post.title.html_safe %></p>
     <%= render 'posts/tags_collection', post: post %>
     <div class="W_AuthorAndDate">
@@ -35,5 +34,3 @@
   </div>
 
   <div class="W_PostBody"><%= post.text %></div>
-  
-</div>

@@ -38,6 +38,7 @@ Rails.application.routes.draw do
     resources :saved_collection, only: [:create, :destroy]
     member do
       post 'add_post', to: 'collections#add_post'
+      delete 'remove_post', to: 'collections#remove_post'
     end
   end
 

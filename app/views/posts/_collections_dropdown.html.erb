@@ -1,0 +1,12 @@
+<turbo-frame class="O_AddToCollectionDropdown" id="collectionsDropdown">
+  <div class="A_Heading3">Мои подборки</div>
+  <div class="C_CollectionCards">
+    <% @collections.each do |collection| %>
+      <div class="M_PostToCollectionCard">
+        <div class="A_Paragraph"><%= collection.name %></div>
+          <%= render partial: 'collections/toggle_add_button', locals: { collection: collection, post: @post } %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'Создать коллекцию', new_collection_path(post_id: @post.id), class: 'A_Button Blue' %>
+</turbo-frame>

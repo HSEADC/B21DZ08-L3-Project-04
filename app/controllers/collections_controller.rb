@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_collection, only: [:show, :edit, :update, :destroy]
+    before_action :set_collection, only: [:show, :edit, :update, :destroy, :add_post, :remove_post]
   
     def index
         @collections = current_user.collections
@@ -15,14 +15,21 @@ class CollectionsController < ApplicationController
     end
 
     def add_post
-        @collection = current_user.collections.find(params[:id])
-        @post = Post.find(params[:post_id])
-    
-        if @collection.posts << @post
-          redirect_to @post, notice: 'Post was successfully added to the collection.'
-        else
-          redirect_to @post, alert: 'Unable to add post to collection.'
-        end
+      @post = Post.find(params[:post_id])
+        @collection.posts << @post
+        respond_to do |format|
+          format.html { redirect_to @post, notice: 'Post was successfully added to the collection.' }
+          format.turbo_stream { render turbo_stream: turbo_stream.replace("collection_#{@collection.id}_post_#{@post.id}", partial: "collections/toggle_add_button", locals: { collection: @collection, post: @post }) }
+      end
+    end
+  
+    def remove_post
+      @post = Post.find(params[:post_id])
+      @collection.posts.delete(@post)
+      respond_to do |format|
+        format.html { redirect_to @post, notice: 'Post was successfully removed from the collection.' }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("collection_#{@collection.id}_post_#{@post.id}", partial: "collections/toggle_add_button", locals: { collection: @collection, post: @post }) }
+      end
     end
   
     def create
