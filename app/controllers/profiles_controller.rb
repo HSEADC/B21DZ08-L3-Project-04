@@ -1,14 +1,13 @@
 class ProfilesController < ApplicationController
     # load_and_authorize_resource
-  before_action :set_profile, only: %i[ show edit update destroy follow ]
+  before_action :set_profile, only: %i[ show edit update destroy ]
 
   def show
     @user = @profile.user
     @posts = @user.posts
     @user_favourited_posts = @user.posts_i_favourited
-
-    @all_follows = Follow.where(followed_id: @user.id)
-    @my_follow = Follow.where(followed_id: @user.id, follower_id: current_user.id)[0]
+    @followers = @profile.user.followings_as_follower
+    @followeds = @profile.user.followings_as_followed
   end
 
   def edit
@@ -32,7 +31,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to profile_url(@profile), notice: "Профиль высрался!!!" }
+        format.html { redirect_to profile_url(@profile), notice: "Profile was successfully created." }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,6 +39,20 @@ class ProfilesController < ApplicationController
       end
     end
   end
+
+
+  def follow
+    @user = @profile.user
+    current_user.follow(@user)
+    redirect_to @profile, notice: 'You are now following this user.'
+  end
+
+  def unfollow
+    @user = @profile.user
+    current_user.unfollow(@user)
+    redirect_to @profile, notice: 'You have unfollowed this user.'
+  end
+
 
   private
 
