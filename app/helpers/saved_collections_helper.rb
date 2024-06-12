@@ -1,0 +1,2 @@
+module SavedCollectionsHelper
+end

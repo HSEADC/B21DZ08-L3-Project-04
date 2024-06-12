@@ -1,4 +1,19 @@
 <div class="A_Button Grey">
     <div class="Q_Icon Add"></div>
-    <p class="A_Paragraph">Добавить<p>
+    <div class="A_Paragraph">Добавить</div>
+    <div class="O_AddToCollectionDropdown">
+        <div class="A_Heading3">Мои подборки</div>
+        <div class="C_CollectionCards">
+            <% @collections.each do |collection| %>
+                <div class="M_PostToCollectionCard">
+                    <div class="A_Paragraph"><%= collection.name %></div>
+                    <%= form_tag(add_post_collection_path(collection), method: :post) do %>
+                        <%= hidden_field_tag :post_id, @post.id %>
+                        <%= submit_tag 'Добавить', class: 'A_Button Blue' %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+        <%= link_to 'Создать коллекцию', new_collection_path(post_id: @post.id), class: 'A_Button Blue' %>
+    </div>
 </div>

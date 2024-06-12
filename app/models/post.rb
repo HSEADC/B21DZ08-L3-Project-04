@@ -21,6 +21,7 @@ class Post < ApplicationRecord
   acts_as_taggable_on :kinds, :themes, :languages, :nationalities
 
   belongs_to :user
+  has_and_belongs_to_many :collections
 
   def api_as_json
     {

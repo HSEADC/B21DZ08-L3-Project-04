@@ -2,18 +2,18 @@
   <%= link_to "", welcome_index_url, class:"A_Logo", id:"logo" %>
   <%= render partial: 'application/searchform' %>
 </div>
-<div id="A_LogoDescriptor">Радуница (Радуніца) — весенний языческий праздник восточных славян, связанный с культом предков</div>
+<div id="A_LogoDescriptor">Радуница (Радуніца) — весенний языческий праздник восточных славян, связанный с культом предков
+</div>
 
 <div class="S_IndexContent">
-
-<div class="O_Banners">
-  <% random_posts = Post.order("RANDOM()").limit(1) %>
-  <% random_posts.each do |post| %>
-    <%= link_to post do %>
-      <%= render partial: 'posts/banner', locals: { post: post, show_email: false } %>
+  <div class="O_Banners">
+    <% random_posts = Post.order("RANDOM()").limit(1) %>
+    <% random_posts.each do |post| %>
+      <%= link_to post do %>
+        <%= render partial: 'posts/banner', locals: { post: post, show_email: false } %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 </div>
   <%= render "posts/recommended", count: 9, heading: "Интересное" %>
   <%= render "posts/recommended", count: 9, heading: "Новое в подписках" %>
@@ -26,7 +26,6 @@
     <% end %>
   </div>
 </div>
-
 </div>
 
 

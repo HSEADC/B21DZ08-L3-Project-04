@@ -33,6 +33,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :subscriptions, only: [:create, :show]
+  
+  resources :collections do
+    resources :saved_collection, only: [:create, :destroy]
+    member do
+      post 'add_post', to: 'collections#add_post'
+    end
+  end
 
   get 'welcome/index'
   get 'welcome/about'

@@ -8,9 +8,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
          
-  has_many :posts
+  has_many :collections, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_many :comments
   has_one :profile
+
+  has_many :saved_collections_relationships, class_name: 'SavedCollection'
+  has_many :saved_collections, through: :saved_collections_relationships, source: :collection
 
   has_and_belongs_to_many :favourites, class_name: 'Post', foreign_key: 'user_id'
 

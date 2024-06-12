@@ -17,6 +17,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @total_comments_count = @post.total_comments_count
+    @collections = current_user.collections
+    # @collection = @collections.find(params[:collection_id])
   end
 
   # GET /posts/new

@@ -1,0 +1,24 @@
+<p>
+  <strong>Name:</strong>
+  <%= @collection.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @collection.description %>
+</p>
+
+<h2>Posts</h2>
+<ul>
+  <% @collection.posts.each do |post| %>
+    <li><%= link_to post.title, post %></li>
+  <% end %>
+</ul>
+
+<% if current_user.saved_collections.include?(@collection) %>
+  <%= link_to 'Unsave Collection', collection_saved_collection_path(@collection), method: :delete %>
+<% else %>
+  <%= link_to 'Save Collection', collection_saved_collection_path(@collection), method: :post %>
+<% end %>
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>

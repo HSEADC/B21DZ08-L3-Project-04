@@ -1,0 +1,11 @@
+<h1>Your Collections</h1>
+<%= link_to 'New Collection', new_collection_path %>
+<ul>
+  <% @collections.each do |collection| %>
+    <li>
+      <%= link_to collection.name, collection %>
+      <%= link_to 'Edit', edit_collection_path(collection) %> |
+      <%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
