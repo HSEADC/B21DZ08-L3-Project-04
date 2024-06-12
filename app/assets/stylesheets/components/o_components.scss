@@ -398,8 +398,15 @@
   margin-bottom: 32px;
 }
 .O_SearchBox {
+  form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 8px;
+  }
   .A_Input {
-    width: 1116px;
+    width: 994px;
     height: 40px;
     border-radius: 16px;
     display: flex;
@@ -458,5 +465,25 @@
     .C_TagCollection {
       width: 100%;
     }
+  }
+}
+.O_Main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 24px;
+  align-items: center;
+  .C_Cards {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 1344px;
+    height: fit-content;
+    margin-top: 24px;
   }
 }

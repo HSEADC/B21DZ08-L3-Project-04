@@ -329,31 +329,69 @@ input[type='checkbox']:checked + label::before {
     background-image: url('Icons/Attachment.svg');
   }
 }
+// .A_Tag {
+//   position: relative;
+//   display: flex;
+//   width: fit-content;
+//   height: fit-content;
+//   padding: 4px 8px;
+//   justify-content: center;
+//   align-items: center;
+//   font-family: 'Noto Serif';
+//   font-weight: 400;
+//   font-size: 18px;
+//   line-height: 115%;
+//   color: var(--black);
+//   &.kind {
+//     background: var(--blue);
+//   }
+//   &.theme {
+//     background: var(--pink);
+//   }
+//   &.language {
+//     background: var(--yellow);
+//   }
+//   &.nationality {
+//     background: var(--dark_gray);
+//   }
+//   &.Selected {
+//     color: var(--white);
+//     background-color: var(--dark_blue);
+//   }
+//   &.None {
+//     display: none;
+//   }
+//   &.newTag {
+//     cursor: pointer;
+//   }
+//   &.newTag:hover {
+//     color: var(--white);
+//     background-color: var(--dark_blue);
+//   }
+//   &.existing {
+//     cursor: pointer;
+//   }
+//   &.existing:hover {
+//     color: var(--white);
+//     background-color: var(--dark_blue);
+//   }
+// }
 .A_Tag {
   position: relative;
-  display: flex;
-  width: fit-content;
-  height: fit-content;
-  padding: 4px 8px;
+  display: inline-flex;
+  color: var(--black);
+  font-family: 'Noto Serif';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  height: 28px;
+  padding: 0px 8px;
   justify-content: center;
   align-items: center;
-  font-family: 'Noto Serif';
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 115%;
-  color: var(--black);
-  &.kind {
-    background: var(--blue);
-  }
-  &.theme {
-    background: var(--pink);
-  }
-  &.language {
-    background: var(--yellow);
-  }
-  &.nationality {
-    background: var(--dark_gray);
-  }
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--gray);
   &.Selected {
     color: var(--white);
     background-color: var(--dark_blue);
@@ -376,6 +414,26 @@ input[type='checkbox']:checked + label::before {
     background-color: var(--dark_blue);
   }
 }
+.A_Tag:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+  &.kind {
+    background: var(--blue);
+  }
+  &.theme {
+    background: var(--pink);
+  }
+  &.language {
+    background: var(--green);
+  }
+  &.nationality {
+    background: var(--orange);
+  }
+}
+
 .A_PostEditorInput::placeholder {
   color: var(--dark_gray);
 }

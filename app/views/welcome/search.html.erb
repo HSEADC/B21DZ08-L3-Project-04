@@ -1,4 +1,9 @@
 <%= render partial: 'application/searchform' %>
-<%= @items.each do |item| %>
-    <%= render item.searchable %>
-<% end %>
+<div class="O_Main">
+    <div class="A_Heading3">Лутки</div>
+    <div class="C_Cards">
+        <%= @items.each do |item| %>
+            <%= render partial: 'posts/post-preview', locals: { post: item.searchable } %>
+        <% end %>
+    </div>
+</div>

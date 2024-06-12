@@ -16,7 +16,7 @@ def seed
   create_comments(2..8)
   create_comment_replies(300)
   create_likes(3..10)
-  create_tags(2..7)
+  create_tags(0..2)
 end
 
 def reset_db
@@ -148,39 +148,39 @@ def create_tags(quantity)
   Post.all.each do |post|
     rand(quantity).times do
       tag_name = "тег#{i}"
-      post.genre_list.add(tag_name)
+      post.kind_list.add(tag_name)
       post.save
       i+=1
     end
     puts "Теги жанров для поста #{post.id} созданы"
   end
-  # Post.all.each do |post|
-  #   rand(quantity).times do
-  #     tag_name = "тег#{i}"
-  #     post.theme_list.add(tag_name)
-  #     post.save
-  #     i+=1
-  #   end
-  #   puts "Теги тем для поста #{post.id} созданы"
-  # end
-  # Post.all.each do |post|
-  #   rand(quantity).times do
-  #     tag_name = "тег#{i}"
-  #     post.language_list.add(tag_name)
-  #     post.save
-  #     i+=1
-  #   end
-  #   puts "Теги языков для поста #{post.id} созданы"
-  # end
-  # Post.all.each do |post|
-  #   rand(quantity).times do
-  #     tag_name = "тег#{i}"
-  #     post.nationality_list.add(tag_name)
-  #     post.save
-  #     i+=1
-  #   end
-  #   puts "Теги национальностей для поста #{post.id} созданы"
-  # end
+  Post.all.each do |post|
+    rand(quantity).times do
+      tag_name = "тег#{i}"
+      post.theme_list.add(tag_name)
+      post.save
+      i+=1
+    end
+    puts "Теги тем для поста #{post.id} созданы"
+  end
+  Post.all.each do |post|
+    rand(quantity).times do
+      tag_name = "тег#{i}"
+      post.language_list.add(tag_name)
+      post.save
+      i+=1
+    end
+    puts "Теги языков для поста #{post.id} созданы"
+  end
+  Post.all.each do |post|
+    rand(quantity).times do
+      tag_name = "тег#{i}"
+      post.nationality_list.add(tag_name)
+      post.save
+      i+=1
+    end
+    puts "Теги национальностей для поста #{post.id} созданы"
+  end
 end
 
 seed
