@@ -1,31 +1,39 @@
-<%= form_with(model: collection, local: true) do |form| %>
-  <% if collection.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(collection.errors.count, "error") %> prohibited this collection from being saved:</h2>
-      <ul>
-        <% collection.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="turbo-modal">
+    <div class="Overlay"></div>
+    <%= form_with(model: collection, local: true, html: { class: "O_CollectionBirth" }) do |form| %>
+      <% if collection.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(collection.errors.count, "error") %> prohibited this collection from being saved:</h2>
+          <ul>
+            <% collection.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="W_HeaderPopUp">
+        <div class="A_Heading2">Создание подборки</div>
+        <div class="Q_Icon Close Large" data-action="click->turbo-modal#close"></div>
+      </div>
+      <%= hidden_field_tag :post_id, @post_id%>
+
+      <div class="W_InputsColumn">
+
+        <div class="M_InputWithLabel">
+          <%= form.label :name, "Название", class: "A_Heading3" %>
+          <%= form.text_field :name, autofocus: true, placeholder: "Название подборки", class: "A_Input" %>
+        </div>
+
+        <div class="M_InputWithLabel">
+          <%= form.label :description, "Описание", class: "A_Heading3" %>
+          <%= form.text_area :description, placeholder: "Описание", class: "A_Input TextArea" %>
+        </div>
+      </div>
+
+      <div class="W_FormButton">
+        <%= form.submit "Создать подборку", class:"A_Button Blue" %>
+      </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :posts %>
-    <%= form.collection_select :post_ids, current_user.posts, :id, :title, {}, { multiple: true } %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>

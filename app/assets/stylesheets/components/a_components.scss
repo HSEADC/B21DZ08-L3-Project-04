@@ -60,17 +60,6 @@
 .A_Heading1::placeholder {
   color: var(--gray);
 }
-// .A_Heading1::before {
-//   content: '';
-//   background-image: url('M_Heading.svg');
-//   background-size: 100%;
-//   display: inline-block;
-//   position: absolute;
-//   width: 312px;
-//   height: 68px;
-//   top: -8px;
-//   left: -12px;
-// }
 input {
   outline: none;
   border: none;
@@ -170,6 +159,10 @@ input {
     width: 16px;
     height: 16px;
   }
+  &.Large {
+    width: 40px;
+    height: 40px;
+  }
   &.More {
     background-image: url('icons/More.svg');
   }
@@ -209,6 +202,9 @@ input {
   &.ArrowLeft {
     background-image: url('icons/ArrowLeftInCircle.svg');
   }
+  &.Close {
+    background-image: url('icons/Close.svg');
+  }
 }
 .A_Input {
   display: flex;
@@ -227,6 +223,9 @@ input {
   text-decoration: none;
   border: 0px;
   overflow: visible;
+  &.TextArea {
+    height: 285px;
+  }
 }
 .A_Input::placeholder {
   color: var(--dark_gray);

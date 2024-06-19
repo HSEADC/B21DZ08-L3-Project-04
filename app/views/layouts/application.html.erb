@@ -17,6 +17,8 @@
 
   </head>
   <body>
+  <%=turbo_frame_tag "modal" do %>
+  <% end %>
     <%= render partial: 'menubar', locals: { profile: @profile } %>
     <div class="W_Body">
       <%= yield %>
