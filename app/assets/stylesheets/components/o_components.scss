@@ -403,6 +403,10 @@
   margin-bottom: 32px;
 }
 .O_SearchBox {
+  position: relative;
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
   form {
     position: relative;
     display: flex;
@@ -411,16 +415,29 @@
     gap: 8px;
   }
   .A_Input {
-    width: 994px;
+    width: 1116px;
     height: 40px;
-    border-radius: 16px;
     display: flex;
     flex-direction: row;
     gap: 8px;
+    background-color: var(--light_gray);
+    border-color: var(--grey_stroke);
+    box-shadow: 0px 15px 20px 0px rgba(108, 111, 121, 0.07),
+      0px 5px 8px 0px rgba(0, 0, 0, 0.04);
     .A_Paragraph {
       background: none;
       width: 1072px;
       height: 40px;
+      &.Short {
+        width: 846px;
+      }
+    }
+    .A_Paragraph::placeholder {
+      color: var(--dark_gray);
+    }
+    &.Short {
+      width: 994px;
+      // transition: 0.2s;
     }
   }
 }

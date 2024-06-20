@@ -210,7 +210,7 @@ input {
   display: flex;
   width: 660px;
   height: fit-content;
-  padding: 16px 24px;
+  padding: 0 12px;
   align-items: center;
   font-family: 'Noto Sans';
   font-size: 18px;
@@ -219,7 +219,7 @@ input {
   line-height: 115%;
   color: var(--black);
   background: var(--gray);
-  border-radius: 30px;
+  border-radius: 12px;
   text-decoration: none;
   border: 0px;
   overflow: visible;

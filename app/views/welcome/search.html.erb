@@ -1,9 +1,13 @@
-<%= render partial: 'application/searchform' %>
-<div class="O_Main">
-    <div class="A_Heading3">Лутки</div>
-    <div class="C_Cards">
-        <%= @items.each do |item| %>
-            <%= render partial: 'posts/post-preview', locals: { post: item.searchable } %>
-        <% end %>
-    </div>
+<div class="M_Search">
+    <div class="A_Logo"></div>
+    <%= render partial: 'application/searchform' %>
+</div>
+
+<div class="O_Posts">
+  <p class="A_Heading3">Лутки</p>
+  <div class="W_Posts">
+    <% @items.each do |item| %>
+        <%= render partial: 'posts/post-preview', locals: { post: item.searchable } %>
+    <% end %>
+  </div>
 </div>

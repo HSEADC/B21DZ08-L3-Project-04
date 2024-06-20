@@ -1,9 +1,9 @@
-<div class= "O_SearchBox">
-    <%= form_with url: welcome_search_url, method: :get do |f| %>
-        <div class="A_Input">
+<div class="O_SearchBox" data-controller="search">
+    <%= form_with url: welcome_search_url, method: :get, html: { data: { search_Target: "form" } } do |f| %>
+        <div class="A_Input" data-search-target="wrapper">
             <div class="Q_Icon Search Small"></div>
-            <%= f.text_field :search, placeholder: "Введите название или текст", class:"A_Paragraph"%>
+            <%= f.text_field :search, placeholder: "Я хочу найти...", class:"A_Paragraph", data:{ search_Target: "input" }, value: params[:search] %>
         </div>
-        <%= f.submit "Найти", class:"A_Button Blue" %>
+        <%= f.submit "Найти", class:"A_Button Blue hidden", data:{ search_Target: "button" }%>
     <% end %>
 </div>

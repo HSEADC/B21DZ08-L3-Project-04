@@ -24,9 +24,6 @@
     .W_Posts {
       gap: 24px;
     }
-    // .W_Posts > *:nth-child(3n) {
-    //   display: none;
-    // }
   }
   .O_CommentsSection {
     width: 1116px;
@@ -35,6 +32,18 @@
     width: 1116px;
     .W_PostBody {
       width: 908px;
+    }
+  }
+  .O_SearchBox {
+    .A_Input {
+      .A_Paragraph {
+        &.Short {
+          width: 952px;
+        }
+      }
+      &.Short {
+        width: 1000px;
+      }
     }
   }
 }
@@ -63,9 +72,6 @@
     .W_Posts {
       gap: 16px;
     }
-    // .W_Posts > *:nth-child(3n) {
-    //   display: none;
-    // }
   }
   .O_CommentsSection {
     width: 983px;
@@ -74,6 +80,20 @@
     width: 983px;
     .W_PostBody {
       width: 761px;
+    }
+  }
+  .O_SearchBox {
+    .A_Input {
+      width: 983px;
+      .A_Paragraph {
+        width: 935px;
+        &.Short {
+          width: 819px;
+        }
+      }
+      &.Short {
+        width: 867px;
+      }
     }
   }
 }
@@ -139,9 +159,6 @@
     .W_Posts {
       gap: 8px;
     }
-    // .W_Posts > *:nth-child(2n) {
-    //   display: none;
-    // }
   }
   .O_CommentsSection {
     width: 650px;
@@ -150,6 +167,22 @@
     width: 650px;
     .W_PostBody {
       width: 650px;
+    }
+  }
+  .O_SearchBox {
+    .A_Input {
+      width: 650px;
+      height: 32px;
+      .A_Paragraph {
+        width: 602px;
+        height: 32px;
+        &.Short {
+          width: 492px;
+        }
+      }
+      &.Short {
+        width: 540px;
+      }
     }
   }
 }
@@ -225,9 +258,6 @@
     .W_Posts {
       gap: 8px;
     }
-    // .W_Posts > *:nth-child(2n) {
-    //   display: none;
-    // }
   }
   .O_CommentsSection {
     width: 324px;
@@ -256,6 +286,25 @@
     blockquote {
       padding-left: 0px;
       padding-right: 0px;
+    }
+  }
+  .O_SearchBox {
+    .A_Input {
+      width: 324px;
+      height: 32px;
+      .A_Paragraph {
+        width: 276px;
+        height: 32px;
+        &.Short {
+          width: 276px;
+        }
+      }
+      &.Short {
+        width: 324px;
+      }
+    }
+    .A_Button {
+      display: none;
     }
   }
 }

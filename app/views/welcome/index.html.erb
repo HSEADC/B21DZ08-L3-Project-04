@@ -15,17 +15,15 @@
     <% end %>
   </div>
 </div>
-  <%= render "posts/recommended", count: 9, heading: "Интересное" %>
-  <%= render "posts/recommended", count: 9, heading: "Новое в подписках" %>
-  <div class="O_Banners">
-    <% random_posts = Post.order("RANDOM()").limit(1) %>
-    <% random_posts.each do |post| %>
-      <%= link_to post do %>
-        <%= render partial: 'posts/banner', locals: { post: post, show_email: false } %>
-      <% end %>
+<%= render "posts/recommended", count: 9, heading: "Интересное" %>
+<%= render "posts/recommended", count: 9, heading: "Новое в подписках" %>
+<div class="O_Banners">
+  <% random_posts = Post.order("RANDOM()").limit(1) %>
+  <% random_posts.each do |post| %>
+    <%= link_to post do %>
+      <%= render partial: 'posts/banner', locals: { post: post, show_email: false } %>
     <% end %>
-  </div>
-</div>
+  <% end %>
 </div>
 
 
