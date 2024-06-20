@@ -25,4 +25,18 @@ module ApplicationHelper
         return "#{count} #{many}"
       end
     end
+
+    def random_logo_class
+      session[:used_logos] ||= []
+  
+      logos = %w[MidSummer1 MidSummer2 MidSummer3 MidSummer4 MidSummer5]
+      available_logos = logos - session[:used_logos]
+      selected_logo = available_logos.sample
+  
+      session[:used_logos] << selected_logo
+  
+      session[:used_logos] = [] if session[:used_logos].length == logos.length
+  
+      selected_logo
+    end
 end

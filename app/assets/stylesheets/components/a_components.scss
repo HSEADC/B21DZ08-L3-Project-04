@@ -123,6 +123,10 @@ input {
     background-color: var(--red);
     color: var(--white);
   }
+  &.LightBlue {
+    background-color: var(--blue);
+    color: var(--white);
+  }
   &.Transparent {
     background-color: transparent;
     color: var(--black);
@@ -204,6 +208,31 @@ input {
   }
   &.Close {
     background-image: url('icons/Close.svg');
+  }
+}
+.A_Logo {
+  position: relative;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  &.Blue1 {
+    background-image: url('logo/Blue1.svg');
+  }
+  &.MidSummer1 {
+    background-image: url('logo/MidSummer1.svg');
+  }
+  &.MidSummer2 {
+    background-image: url('logo/MidSummer2.svg');
+  }
+  &.MidSummer3 {
+    background-image: url('logo/MidSummer3.svg');
+  }
+  &.MidSummer4 {
+    background-image: url('logo/MidSummer4.svg');
+  }
+  &.MidSummer5 {
+    background-image: url('logo/MidSummer5.svg');
   }
 }
 .A_Input {

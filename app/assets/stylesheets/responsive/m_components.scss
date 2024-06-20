@@ -39,6 +39,12 @@
   .M_InputWithAvatar {
     gap: 8px;
   }
+  .M_Banner {
+    width: 1344px;
+    .W_Banner {
+      width: 684px;
+    }
+  }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .W_Dropdown {
@@ -58,7 +64,7 @@
   .M_Banner {
     width: 983px;
     .W_Banner {
-      width: 569px;
+      width: 555px;
     }
   }
   .M_Search {
@@ -149,7 +155,7 @@
   .M_Banner {
     width: 643px;
     .W_Banner {
-      width: 399px;
+      width: 321px;
     }
   }
   .M_Search {

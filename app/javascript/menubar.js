@@ -1,55 +1,62 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.addEventListener('click', function (event) {
-    var dropdowns = document.querySelectorAll('.M_Dropdown');
-    dropdowns.forEach(function (dropdown) {
-      if (dropdown.classList.contains('NotActive')) {
-        if (event.target.classList.contains('Q_DropOpener')) {
-          dropdown.classList.remove('NotActive');
-        }
-      } else {
-        dropdown.classList.add('NotActive');
-      }
-    });
-  });
-});
+  const burgerButton = document.getElementById('burgerMenu');
+  const dropdown = document.getElementById('mobileDropdown');
+  const desktopOpener = document.getElementById('desktopOpener');
+  const desktopDropdown = document.getElementById('desktopDropdown');
 
-document.addEventListener('DOMContentLoaded', function () {
-  const commentInput = document.getElementById('CommentInput');
-  const commentButton = document.getElementById('CommentButton');
+  function toggleMenu() {
+    burgerButton.classList.toggle('Active');
 
-  commentInput.addEventListener('focus', function () {
-    if (commentInput.value.trim() !== '') {
-      commentButton.classList.remove('Grey');
-      commentButton.classList.add('Blue');
-      commentButton.removeAttribute('disabled');
-    }
-  });
-
-  commentInput.addEventListener('blur', function () {
-    if (commentInput.value.trim() === '') {
-      commentButton.classList.add('Grey');
-      commentButton.classList.remove('Blue');
-      commentButton.setAttribute('disabled', true);
-    }
-  });
-
-  commentInput.addEventListener('input', function () {
-    if (commentInput.value.trim() !== '') {
-      commentButton.classList.remove('Grey');
-      commentButton.classList.add('Blue');
-      commentButton.removeAttribute('disabled');
+    if (dropdown.classList.contains('NotActive')) {
+      dropdown.classList.remove('NotActive');
+      burgerButton.classList.add('Active');
     } else {
-      commentButton.classList.add('Grey');
-      commentButton.classList.remove('Blue');
-      commentButton.setAttribute('disabled', true);
+      burgerButton.classList.remove('Active');
+      dropdown.classList.add('NotActive');
     }
-  });
-});
+  }
 
-//Это абсолютно безумно я обещаю я сделаю по-человечески... но позже...
+  function desktopDropdownToggle() {
+    if (desktopDropdown.classList.contains('NotActive')) {
+      desktopDropdown.classList.remove('NotActive');
+    } else {
+      desktopDropdown.classList.add('NotActive');
+    }
+  }
+
+  burgerButton.addEventListener('click', toggleMenu);
+  desktopOpener.addEventListener('click', desktopDropdownToggle);
+});
 
 // document.addEventListener('DOMContentLoaded', function () {
-//   let button = document.getElementById('submitButton');
-//   let container = document.getElementById('W_DateAndReplyButton');
-//   container.appendChild(button);
+//   const commentInput = document.getElementById('CommentInput');
+//   const commentButton = document.getElementById('CommentButton');
+
+//   commentInput.addEventListener('focus', function () {
+//     if (commentInput.value.trim() !== '') {
+//       commentButton.classList.remove('Grey');
+//       commentButton.classList.add('Blue');
+//       commentButton.removeAttribute('disabled');
+//     }
+//   });
+
+//   commentInput.addEventListener('blur', function () {
+//     if (commentInput.value.trim() === '') {
+//       commentButton.classList.add('Grey');
+//       commentButton.classList.remove('Blue');
+//       commentButton.setAttribute('disabled', true);
+//     }
+//   });
+
+//   commentInput.addEventListener('input', function () {
+//     if (commentInput.value.trim() !== '') {
+//       commentButton.classList.remove('Grey');
+//       commentButton.classList.add('Blue');
+//       commentButton.removeAttribute('disabled');
+//     } else {
+//       commentButton.classList.add('Grey');
+//       commentButton.classList.remove('Blue');
+//       commentButton.setAttribute('disabled', true);
+//     }
+//   });
 // });

@@ -2,7 +2,7 @@
     <%= form_with url: welcome_search_url, method: :get, html: { data: { search_Target: "form" } } do |f| %>
         <div class="A_Input" data-search-target="wrapper">
             <div class="Q_Icon Search Small"></div>
-            <%= f.text_field :search, placeholder: "Я хочу найти...", class:"A_Paragraph", data:{ search_Target: "input" }, value: params[:search] %>
+            <%= f.text_field :search, placeholder: "Я хочу найти...", class:"A_Paragraph", data:{ search_Target: "input" }, value: params[:search], autocomplete: "off" %>
         </div>
         <%= f.submit "Найти", class:"A_Button Blue hidden", data:{ search_Target: "button" }%>
     <% end %>

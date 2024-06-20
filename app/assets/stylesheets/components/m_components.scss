@@ -411,22 +411,19 @@
   gap: 40px;
   margin-bottom: 80px;
   .A_Logo {
-    width: 706px;
-    height: 173.42px;
-    display: block;
-    background-image: url('A_LogoSurqhuri.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    width: 750px;
+    height: 230px;
   }
 }
 .M_Banner {
-  width: 1116px;
+  width: 1800px;
   height: 176px;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--gray);
-
+  background: var(--light_gray);
+  border: 1px solid var(--grey_stroke);
+  box-shadow: 0px 15px 20px 0px rgba(108, 111, 121, 0.07),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.04);
   a {
     display: flex;
     flex-direction: row;
@@ -435,7 +432,7 @@
   }
   .W_Banner {
     display: flex;
-    width: 569px;
+    width: 1140px;
     height: 176px;
     padding: 16px;
     flex-direction: column;

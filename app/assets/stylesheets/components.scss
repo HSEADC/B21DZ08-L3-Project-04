@@ -780,68 +780,68 @@ blockquote {
   }
 }
 
-.O_HeaderMobile {
-  width: 100%;
-  position: fixed;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  z-index: 101;
-  background-color: var(--white);
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-  .M_Dropdown {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 10px;
-    &.NotActive {
-      display: none;
-      height: 0;
-    }
-  }
+// .O_HeaderMobile {
+//   width: 100%;
+//   position: fixed;
+//   display: none;
+//   flex-direction: column;
+//   align-items: center;
+//   z-index: 101;
+//   background-color: var(--white);
+//   border-radius: 10px;
+//   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+//   .M_Dropdown {
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     justify-content: center;
+//     padding-bottom: 10px;
+//     &.NotActive {
+//       display: none;
+//       height: 0;
+//     }
+//   }
 
-  .W_HeaderMobile {
-    display: flex;
-    width: 100%;
-    height: 60px;
-    background-color: var(--white);
-    padding: 15px 20px 18px 20px;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-shrink: 0;
+//   .W_HeaderMobile {
+//     display: flex;
+//     width: 100%;
+//     height: 60px;
+//     background-color: var(--white);
+//     padding: 15px 20px 18px 20px;
+//     justify-content: space-between;
+//     align-items: flex-end;
+//     flex-shrink: 0;
 
-    .A_Logo {
-      background-image: url('A_LogoSurqhuri.svg');
-      width: 140px;
-      display: block;
-      height: 34px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    }
-    .Q_Search {
-      background-image: url('Q_Search.svg');
-      width: 22.5px;
-      height: 24px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    }
-    .A_Menu_Mobile {
-      width: 30px;
-      height: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
+//     .A_Logo {
+//       background-image: url('A_LogoSurqhuri.svg');
+//       width: 140px;
+//       display: block;
+//       height: 34px;
+//       background-repeat: no-repeat;
+//       background-position: center;
+//       background-size: contain;
+//     }
+//     .Q_Search {
+//       background-image: url('Q_Search.svg');
+//       width: 22.5px;
+//       height: 24px;
+//       background-repeat: no-repeat;
+//       background-position: center;
+//       background-size: contain;
+//     }
+//     .A_Menu_Mobile {
+//       width: 30px;
+//       height: 30px;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       gap: 10px;
 
-      * {
-        height: 2px;
-        width: 30px;
-        background-color: var(--dark_gray);
-      }
-    }
-  }
-}
+//       * {
+//         height: 2px;
+//         width: 30px;
+//         background-color: var(--dark_gray);
+//       }
+//     }
+//   }
+// }

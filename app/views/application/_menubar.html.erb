@@ -1,12 +1,16 @@
 <div class="O_Header">
     <div class="W_Menu">
-      <%= link_to "", welcome_index_url, class:"A_Logo" %>
+      <% if controller.controller_name == 'welcome' && (controller.action_name == 'index' || controller.action_name == 'search') %>
+        <div class="A_Logo"></div>
+      <% else %>
+        <%= link_to "", welcome_index_url, class: "A_Logo #{random_logo_class}" %>
+      <% end %>
       <!--<div class="W_MenuBarCenter">
         <p> Скоро тут будет поиск :) </p>
       </div> -->
       <div class="W_MenuBarRight">
         <% if user_signed_in? && current_user.admin == true%>
-            <%= link_to "Загрузить", new_post_path, class:"A_Button Black" %>
+            <%= link_to "Загрузить", new_post_path, class:"A_Button LightBlue" %>
         <% end %>
         <% if user_signed_in? %>
         <div class="A_AvatarHeaderButton">
@@ -17,7 +21,7 @@
               <div class="A_Avatar NoImage"></div>
             <% end %> 
             <% end %> 
-            <div class="Q_Opener Q_DropOpener"></div>    
+            <div class="Q_Opener Q_DropOpener" id="desktopOpener"></div>    
             </div>      
         <% else %>
           <%= link_to "Войти", new_user_session_path, class: "A_Button Black" %>
@@ -25,9 +29,8 @@
       </div>
     </div>
   </div>
-
   <div class="W_Dropdown">
-    <div class="M_Dropdown NotActive">
+    <div class="M_Dropdown NotActive" id="desktopDropdown">
       <% if user_signed_in? %>
         <%= link_to profile_path(current_user.profile), class: "M_PostAuthor" do %>
           <div class="A_Avatar NoImage">
@@ -60,16 +63,16 @@
   </div>
   <div class="O_HeaderMobile">
   <div class="W_HeaderMobile">
-    <div class="A_Menu_Mobile Q_DropOpener">
+    <div class="A_Menu_Mobile" id="burgerMenu">
       <div></div>
       <div></div>
       <div></div> 
     </div>
-    <%= link_to "", welcome_index_url, class:"A_Logo" %>
+    <%= link_to "", welcome_index_url, class:"A_Logo #{random_logo_class}" %>
     <div class="Q_Search"> </div>
     </div>
 
-  <div class="M_Dropdown NotActive">
+  <div class="M_Dropdown NotActive" id="mobileDropdown">
   <% if user_signed_in? %>
   <%= link_to "Профиль", profile_path(current_user.profile), class: "A_Button Transparent" %>
   <%= link_to "Настройки", edit_profile_url(current_user.profile), class: "A_Button Transparent" %>
