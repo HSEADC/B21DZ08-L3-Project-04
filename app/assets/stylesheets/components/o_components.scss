@@ -362,6 +362,7 @@
   }
 }
 .O_Posts {
+  position: relative;
   display: flex;
   gap: 24px;
   flex-direction: column;
@@ -382,6 +383,10 @@
     align-content: flex-start;
     gap: 24px;
     flex-wrap: wrap;
+    &.Favs {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
   }
 }
 .S_IndexContent {
@@ -552,4 +557,32 @@
   background-color: var(--black);
   opacity: 35%;
   z-index: 101;
+}
+.O_Collection {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding: 16px;
+  background-color: var(--white);
+  border-radius: 24px;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.M_CollectionInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 432px;
+  height: 235px;
+  .W_CollectionPreview {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
 }

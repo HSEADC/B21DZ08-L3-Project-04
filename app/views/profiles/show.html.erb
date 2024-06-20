@@ -1,69 +1,54 @@
 <div class="O_Account">
-<div class="M_ProfileInfo">
-<% if @profile.avatar? %>
-  <%= image_tag @profile.avatar.url, class: "A_Icon"  %>
-<% else %>
-<div class="A_Icon NoImage"></div>
-<% end %>
-
-
-<div class="W_ProfileInfo">
-
-<div class="W_ProfileName">
-<div class="A_Heading3">
-<%= @profile.username%>
-</div>
-<div class="A_Paragraph Grey">
-<%= @profile.login%>
-</div>
-<div class="A_Paragraph">
-<%= @profile.about%>
-</div>
-</div>
-</div>
-  
-</div><% if current_user && current_user == @profile.user %>
-<%= link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue' %>
-<% end %></div>
-
-
-<div class="O_Posts">
-<div class="M_Switcher">
-<p class="A_Paragraph A_Link Users">Публикации</p>
-<p class="A_Paragraph Favs">Избранное</p>
-<% if current_user && current_user == @profile.user %>
-<p class="A_Paragraph Drafts">Черновики</p>
-<% end %>
-
-</div>
-
-
-
-<div class="W_Posts Users">
-  <% @posts.each do |post| %>
-    <%= link_to post do%>
-      <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false, } %>
+  <div class="M_ProfileInfo">
+    <% if @profile.avatar? %>
+      <%= image_tag @profile.avatar.url, class: "A_Icon"  %>
+    <% else %>
+      <div class="A_Icon NoImage"></div>
     <% end %>
-  <% end %>
-</div> 
-
-
-<div class="W_Posts Favs Hidden">
-<% if @user_favourited_posts.present? %>
-<% @user_favourited_posts.each do |post| %>
-  <%= link_to post do %>
-    <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false } %>
-  <% end %>
-<% end %>
-<% end %>
-</div>
-
-<div class="W_Posts Drafts Hidden">
-</div>
-
-
-
-
-
-
+    <div class="W_ProfileInfo">
+      <div class="W_ProfileName">
+        <div class="A_Heading3">
+          <%= @profile.username%>
+        </div>
+        <div class="A_Paragraph Grey">
+          <%= @profile.login%>
+        </div>
+        <div class="A_Paragraph">
+          <%= @profile.about%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% if current_user && current_user == @profile.user %>
+    <%= link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue' %>
+  <% end %></div>
+  <div class="O_Posts hidden">
+    <div class="M_Switcher">
+      <p class="A_Paragraph A_Link Users">Публикации</p>
+      <p class="A_Paragraph Favs">Избранное</p>
+      <% if current_user && current_user == @profile.user %>
+        <p class="A_Paragraph Drafts">Черновики</p>
+      <% end %>
+  </div>
+  <div class="W_Posts Users hidden">
+    <% @posts.each do |post| %>
+      <%= link_to post do%>
+        <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false, } %>
+      <% end %>
+    <% end %>
+  </div> 
+  <div class="W_Posts Favs">
+    <%# if @user_favourited_posts.present? %>
+      <%# @user_favourited_posts.each do |post| %>
+        <%#= link_to post do %>
+          <%#= render partial: 'posts/post-preview', locals: { post: post, show_email: false } %>
+        <%# end %>
+      <%# end %>
+    <%# end %>
+    <% @collections.each do |collection| %>
+        <%= render partial: 'collections/collection', locals: { collection: collection } %>
+    <% end %>
+  </div>
+  <div class="W_Posts Drafts Hidden">
+  </div>
 </div>

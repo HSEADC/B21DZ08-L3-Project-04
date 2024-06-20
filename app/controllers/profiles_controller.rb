@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
     @user = @profile.user
     @posts = @user.posts
     @user_favourited_posts = @user.posts_i_favourited
+    @collections = @user.collections.order(created_at: :desc)
   end
 
   def edit
