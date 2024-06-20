@@ -1,5 +1,5 @@
-<div class="A_Button Grey">
+<div class="A_Button Grey" data-controller="dropdown"  data-action="mouseenter->dropdown#open mouseenter->dropdown#cancelClose mouseleave->dropdown#resumeClose">
     <div class="Q_Icon Add"></div>
-    <div class="A_Paragraph">Добавить</div>
+    <div class="A_Paragraph" id="hideText">Добавить</div>
     <%= render 'posts/collections_dropdown', post: post %>
 </div>

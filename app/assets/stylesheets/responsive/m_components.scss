@@ -10,7 +10,6 @@
     }
   }
   .M_PostActions {
-    margin-top: 64px;
     .W_ButtonGroup {
       gap: 12px;
     }
@@ -80,7 +79,6 @@
     max-width: 679px;
   }
   .M_PostActions {
-    margin-top: 64px;
     .W_ButtonGroup {
       gap: 8px;
     }
@@ -179,7 +177,6 @@
     max-width: 650px;
   }
   .M_PostActions {
-    margin-top: 48px;
     .W_ButtonGroup {
       gap: 8px;
     }
@@ -281,10 +278,9 @@
     max-width: 324px;
   }
   .M_PostActions {
-    margin-top: 48px;
     .W_ButtonGroup {
       gap: 4px;
-      p {
+      #hideText {
         display: none;
       }
     }
@@ -335,7 +331,7 @@
   .W_ButtonGroup {
     .A_Button {
       .O_AddToCollectionDropdown {
-        left: -147px;
+        left: -139px;
       }
     }
   }
