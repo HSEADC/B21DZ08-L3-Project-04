@@ -340,7 +340,6 @@
       text-overflow: ellipsis;
       white-space: normal;
       padding-bottom: 0.2em;
-      box-sizing: border-box;
     }
   }
   .C_TagCollection {
@@ -494,5 +493,44 @@
     .Antiqua {
       padding-bottom: 5px;
     }
+  }
+}
+.M_PostToCollectionCard {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--light_gray);
+  border-radius: 12px;
+  padding: 16px;
+  gap: 16px;
+  .A_Paragraph {
+    width: 290px;
+    height: fit-content;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    padding-bottom: 0.2em;
+  }
+  .A_Button {
+    width: 146px;
+  }
+}
+.M_CollectionInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 432px;
+  height: 235px;
+  .W_CollectionPreview {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: fit-content;
+    height: fit-content;
   }
 }

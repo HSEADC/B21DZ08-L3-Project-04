@@ -450,6 +450,8 @@
 .O_AddToCollectionDropdown {
   position: absolute;
   display: flex;
+  width: fit-content;
+  height: fit-content;
   flex-direction: column;
   padding: 24px 16px 16px 16px;
   z-index: 100;
@@ -460,38 +462,32 @@
   background-color: var(--white);
   box-shadow: 0px 15px 20px 0px rgba(108, 111, 121, 0.07),
     0px 5px 8px 0px rgba(0, 0, 0, 0.04);
-  .C_CollectionCards {
+  .C_CollectionList {
     position: relative;
     display: flex;
     width: fit-content;
     height: fit-content;
+    max-height: 503px;
+    overflow: scroll;
     flex-direction: column;
     gap: 12px;
   }
-}
-.M_PostToCollectionCard {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  background-color: var(--light_gray);
-  border-radius: 16px;
-  padding: 16px;
-  gap: 16px;
-  .A_Paragraph {
-    width: 254px;
-    height: fit-content;
+  .W_BigButton {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
   }
 }
 .O_CollectionBirth {
   position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  top: 100px;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   width: fit-content;
   height: fit-content;
-  z-index: 102;
+  z-index: 1001;
   border-radius: 24px;
   padding: 24px;
   background-color: var(--white);
@@ -511,7 +507,7 @@
   height: 100vh;
   background-color: var(--black);
   opacity: 35%;
-  z-index: 101;
+  z-index: 1000;
 }
 .O_Collection {
   position: relative;
@@ -524,20 +520,4 @@
   width: fit-content;
   height: fit-content;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-}
-.M_CollectionInfo {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 432px;
-  height: 235px;
-  .W_CollectionPreview {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: fit-content;
-    height: fit-content;
-  }
 }

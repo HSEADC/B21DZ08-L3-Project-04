@@ -53,6 +53,9 @@
     padding: 14px 12px;
     width: 539px;
   }
+  .W_BigButton {
+    width: 424px;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .A_Heading1 {
@@ -82,10 +85,8 @@
   .A_Input {
     width: 428px;
   }
-  .Q_ChaoticLetters {
-    // width: 475px;
-    // height: 232px;
-    display: none;
+  .W_BigButton {
+    width: 394px;
   }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
@@ -120,5 +121,8 @@
   }
   .A_Input {
     width: 324px;
+  }
+  .W_BigButton {
+    width: 300px;
   }
 }

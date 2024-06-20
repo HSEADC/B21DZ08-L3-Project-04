@@ -96,6 +96,16 @@
       }
     }
   }
+  .O_AddToCollectionDropdown {
+    .C_CollectionList {
+      max-height: 499px;
+    }
+  }
+  .O_CollectionBirth {
+    .W_HeaderPopUp {
+      width: 539px;
+    }
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .W_Body {
@@ -183,6 +193,16 @@
       &.Short {
         width: 540px;
       }
+    }
+  }
+  .O_AddToCollectionDropdown {
+    .C_CollectionList {
+      max-height: 492px;
+    }
+  }
+  .O_CollectionBirth {
+    .W_HeaderPopUp {
+      width: 428px;
     }
   }
 }
@@ -305,6 +325,21 @@
     }
     .A_Button {
       display: none;
+    }
+  }
+  .O_AddToCollectionDropdown {
+    padding: 16px 12px 12px 12px;
+    .C_CollectionList {
+      max-height: 444px;
+    }
+    .W_BigButton {
+      left: 12px;
+      bottom: 12px;
+    }
+  }
+  .O_CollectionBirth {
+    .W_HeaderPopUp {
+      width: 324px;
     }
   }
 }

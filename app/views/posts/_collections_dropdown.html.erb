@@ -1,9 +1,14 @@
 <turbo-frame class="O_AddToCollectionDropdown" id="collectionsDropdown" data-controller="turbo-modal">
   <div class="A_Heading3">Мои подборки</div>
-  <div class="C_CollectionCards" id="collections-list">
+  <div class="C_CollectionList" id="collections-list">
     <% @collections.each do |collection| %>
       <%= render partial: 'collections/collection_card', locals: { collection: collection, post: @post } %>
     <% end %>
   </div>
-  <%= link_to 'Создать коллекцию', new_collection_path(post_id: @post.id), data: { turbo_frame: 'modal'}, class: 'A_Button Blue' %>
+  <%= link_to new_collection_path(post_id: @post.id), data: { turbo_frame: 'modal'}, class: 'W_BigButton' do %>
+    <div class="A_Button Pink">
+      <div class="Q_Icon Add"></div>
+      <div class="A_Paragraph">Создать новую подборку</div>
+    </div>
+  <% end %>
 </turbo-frame>
