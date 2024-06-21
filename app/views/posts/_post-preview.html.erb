@@ -1,7 +1,7 @@
 <%= link_to post_path(post) do %>
     <div class="M_PostPreview" id="<%= dom_id post %>">
         <div class="W_Header">
-          <div class="A_Paragraph Grey">тут будет село</div>
+          <div class="A_Paragraph Grey"><%= post.place %></div>
           <div class="A_Heading3"><%= post.title %></div>
         </div>
         <div class="W_Tags">

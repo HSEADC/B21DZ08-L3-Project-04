@@ -26,9 +26,9 @@
     <div class="M_Switcher">
       <p class="A_Paragraph A_Link" data-profile-target="postsButton" data-action="click->profile#showPosts">Публикации</p>
       <p class="A_Paragraph" data-profile-target="collectionsButton" data-action="click->profile#showCollections">Избранное</p>
-      <% if current_user && current_user == @profile.user %>
-        <p class="A_Paragraph" data-profile-target="draftsButton" data-action="click->profile#showDrafts">Черновики</p>
-      <% end %>
+      <%# if current_user && current_user == @profile.user %>
+        <!--<p class="A_Paragraph" data-profile-target="draftsButton" data-action="click->profile#showDrafts">Черновики</p>-->
+      <%# end %>
     </div>
     <%= render partial: 'profiles/posts', locals: { posts: @profile.user.posts } %>
     <%= render partial: 'profiles/collections', locals: { collections: @profile.user.collections } %>

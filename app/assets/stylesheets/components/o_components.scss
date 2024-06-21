@@ -318,7 +318,7 @@
     align-content: flex-start;
     gap: 24px;
     flex-wrap: wrap;
-    &.Favs {
+    &.Collections {
       flex-direction: column;
       flex-wrap: nowrap;
     }
@@ -544,5 +544,13 @@
   position: relative;
   display: block;
   width: fit-content;
+  height: fit-content;
+}
+.W_ProfileSwitcher {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
   height: fit-content;
 }

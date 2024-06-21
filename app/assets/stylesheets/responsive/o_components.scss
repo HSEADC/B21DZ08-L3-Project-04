@@ -127,6 +127,10 @@
     width: 761px;
     gap: 64px;
   }
+  .O_Collection {
+    gap: 16px;
+    padding: 12px;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .W_Body {
@@ -189,6 +193,9 @@
   .O_Posts {
     .W_Posts {
       gap: 8px;
+      &.Collections {
+        gap: 16px;
+      }
     }
   }
   .O_CommentsSection {
@@ -247,8 +254,12 @@
     width: 650px;
     gap: 64px;
   }
+  .O_Collection {
+    gap: 16px;
+    padding: 12px;
+  }
 }
-@media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+@media only screen and (min-width: 0px) and (max-width: 767px) {
   .W_Body {
     width: 324px;
   }
@@ -319,6 +330,9 @@
   .O_Posts {
     .W_Posts {
       gap: 8px;
+      &.Collections {
+        gap: 16px;
+      }
     }
   }
   .O_CommentsSection {
@@ -387,5 +401,9 @@
   .O_PostBody {
     width: 324px;
     gap: 64px;
+  }
+  .O_Collection {
+    gap: 16px;
+    padding: 12px;
   }
 }

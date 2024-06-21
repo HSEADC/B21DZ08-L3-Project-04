@@ -2,12 +2,12 @@
   <%= render @post, show_email: true %>
   <div class="A_Caption">***</div>
   <%= render "posts/recommended", count: 6, heading: "Другие луточки" %>
-  <div class="A_Caption">***</div>
+  <!--<div class="A_Caption">***</div>
   <div class="O_CommentsSection">
-    <div class="A_Heading3"><%= russian_pluralize(@total_comments_count, 'комментарий', 'комментария', 'комментариев') %></div>
-    <%= render "comments/form", comment: Comment.new, post: @post %>
+    <div class="A_Heading3"><%#= russian_pluralize(@total_comments_count, 'комментарий', 'комментария', 'комментариев') %></div>
+    <%#= render "comments/form", comment: Comment.new, post: @post %>
     <div class="W_Comments">
-      <%= render @post.comments.reverse, post: @post %>
-    </div>
+      <%#= render @post.comments.reverse, post: @post %>
+    </div>-->
   </div>
 </div>
