@@ -1,14 +1,6 @@
 <div class="C_TagCollection">
-      <% post.kind_list.each do |tag| %>
-        <%= content_tag :span, tag, class: "A_Tag kind" %>
-      <% end %>
-      <% post.theme_list.each do |tag| %>
-        <%= content_tag :span, tag, class: "A_Tag theme" %>
-      <% end %>
-      <% post.language_list.each do |tag| %>
-        <%= content_tag :span, tag, class: "A_Tag language" %>
-      <% end %>
-      <% post.nationality_list.each do |tag| %>
-        <%= content_tag :span, tag, class: "A_Tag nationality" %>
-      <% end %>
+  <%= content_tag :span, post.kind_list.first, class: "A_Tag kind" if post.kind_list.any? %>
+  <%= content_tag :span, post.theme_list.first, class: "A_Tag theme" if post.theme_list.any? %>
+  <%= content_tag :span, post.language_list.first, class: "A_Tag language" if post.language_list.any? %>
+  <%= content_tag :span, post.nationality_list.first, class: "A_Tag nationality" if post.nationality_list.any? %>
 </div>
