@@ -313,9 +313,6 @@
     .A_Heading3 {
       text-align: left;
     }
-    &.Hidden {
-      display: none;
-    }
     display: flex;
     align-items: flex-start;
     align-content: flex-start;
@@ -325,6 +322,12 @@
       flex-direction: column;
       flex-wrap: nowrap;
     }
+  }
+  &.Hidden {
+    display: none;
+  }
+  &.Active {
+    display: flex;
   }
 }
 .S_IndexContent {
@@ -536,4 +539,10 @@
   width: 888px;
   gap: 64px;
   margin: 0 auto;
+}
+.W_ProfileSwitcher {
+  position: relative;
+  display: block;
+  width: fit-content;
+  height: fit-content;
 }

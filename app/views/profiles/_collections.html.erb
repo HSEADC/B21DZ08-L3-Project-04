@@ -1,0 +1,7 @@
+<%#=turbo_frame_tag "profileCollections" do %>
+    <div class="O_Posts Hidden" data-profile-target="collections">
+        <% collections.each do |collection| %>
+            <%= render partial: 'collections/collection', locals: { collection: collection } %>
+        <% end %>
+    </div>
+<%# end %>

@@ -1,0 +1,7 @@
+<%#=turbo_frame_tag "profilePosts" do %>
+    <div class="O_Posts Hidden" data-profile-target="posts">
+        <% posts.each do |post| %>
+            <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false, } %>
+        <% end %>
+    </div>
+<%# end %>

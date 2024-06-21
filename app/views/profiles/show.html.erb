@@ -22,22 +22,22 @@
   <% if current_user && current_user == @profile.user %>
     <%= link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue' %>
   <% end %></div>
-  <div class="O_Posts hidden">
+  <div class="W_ProfileSwitcher" data-controller="profile">
     <div class="M_Switcher">
-      <p class="A_Paragraph A_Link Users">Публикации</p>
-      <p class="A_Paragraph Favs">Избранное</p>
+      <p class="A_Paragraph A_Link" data-profile-target="postsButton" data-action="click->profile#showPosts">Публикации</p>
+      <p class="A_Paragraph" data-profile-target="collectionsButton" data-action="click->profile#showCollections">Избранное</p>
       <% if current_user && current_user == @profile.user %>
-        <p class="A_Paragraph Drafts">Черновики</p>
+        <p class="A_Paragraph" data-profile-target="draftsButton" data-action="click->profile#showDrafts">Черновики</p>
       <% end %>
+    </div>
+    <%= render partial: 'profiles/posts', locals: { posts: @profile.user.posts } %>
+    <%= render partial: 'profiles/collections', locals: { collections: @profile.user.collections } %>
+    <%= render partial: 'profiles/drafts', locals: { posts: @profile.user.posts } %>
   </div>
-  <div class="W_Posts Users hidden">
-    <% @posts.each do |post| %>
-      <%= link_to post do%>
-        <%= render partial: 'posts/post-preview', locals: { post: post, show_email: false, } %>
-      <% end %>
-    <% end %>
-  </div> 
-  <div class="W_Posts Favs">
+
+
+
+
     <%# if @user_favourited_posts.present? %>
       <%# @user_favourited_posts.each do |post| %>
         <%#= link_to post do %>
@@ -45,10 +45,3 @@
         <%# end %>
       <%# end %>
     <%# end %>
-    <% @collections.each do |collection| %>
-        <%= render partial: 'collections/collection', locals: { collection: collection } %>
-    <% end %>
-  </div>
-  <div class="W_Posts Drafts Hidden">
-  </div>
-</div>
