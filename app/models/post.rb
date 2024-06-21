@@ -6,6 +6,10 @@ class Post < ApplicationRecord
   has_many :attachments
   mount_uploader :post_image, PostImageUploader
   has_rich_text :text
+  has_rich_text :people
+  has_rich_text :source
+  has_rich_text :context
+  has_rich_text :remark 
 
   # acts_as_taggable_on :tags
 

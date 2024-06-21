@@ -396,6 +396,12 @@ input[type='checkbox']:checked + label::before {
       color: var(--white);
       transition: 0.2s;
     }
+    &.kind:before,
+    &.theme:before,
+    &.language:before,
+    &.nationality:before {
+      background-color: var(--white);
+    }
     &.theme {
       background-color: var(--pink);
       color: var(--white);
@@ -438,6 +444,10 @@ input[type='checkbox']:checked + label::before {
       transition: 0.2s;
     }
   }
+  &.newTag:hover:before {
+    background: var(--white);
+    transition: 0.2s;
+  }
   &.existing {
     cursor: pointer;
     &.kind:hover {
@@ -460,6 +470,10 @@ input[type='checkbox']:checked + label::before {
       color: var(--white);
       transition: 0.2s;
     }
+  }
+  &.existing:hover:before {
+    background: var(--white);
+    transition: 0.2s;
   }
 }
 .A_Tag:before {

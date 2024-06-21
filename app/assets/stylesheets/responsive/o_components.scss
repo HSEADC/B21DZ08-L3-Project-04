@@ -123,6 +123,10 @@
       padding: 0 16px;
     }
   }
+  .O_PostBody {
+    width: 761px;
+    gap: 64px;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .W_Body {
@@ -238,6 +242,10 @@
       font-size: 14px;
       padding: 0 12px;
     }
+  }
+  .O_PostBody {
+    width: 650px;
+    gap: 64px;
   }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
@@ -375,5 +383,9 @@
     .W_HeaderPopUp {
       width: 324px;
     }
+  }
+  .O_PostBody {
+    width: 324px;
+    gap: 64px;
   }
 }

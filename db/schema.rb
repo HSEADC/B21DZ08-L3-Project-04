@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_21_094704) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_21_115200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -115,11 +115,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_21_094704) do
     t.datetime "updated_at", null: false
     t.string "post_image"
     t.integer "user_id"
-    t.string "place"
-    t.string "people"
-    t.string "source"
-    t.string "context"
-    t.string "remark"
+    t.text "place"
+    t.text "people"
+    t.text "source"
+    t.text "context"
+    t.text "remark"
     t.date "recording_date"
     t.boolean "draft"
   end

@@ -32,4 +32,24 @@
       </div>
     </div>
 </div>
-<!--<div class="W_PostBody"><%#= post.text %></div>-->
+<div class="O_PostBody">
+  <div class="M_PostSection">
+    <div class="W_PostBody"><%= post.text %></div>
+  </div>
+  <div class="M_PostSection">
+    <div class="A_Heading3">Кто записан</div>
+    <div class="W_PostBody"><%= post.people %></div>
+  </div>
+  <div class="M_PostSection">
+    <div class="A_Heading3">Источник</div>
+    <div class="W_PostBody"><%= post.source %></div>
+  </div>
+  <div class="M_PostSection">
+    <div class="A_Heading3">Контекст записи</div>
+    <div class="W_PostBody"><%= post.context %></div>
+  </div>
+  <div class="M_PostSection">
+    <div class="A_Heading3">Примечания</div>
+    <div class="W_PostBody"><%= post.remark %></div>
+  </div>
+</div>

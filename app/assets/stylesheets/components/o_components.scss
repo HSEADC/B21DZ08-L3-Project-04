@@ -528,3 +528,12 @@
   height: fit-content;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
 }
+.O_PostBody {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 888px;
+  gap: 64px;
+  margin: 0 auto;
+}
