@@ -44,6 +44,11 @@
       width: 684px;
     }
   }
+  // .M_InputWithLabel {
+  // &.Editor {
+  //   width: 1344px;
+  // }
+  // }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .W_Dropdown {
@@ -118,7 +123,34 @@
       width: 136px;
     }
   }
+  // .M_InputWithLabel {
+  // &.Editor {
+  //   width: 982px;
+  // }
+  // }
 }
+
+///////
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  .M_SectionName {
+    .W_Captions {
+      flex-direction: row;
+      gap: 32px;
+      top: 4px;
+      left: 176px;
+      .A_Caption {
+        width: 360px;
+      }
+    }
+  }
+  .SO_EditorSection {
+    .W_EditorInputs {
+      margin: 60px auto;
+    }
+  }
+}
+////////
+
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .W_Dropdown {
     .M_Dropdown {
@@ -141,6 +173,9 @@
   }
   .M_InputWithLabel {
     gap: 6px;
+    // &.Editor {
+    //   width: 650px;
+    // }
   }
   .W_InputsColumn {
     gap: 12px;
@@ -214,6 +249,21 @@
     }
     .A_Button {
       width: 127px;
+    }
+  }
+  .M_SectionName {
+    .W_Captions {
+      gap: 12px;
+      top: 32px;
+      left: 0px;
+      .A_Caption {
+        width: 428px;
+      }
+    }
+  }
+  .SO_EditorSection {
+    .W_EditorInputs {
+      margin: 120px auto;
     }
   }
 }
@@ -311,9 +361,6 @@
   }
   .M_InputWithAvatar {
     gap: 8px;
-    .A_Input {
-      width: 220px;
-    }
   }
   .M_EditForm {
     width: 324px;

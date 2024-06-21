@@ -21,24 +21,32 @@
               <% end %> 
             <% end %>
           </div>
-        </div>          
-        <div class="M_InputWithLabel">
+        </div>         
+        <div class="M_InputWithLabel Editor">
           <%= form.label :title, "Название", style: "display: block; color: var(--dark_gray);", class: "A_Caption" %>
-          <%= form.text_field :title, placeholder: "Название", class: "A_Heading1", style: "width: 1116px;"%>
+          <%= form.text_field :title, placeholder: "Название", class: "A_Heading1"%>
         </div>
         <div class="SO_EditorSection">
           <div class="M_SectionName">
             <div class="Q_Icon ArrowUp"></div>
-            <div class="A_Paragraph">Фольклорный паспорт</div>
+            <div class="A_Paragraph">Основные поля</div>
             <div class="W_Captions">
-              <div class="A_Caption Gray">Заполнение этих полей обязательно для любой фольклорной единицы.</div>
-              <div class="A_Caption Gray">А&nbsp;еще другим исследователям так будет проще найти ваш материал (ведь все мы&nbsp;хотим быть найденными)</div>
+              <div class="A_Caption Gray">Заполнение полей фольклорного паспорта обязательно для любой фольклорной единицы.</div>
+              <div class="A_Caption Gray">А&nbsp;еще так другим исследователям будет проще найти ваш материал, ведь все мы&nbsp;хотим быть найденными.</div>
             </div>
           </div>
           <div class="W_EditorInputs">
+            <div class="M_InputWithLabel" style="margin-left: 0;">
+              <%= form.label :recording_date, "Дата записи", class: "A_Heading3" %>
+              <%= form.date_field :recording_date, placeholder: "Дата записи", class: "A_Input", style: "width: 172px;" %>
+            </div>
+            <div class="M_InputWithLabel" style="margin-left: 0;">
+              <%= form.label :place, "Место", class: "A_Heading3" %>
+              <%= form.text_field :place, placeholder: "Место сбора", class: "A_Input"%>
+            </div>
             <div class="W_TagsSelection" data-controller="tags">
               <div class="A_Heading3">Теги</div>
-              <div class="C_TagCollection" data-tags-target="selectedTagsContainer">
+              <div class="C_TagCollection" data-tags-target="selectedTagsContainer" id="selectedTags">
               </div>
               <%= form.hidden_field :kind_list, value: post.kind_list.join(", "), id: "kind", data: { tags_target: "postTagsForm", type: "kind"} %>
               <%= form.hidden_field :nationality_list, value: post.nationality_list.join(", "), id: "nationality", data: { tags_target: "postTagsForm", type: "nationality" } %>
@@ -89,7 +97,7 @@
                 </div>
                 <div class="M_TagsSearchUnit">
                   <div class="W_TopSearchPart">
-                    <div class="A_Paragraph Antiqua">Язык, диалект</div>
+                    <div class="A_Paragraph Antiqua">Язык</div>
                     <div class="A_SearchInput">
                     <div class="Q_Icon SearchGray Small"></div>
                     <%= tag.input type: "text", placeholder: "Я хочу найти…", class: "A_Paragraph", id: "language", 
@@ -133,8 +141,41 @@
             </div>
           </div>
         </div>
-        <div class="O_CustomTrixEditor">
-          <p class="A_Paragraph">Луток</p>
-          <%= form.rich_text_area :text, data: { controller: "trix" }%>
+        <div data-controller="trix">
+          <div class="O_CustomTrixEditor">
+            <div class="M_SectionName">
+              <div class="Q_Icon ArrowUp"></div>
+              <p class="A_Paragraph">Луток</p>
+            </div>
+            <%= form.rich_text_area :text%>
+          </div>
+          <div class="O_CustomTrixEditor">
+            <div class="M_SectionName">
+              <div class="Q_Icon ArrowUp"></div>
+              <p class="A_Paragraph">Кто записан</p>
+            </div>
+            <%= form.rich_text_area :people%>
+          </div>
+          <div class="O_CustomTrixEditor">
+            <div class="M_SectionName">
+              <div class="Q_Icon ArrowUp"></div>
+              <p class="A_Paragraph">Источник</p>
+            </div>
+            <%= form.rich_text_area :source%>
+          </div>
+          <div class="O_CustomTrixEditor">
+            <div class="M_SectionName">
+              <div class="Q_Icon ArrowUp"></div>
+              <p class="A_Paragraph">Контекст записи</p>
+            </div>
+            <%= form.rich_text_area :context%>
+          </div>
+          <div class="O_CustomTrixEditor">
+            <div class="M_SectionName">
+              <div class="Q_Icon ArrowUp"></div>
+              <p class="A_Paragraph">Примечания</p>
+            </div>
+            <%= form.rich_text_area :remark%>
+          </div>
         </div>
 <% end %>

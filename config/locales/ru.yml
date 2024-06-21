@@ -7,3 +7,10 @@ ru:
           attributes:
             username:
               too_short: 'Слишком коротко'
+  date:
+    formats:
+      default: '%d.%m.%Y'
+    order:
+      - :day
+      - :month
+      - :year

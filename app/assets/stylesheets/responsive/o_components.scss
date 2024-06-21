@@ -106,6 +106,23 @@
       width: 539px;
     }
   }
+  .SO_EditorSection .W_TagsSelection {
+    #selectedTags {
+      width: 539px;
+    }
+    .M_TagsSearchUnit {
+      width: 491px;
+    }
+  }
+  .O_CustomTrixEditor {
+    .trix-content {
+      width: 750px;
+    }
+    .trix-button {
+      font-size: 16px;
+      padding: 0 16px;
+    }
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .W_Body {
@@ -203,6 +220,23 @@
   .O_CollectionBirth {
     .W_HeaderPopUp {
       width: 428px;
+    }
+  }
+  .SO_EditorSection .W_TagsSelection {
+    #selectedTags {
+      width: 428px;
+    }
+    .M_TagsSearchUnit {
+      width: 380px;
+    }
+  }
+  .O_CustomTrixEditor {
+    .trix-content {
+      width: 644px;
+    }
+    .trix-button {
+      font-size: 14px;
+      padding: 0 12px;
     }
   }
 }

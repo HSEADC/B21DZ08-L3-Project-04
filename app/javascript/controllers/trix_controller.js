@@ -37,8 +37,17 @@ export default class TrixController extends Controller {
   ];
 
   connect() {
-    TrixController.TOOLBAR_BUTTON_ICONS.forEach((group) => {
-      document.querySelector(group.identifier).innerHTML = group.text;
+    const trixEditors = this.element.querySelectorAll('trix-editor');
+
+    trixEditors.forEach((editor) => {
+      const toolbar = editor.toolbarElement;
+
+      TrixController.TOOLBAR_BUTTON_ICONS.forEach((group) => {
+        const button = toolbar.querySelector(group.identifier);
+        if (button) {
+          button.innerHTML = group.text;
+        }
+      });
     });
   }
 }
