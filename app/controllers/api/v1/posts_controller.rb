@@ -1,5 +1,6 @@
 class Api::V1::PostsController < Api::V1::ApplicationController
   def index
+    @post = Post.find(params[:id])
     @posts = Post.all
   end
 
