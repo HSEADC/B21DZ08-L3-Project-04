@@ -510,7 +510,7 @@
   padding: 16px;
   gap: 16px;
   .A_Paragraph {
-    width: 290px;
+    width: 207px;
     height: fit-content;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -519,9 +519,6 @@
     text-overflow: ellipsis;
     white-space: normal;
     padding-bottom: 0.2em;
-  }
-  .A_Button {
-    width: 146px;
   }
 }
 .M_CollectionInfo {

@@ -477,15 +477,15 @@
     display: flex;
     width: fit-content;
     height: fit-content;
-    max-height: 503px;
+    max-height: 295px;
     overflow: scroll;
     flex-direction: column;
     gap: 12px;
   }
   .W_BigButton {
-    position: absolute;
-    left: 16px;
-    bottom: 16px;
+    position: relative;
+    // left: 16px;
+    // bottom: 16px;
   }
 }
 .O_CollectionBirth {

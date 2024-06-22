@@ -142,7 +142,7 @@ input {
     text-decoration: underline;
   }
   &.Icon {
-    background-image: url('icons/Send.svg');
+    // background-image: url('icons/Send.svg');
     background-size: 24px 24px;
     background-repeat: no-repeat;
     background-position: 11px 10px;
@@ -155,16 +155,33 @@ input {
   &.IconText {
     background-position: 16px 9.5px;
   }
+  &.Add {
+    background-image: url('icons/Plus.svg');
+    width: 40px;
+    border-radius: 20px;
+    background-color: var(--dark_blue);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &.Remove {
+    background-image: url('icons/Minus.svg');
+    width: 40px;
+    border-radius: 20px;
+    background-color: var(--grey);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 .W_BigButton {
   position: relative;
   display: block;
-  width: 484px;
+  width: 295px;
   height: fit-content;
-  background-color: var(--pink);
+  background-color: var(--blue);
   border-radius: 12px;
   box-shadow: 0px 15px 20px 0px rgba(108, 111, 121, 0.07),
     0px 5px 8px 0px rgba(0, 0, 0, 0.04);
+  color: var(--white);
   .A_Button {
     margin: 16px auto;
   }
@@ -192,6 +209,9 @@ input {
   }
   &.Add {
     background-image: url('icons/Add.svg');
+  }
+  &.AddWhite {
+    background-image: url('icons/AddWhite.svg');
   }
   &.Edit {
     background-image: url('icons/Edit.svg');

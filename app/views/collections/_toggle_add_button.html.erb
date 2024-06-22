@@ -1,6 +1,7 @@
 <turbo-frame id="collection_<%= collection.id %>_post_<%= @post.id %>">
 <%= form_with(url: collection.posts.include?(post) ? remove_post_collection_path(collection) : add_post_collection_path(collection), method: collection.posts.include?(post) ? :delete : :post, data: { turbo_frame: "collection_#{collection.id}_post_#{post.id}" }) do %>
   <%= hidden_field_tag :post_id, post.id %>
-  <%= submit_tag collection.posts.include?(post) ? 'Удалить' : 'Добавить', class: collection.posts.include?(post) ? 'A_Button Grey' : 'A_Button LightBlue' %>
+  <%= submit_tag '', class: collection.posts.include?(post) ? 'A_Button Add' : 'A_Button Remove' do %>
+  <% end %>
 <% end %>
 </turbo-frame>
