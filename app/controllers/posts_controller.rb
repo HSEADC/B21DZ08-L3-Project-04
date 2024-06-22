@@ -18,10 +18,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @total_comments_count = @post.total_comments_count
     @collections = current_user.collections.order(created_at: :desc) if user_signed_in?
-  rescue ActiveRecord::RecordNotFound
-    # Если запись с заданным id не найдена, можно обработать эту ошибку
-    flash[:error] = "Post not found"
-    redirect_to posts_path
   end
 
   # GET /posts/new
