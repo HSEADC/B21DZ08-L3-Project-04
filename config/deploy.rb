@@ -58,18 +58,3 @@ namespace :logs do
       end
     end
   end
-
-  namespace :deploy do
-  desc 'Seed the database'
-  task :seed do
-    on roles(:db) do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, 'db:seed'
-        end
-      end
-    end
-  end
-end
-
-after 'deploy:migrate', 'deploy:seed'
