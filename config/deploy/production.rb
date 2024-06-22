@@ -54,7 +54,7 @@ server "81.177.160.230",
   roles: %w{web app db},
   ssh_options: {
     # user: "user_name", # overrides user setting above
-    keys: %w(/home/user_name/.ssh/id_ed25519),
+    # keys: %w(/home/user_name/.ssh/id_ed25519),
     forward_agent: true,
     auth_methods: %w(publickey)
     # password: "please use keys"
