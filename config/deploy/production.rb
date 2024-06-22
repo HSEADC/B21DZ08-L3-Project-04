@@ -59,4 +59,3 @@ server "81.177.160.230",
     auth_methods: %w(publickey)
     # password: "please use keys"
   }
-  after 'deploy:published', 'db:seed'
