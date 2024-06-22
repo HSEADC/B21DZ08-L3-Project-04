@@ -8,6 +8,7 @@
 
 @tags = [""]
 def seed
+  reset_db
   create_admin
   create_users
   # create_profiles
