@@ -580,3 +580,25 @@ input[type='checkbox']:checked + label::before {
     color: var(--dark_gray);
   }
 }
+.A_PictureAbout {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  // left: 50%; /* Сдвиг влево на 50% */
+  // transform: translateX(-50%);
+  z-index: -1;
+  margin-top: -10vh;
+}
+.A_PictureAboutMobile {
+  display: none;
+  width: 100vw;
+  margin: 0 auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 50%; /* Сдвиг влево на 50% */
+  transform: translateX(-50%);
+  z-index: -1;
+}

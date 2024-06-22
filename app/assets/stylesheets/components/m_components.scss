@@ -547,3 +547,91 @@
     width: 100%;
   }
 }
+.M_About {
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+  left: 0;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 160px;
+  & * {
+    transition: all 0.3s ease-out;
+  }
+  .S_AboutSection {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    width: 888px;
+    &.Num1 {
+      height: 100vh;
+    }
+    &.Num2 {
+      margin-top: 160px;
+      img {
+        position: absolute;
+        left: -200px;
+        top: -300px;
+      }
+      img:hover {
+        left: -180px;
+        top: -320px;
+      }
+    }
+    &.Num5 {
+      margin-bottom: 100px;
+    }
+  }
+  .A_PictureAbout2 {
+    width: 90vw;
+    height: auto;
+  }
+  .C_Pictures {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    .A_PictureAbout3 {
+      width: 50%;
+      height: auto;
+      transform: rotate(-7deg);
+      &:hover {
+        transform: rotate(-10deg);
+      }
+    }
+    .A_PictureAbout4 {
+      width: 50%;
+      height: auto;
+      margin-top: 20px;
+      transform: rotate(2deg);
+      &:hover {
+        transform: rotate(6deg);
+      }
+    }
+  }
+  .A_PictureAbout5 {
+    width: 80vw;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+
+  .A_SVGAbout {
+    width: 100vw;
+    height: auto;
+    margin: -100px;
+  }
+  .A_PictureAbout6 {
+    width: 80vw;
+    height: auto;
+    margin: -200px;
+  }
+}

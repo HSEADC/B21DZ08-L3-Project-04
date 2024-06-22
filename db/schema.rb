@@ -86,6 +86,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_21_115200) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "followings", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "guests", force: :cascade do |t|
     t.string "token"
     t.datetime "created_at", null: false

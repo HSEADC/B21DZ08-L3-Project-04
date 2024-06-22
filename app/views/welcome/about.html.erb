@@ -1,110 +1,48 @@
-<section>
-  <div class="W_AllMainLines">
-      <div class="W_MainLine">
-        <div class="A_MainHeading1 part1">
-        Путь к моему
-        </div>
-        <div class="A_MainHeading1Antiqua part2">
-          сердцу
-        </div>
-      </div>
-      <div class="W_MainLine">
-        <div class="A_MainHeading1 part3">
-          <div class="right">
-            лежит 
-          </div>
-        </div>
-      </div>
-      <div class="W_MainLine">
-        <div class="A_MainHeading1 part4">
-          через
-        </div>
-      </div>
-      <div class="W_MainLine">
-        <div class="A_MainHeading1Antiqua part5">
-          <div class="right">
-            звук
-          </div>
-        </div>
-      </div>
-    </div>
-  <div class="A_BgSlide1">
-    <div class="A_BgSlide1_Left"></div>
-    <div class="A_BgSlide_Center"></div>
-    <div class="A_BgSlide1_Right"></div>
-    <div class="Q_BgSlide1_Pic"></div>
+<div class="O_AboutMenu">
+  <div class="A_Tag kind" onClick="window.scrollTo({ top: 0, behavior: 'smooth' });">О нас</div>
+  <div class="A_Tag language" onClick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Контакты</div>
+  <%= link_to "К фольклору", welcome_index_url, class: "A_Tag theme" %>
+
+</div>
+
+<%= image_tag "Landing/A_Picture.png", class: "A_PictureAbout" %>
+<%= image_tag "Landing/A_PictureAboutMobile.png", class: "A_PictureAboutMobile" %>
+
+<div class="M_About" id="about">
+  <div class="S_AboutSection Num1">
+    <%= link_to "К фольклору", welcome_index_url, class: "A_Button White" %>
   </div>
-</section>
-<section>
-  <div class="Texts">
-    <div class="A_TextBlock">
-      Луток&nbsp;&mdash; медиа-сервис о&nbsp;близости, родстве и&nbsp;нежности через&nbsp;то, что раньше звучало громче и&nbsp;объединяло нас всех.
+
+  <div class="S_AboutSection Num2">
+    <%= image_tag "Landing/A_PictureLutok1.png", class: "A_PictureAboutLutok" %>
+    <div class= "A_Heading1"><%= raw "о нас"%> </div>
+    <div class= "A_Heading3"><%= raw "Медиа-сервис про близость и&nbsp;родство народов через сбор, исследование и&nbsp;сбережение фольклора. 
+    Мы&nbsp;большая исследоваетльская семья, и&nbsp;мы&nbsp;верим, что в&nbsp;познании лежит ключ к&nbsp;любви и&nbsp;свету"%> </div>
+  </div>
+ 
+  <%= image_tag "Landing/A_SVGAbout.svg", class: "A_SVGAbout" %>
+
+  <div class="S_AboutSection Num3">
+    <div class= "A_Heading1"><%= raw "собираем"%> </div>
+    <div class= "A_Heading3"><%= raw "Мы&nbsp;хотим упорядочить весь фольклор народов России, сделать мир открытым и&nbsp;удобным для новых исследований. Воспитать чувство ответственности за&nbsp;сохранение культурного наследия, объединить все народы, ментально сблизить людей"%> </div>
+    <%= image_tag "Landing/A_Picture2.png", class: "A_PictureAbout2" %>
     </div>
-    <div class="A_TextBlock">
-      Мы&nbsp;собираем и&nbsp;храним
-          <div class="A_Highlighted">
-      <div class="A_HighlightedText">
-        фольклор
-      </div>
+  <div class="S_AboutSection Num4">
+    <div class= "A_Heading1"><%= raw "исследуем"%> </div>
+    <div class= "A_Heading3"><%= raw "Луток&nbsp;&mdash; это не&nbsp;просто коллекция, а&nbsp;живой исследовательский проект. Пользователи анализируют и&nbsp;интерпретируют фольклорные материалы, раскрывая их&nbsp;скрытые смыслы и&nbsp;исторический контекст. Узнайте больше о&nbsp;культурных корнях и&nbsp;традициях через наш каталог."%> </div>
+    <div class="C_Pictures">
+    <%= image_tag "Landing/A_Picture3.png", class: "A_PictureAbout3" %>
+    <%= image_tag "Landing/A_Picture4.png", class: "A_PictureAbout4" %>
     </div>
     </div>
+  <div class="S_AboutSection Num5">
+    <div class= "A_Heading1"><%= raw "сберегаем"%> </div>
+    <div class= "A_Heading3"><%= raw "Мы&nbsp;стремимся сохранить фольклор для будущих поколений. Луток обеспечивает долговременное хранение и&nbsp;доступ к&nbsp;редким и&nbsp;исчезающим фольклорным материалам. Мы&nbsp;верны миссии по&nbsp;сохранению народного наследия и&nbsp;передаче его будущим поколениям."%> </div>
+    <%= image_tag "Landing/A_Picture5.png", class: "A_PictureAbout5" %>
+    <%= link_to "К фольклору", welcome_index_url, class: "A_Button LightBlue" %>
   </div>
-  <div class="A_BgSlide2">
-  <div class="A_BgSlide2_Left"></div>
-  <div class="A_BgSlide_Center"></div>
-  <div class="A_BgSlide2_Right"></div>
-  <div class="Q_BgSlide2_Pic"></div>
-  </div>
-</section>
-<section class="section3">
-  <div class="Texts">
-    <div class="A_TextBlock">
-      Мы&nbsp;объединяем исследователей, художников, просто любителей научпопа и&nbsp;всех-всех-всех вместе
-    </div>
-  </div>
-  <div class="A_BgSlide3">
-  <div class="A_BgSlide3_Left"></div>
-  <div class="A_BgSlide_Center"></div>
-  <div class="A_BgSlide3_Right"></div>
-  </div>
-</section>
-<section class="section4">
-  <div class="Texts">
-    <div class="A_TextBlock">
-      Давай вместе дадим 
-    </div>
-    <div class="A_TextBlock">
-      жизнь фольклору*
-    </div>
-  </div>
-  <div class="snoska">
-    *Это клеточный автомат — прямая метафора того, как работает фольклор. Нажми, чтобы внести вклад и посмотреть, как это отразится на будущем
-  </div>
-  <div class="A_BgSlide4">
-  <main class="A_BgSlide4">
-    <div class="A_BgSlide4_Left"></div>
-  <div class="A_BgSlide_Center"></div>
-  <div class="A_BgSlide4_Right"></div>
-  </main>
-  </div>
-</section>
-<section class="section5">
-  <div class="SubscribeContent">
-    <div class="Texts">
-      <div class="A_TextBlock">
-        Оставь свой тг&nbsp;или подпишись на&nbsp;канал, чтобы быть в&nbsp;курсе
-      </div>
-    </div>
-    <div class="W_Subscribe">
-      <%= turbo_frame_tag @subscription do %>
-        <%= render 'subscriptions/form', subscription: @subscription %>
-      <% end%>
-    </div>
-  </div>
-  <div class="A_BgSlide5"> <div class="A_BgSlide5_Left"></div>
-  <div class="A_BgSlide_Center"></div>
-  <div class="A_BgSlide5_Right"></div>
-  <div class="Q_BgSlide5_Pic"></div>
-  </div>
-</section>
-<div class="A_BgSlide6"></div>
+
+  <%= image_tag "Landing/A_Picture6.png", class: "A_PictureAbout6" %>
+  <div id="contact"></div>
+
+</div>
