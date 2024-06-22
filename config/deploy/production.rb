@@ -42,7 +42,7 @@
 # Global options
 # --------------
 #  set :ssh_options, {
-#    keys: %w(/home/user_name/.ssh/id_rsa),
+#    keys: %w(/home/user_name/.ssh/id_ed25519),
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
