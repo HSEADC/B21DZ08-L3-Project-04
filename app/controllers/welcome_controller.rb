@@ -13,6 +13,7 @@ class WelcomeController < ApplicationController
   end
 
   def about
+    render layout: "about"
     @subscription = Subscription.new
   end
 

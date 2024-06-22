@@ -581,3 +581,20 @@
     }
   }
 }
+.O_AboutMenu {
+  position: fixed;
+  top: 20px;
+  width: 100vw;
+  left: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px 15px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  .A_Tag {
+    cursor: pointer;
+  }
+}

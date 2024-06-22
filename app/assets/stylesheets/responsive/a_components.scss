@@ -59,6 +59,9 @@
   .A_SearchInput {
     width: 360px;
   }
+  .A_PictureAbout {
+    margin-top: 0vh;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .A_Heading1 {
@@ -93,6 +96,9 @@
   }
   .A_SearchInput {
     width: 269px;
+  }
+  .A_PictureAbout {
+    margin-top: 0vh;
   }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
@@ -130,5 +136,11 @@
   }
   .W_BigButton {
     width: 300px;
+  }
+  .A_PictureAbout {
+    display: none;
+  }
+  .A_PictureAboutMobile {
+    display: block;
   }
 }

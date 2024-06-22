@@ -44,6 +44,11 @@
       width: 684px;
     }
   }
+  .M_About {
+    .S_AboutSection {
+      width: 660px;
+    }
+  }
   // .M_InputWithLabel {
   // &.Editor {
   //   width: 1344px;
@@ -135,6 +140,14 @@
       gap: 12px;
     }
   }
+  .M_About {
+    .S_AboutSection {
+      width: 660px;
+      &.Num2 {
+        margin-top: -100px;
+      }
+    }
+  }
 }
 
 ///////
@@ -153,6 +166,11 @@
   .SO_EditorSection {
     .W_EditorInputs {
       margin: 60px auto;
+    }
+  }
+  .M_About {
+    .S_AboutSection {
+      width: 746px;
     }
   }
 }
@@ -280,6 +298,18 @@
       gap: 8px;
     }
   }
+  .M_About {
+    .S_AboutSection {
+      width: 644px;
+      &.Num2 {
+        margin-top: -100px;
+      }
+      &.Num1 {
+        height: 70vh;
+        padding-bottom: 100px;
+      }
+    }
+  }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   .M_FormHeader {
@@ -401,6 +431,36 @@
     height: 225px;
     .W_CollectionPreview {
       gap: 8px;
+    }
+  }
+  .M_About {
+    gap: 100px;
+    .S_AboutSection {
+      width: 320px;
+      &.Num1 {
+        height: 100vh;
+        padding-top: 20vh;
+      }
+      &.Num2 {
+        margin-top: -100px;
+      }
+      &.Num1 {
+        height: 70vh;
+        padding-bottom: 100px;
+      }
+    }
+    .A_PictureAbout4 {
+      width: 50vw;
+    }
+    .A_PictureAbout5 {
+      width: 120vw;
+    }
+    .A_PictureAbout6 {
+      width: 200vw;
+      margin: -150px;
+    }
+    .A_PictureAbout2 {
+      width: 200vw;
     }
   }
 }
