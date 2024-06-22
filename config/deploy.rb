@@ -49,3 +49,12 @@ set :puma_enable_socket_service, true
 set :puma_conf, -> { File.join(shared_path, 'config', 'puma.rb') }
 
 set :ssh_options, verify_host_key: :never
+
+namespace :logs do
+    desc "Tail application logs"
+    task :tail do
+      on roles(:app) do
+        execute "tail -f #{shared_path}/log/production.log" # Adjust the log path as per your environment
+      end
+    end
+  end
