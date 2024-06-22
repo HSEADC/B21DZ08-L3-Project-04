@@ -554,3 +554,30 @@
   width: 100%;
   height: fit-content;
 }
+.EditorCap {
+  position: relative;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  .W_Center {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: fixed;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 324px;
+    .A_Heading3 {
+      position: relative;
+      width: 100%;
+      text-align: center;
+    }
+    .A_Button {
+      position: relative;
+      color: var(--white);
+    }
+  }
+}

@@ -24,20 +24,27 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def create
-    @user = User.new(user_params)
-    @profile = @user.build_profile(profile_params)
+  # def create_profile
+  #   profile = Profile.create(user_id: id)
+  #   if profile.errors.any?
+  #     puts profile.errors.full_messages
+  #   end
+  # end
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to profile_url(@profile), notice: "Profile was successfully created." }
-        format.json { render :show, status: :created, location: @profile }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def create
+  #   @user = User.new(user_params)
+  #   @profile = @user.build_profile(profile_params)
+
+  #   respond_to do |format|
+  #     if @user.save
+  #       format.html { redirect_to profile_url(@profile), notice: "Profile was successfully created." }
+  #       format.json { render :show, status: :created, location: @profile }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @user.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   private
 

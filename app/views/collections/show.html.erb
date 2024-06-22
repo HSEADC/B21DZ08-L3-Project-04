@@ -16,16 +16,16 @@
       </div>
       <div class="A_Paragraph"><%= formatted_date(@collection.created_at)%></div>
     </div>
-</div>
-<div class="M_PostActions">
-  <div class="W_ButtonGroup">
-    <%#= render 'posts/favourite_button', post: post %>
-    <%#= render 'posts/like_button', post: post %>
-    <%#= render 'posts/add_to_collection_button', post: @collection %>
-  </div>
-  <div class="W_ButtonGroup">
-    <%= render 'posts/share_button', post: @collection %>
-    <%= render 'posts/more_button', post: @collection %>
+    <div class="M_PostActions">
+      <div class="W_ButtonGroup">
+        <%#= render 'posts/favourite_button', post: post %>
+        <%#= render 'posts/like_button', post: post %>
+        <%#= render 'posts/add_to_collection_button', post: @collection %>
+      </div>
+    <div class="W_ButtonGroup">
+        <%= render 'posts/share_button', post: @collection %>
+        <%= render 'posts/more_button', post: @collection %>
+    </div>
   </div>
 </div>
 <div class="O_Posts">

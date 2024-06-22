@@ -20,8 +20,12 @@
     </div>
   </div>
   <% if current_user && current_user == @profile.user %>
-    <%= link_to "Редактировать", edit_profile_path(@profile), class: 'A_Button Blue' %>
-  <% end %></div>
+    <%= link_to edit_profile_path(@profile), class: 'A_Button Grey' do %>
+    <div class="Q_Icon Edit"></div>
+    <div class="A_Paragraph">Редактировать</div>
+    <% end %>
+  <% end %>
+  </div>
   <div class="W_ProfileSwitcher" data-controller="profile">
     <div class="M_Switcher">
       <p class="A_Paragraph A_Link" data-profile-target="postsButton" data-action="click->profile#showPosts">Публикации</p>

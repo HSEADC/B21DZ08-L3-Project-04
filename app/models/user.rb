@@ -24,4 +24,13 @@ class User < ApplicationRecord
   has_many :likes
   has_many :posts_i_liked, through: :likes, source: 'post'
 
+  after_create :create_profile
+
+  def create_profile
+    profile = Profile.create(user_id: id, username: "Пользователь#{id}", login: "Пользователь#{id}")
+    if profile.errors.any?
+      puts profile.errors.full_messages
+    end
+  end
+
 end

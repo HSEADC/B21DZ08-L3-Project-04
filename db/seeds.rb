@@ -11,10 +11,10 @@ def seed
   reset_db
   create_admin
   create_users
-  create_profiles
+  # create_profiles
   create_posts(15)
-  create_comments(2..8)
-  create_comment_replies(300)
+  # create_comments(2..8)
+  # create_comment_replies(300)
   create_likes(3..10)
   create_tags(0..2)
 end
@@ -41,23 +41,23 @@ def create_users
   end
 end
 
-def create_profiles
-  avatars_directory = "app/assets/images/DefaultAvatars"
-  avatars = Dir.entries(avatars_directory).reject { |f| File.directory? File.join(avatars_directory, f) || !f.match(/\.(png|jpg|jpeg|gif)$/i) }
+# def create_profiles
+#   avatars_directory = "app/assets/images/DefaultAvatars"
+#   avatars = Dir.entries(avatars_directory).reject { |f| File.directory? File.join(avatars_directory, f) || !f.match(/\.(png|jpg|jpeg|gif)$/i) }
 
-  User.all.each_with_index do |user, index|
-    random_avatar = avatars.sample
-    avatar_path = File.join(avatars_directory, random_avatar)
-    username = "user_#{index}"
-    nickname = "nickname_#{index}"
-    profile = Profile.create(username: username, about: create_mashup(3), user_id: user.id, login: nickname, avatar: File.open(avatar_path))
-    if profile.valid?
-      puts "Profile #{profile.id} for user #{profile.user.id} created"
-    else
-      puts "Error creating profile for user #{user.id}: #{profile.errors.full_messages.join(', ')}"
-    end
-  end
-end
+#   User.all.each_with_index do |user, index|
+#     random_avatar = avatars.sample
+#     avatar_path = File.join(avatars_directory, random_avatar)
+#     username = "user_#{index}"
+#     nickname = "nickname_#{index}"
+#     profile = Profile.create(username: username, about: create_mashup(3), user_id: user.id, login: nickname, avatar: File.open(avatar_path))
+#     if profile.valid?
+#       puts "Profile #{profile.id} for user #{profile.user.id} created"
+#     else
+#       puts "Error creating profile for user #{user.id}: #{profile.errors.full_messages.join(', ')}"
+#     end
+#   end
+# end
 
 
 def create_admin
