@@ -167,7 +167,7 @@ input {
     background-image: url('icons/Minus.svg');
     width: 40px;
     border-radius: 20px;
-    background-color: var(--grey);
+    background-color: var(--gray);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -245,6 +245,9 @@ input {
   }
   &.Close {
     background-image: url('icons/Close.svg');
+  }
+  &.Unliked {
+    background-image: url('icons/Unliked.svg');
   }
 }
 .A_Logo {

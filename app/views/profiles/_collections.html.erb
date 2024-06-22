@@ -1,6 +1,12 @@
 <%#=turbo_frame_tag "profileCollections" do %>
     <div class="O_Posts Hidden" data-profile-target="collections">
         <div class="W_Posts Collections">
+            <%#= link_to new_collection_path(), data: { turbo_frame: 'modal'}, class: 'W_BigButton' do %>
+                <!--<div class="A_Button LightBlue">
+                    <div class="Q_Icon AddWhite"></div>
+                    <div class="A_Paragraph White">Создать новую подборку</div>
+                </div>-->
+            <%# end %>
             <% collections.each do |collection| %>
                 <%= render partial: 'collections/collection', locals: { collection: collection } %>
             <% end %>

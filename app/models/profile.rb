@@ -3,6 +3,8 @@ class Profile < ApplicationRecord
     mount_uploader :avatar, AvatarUploader
     # validates :login, presence: true, length: { minimum: 6 }, format: { with: /\A[a-zA-Z0-9!@#$%^&*]+\z/, message: "Используйте латиницу" }
     validate :login_unique
+    # load_and_authorize_resource
+
     private
     def login_unique
         if Profile.exists?(login: login) && Profile.find_by(login: login).id != self.id

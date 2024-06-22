@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @total_comments_count = @post.total_comments_count
-    @collections = current_user.collections.order(created_at: :desc)
+    @collections = current_user.collections.order(created_at: :desc) if user_signed_in?
   end
 
   # GET /posts/new

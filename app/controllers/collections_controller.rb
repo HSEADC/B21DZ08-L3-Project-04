@@ -35,48 +35,7 @@ class CollectionsController < ApplicationController
         format.turbo_stream { render turbo_stream: turbo_stream.replace("collection_#{@collection.id}_post_#{@post.id}", partial: "collections/toggle_add_button", locals: { collection: @collection, post: @post }) }
       end
     end
-  
-    # def create
-    #   @post = Post.find(params[:post_id])
-    #   @collection = current_user.collections.build(collection_params)
-    #   respond_to do |format|
-    #     if @collection.save
-    #       if params[:post_id].present?
-    #         @collection.posts << @post
-    #       end
-    #       format.turbo_stream do
-    #         render turbo_stream: turbo_stream.prepend('collections-list', partial: 'collections/collection_card', locals: { collection: @collection })
-    #       end
-    #       format.html { redirect_to post_url(@post), notice: "Collection was successfully created." }
-    #     else
-    #       format.html { render :new, status: :unprocessable_entity }
-    #       format.turbo_stream do
-    #         render turbo_stream: turbo_stream.replace('modal', partial: 'modal', locals: { collection: @collection })
-    #       end
-    #     end
-    #   end
-    # end
 
-    # def create
-    #   puts params
-    #   @post = Post.find(params[:post_id])
-    #   puts @post
-    #   @collection = current_user.collections.build(collection_params)
-    #   respond_to do |format|
-    #     if @collection.save
-    #       if params[:post_id].present?
-    #         @collection.posts << @post
-    #       end
-    #       format.html { redirect_to @post, notice: 'Collection was successfully created.'}
-    #       format.turbo_stream do
-    #         render turbo_stream: [
-    #           turbo_stream.prepend("collections-list", partial: "collections/collection_card", locals: { collection: @collection }),
-    #           turbo_stream.replace("turbo-frame-id", "") # Add this line to handle frame removal
-    #         ]
-    #       end
-    #     end
-    #   end
-    # end
 
       def create
         @post = Post.find(params[:post_id])
@@ -113,7 +72,7 @@ class CollectionsController < ApplicationController
   
     def destroy
       @collection.destroy
-      redirect_to collections_url, notice: 'Collection was successfully destroyed.'
+      redirect_to profile_url, notice: 'Collection was successfully destroyed.'
     end
   
     private

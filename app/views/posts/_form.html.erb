@@ -12,7 +12,7 @@
         <% end %>
         <div class="W_EditorHeader">
           <div class="M_EditorHeader">
-            <%= form.submit "Сохранить", class:"A_Button Black" %>
+            <%= form.submit "Сохранить", class:"A_Button LightBlue" %>
             <%= link_to profile_path(current_user.profile) do %>
               <% if current_user.profile.avatar.present? %>
                   <%= image_tag current_user.profile.avatar.url, class: "A_Avatar" %>
