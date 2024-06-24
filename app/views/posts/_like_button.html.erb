@@ -6,7 +6,7 @@
   end
 
   counter = post_user_ids.count > 0 ? post_user_ids.count : nil
-  like_image = post_user_ids.include?(current_user&.id) ? "/Liked.svg" : "/Unliked.svg"
+  like_image = post_user_ids.include?(current_user&.id) ? "Liked.svg" : "Unliked.svg"
 %>
 
 <%= turbo_frame_tag dom_id(post) do %>

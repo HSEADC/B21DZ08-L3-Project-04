@@ -4,7 +4,7 @@
   post.users_who_favourited.each do |user|
     post_user_ids << user.id
   end
-  favourite_image = post_user_ids.include?(current_user&.id) ? "/Favourite.svg" : "/NotFavourite.svg"
+  favourite_image = post_user_ids.include?(current_user&.id) ? "Favourite.svg" : "NotFavourite.svg"
 %>
 
 <%= turbo_frame_tag dom_id(post) do %>
