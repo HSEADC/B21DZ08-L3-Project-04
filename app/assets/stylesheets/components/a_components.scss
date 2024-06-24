@@ -42,7 +42,7 @@
     text-decoration: none;
   }
   &.Arrow::after {
-    content: url('Icons/LinkArrow.svg');
+    content: url('LinkArrow.svg');
     padding-left: 6px;
   }
 }
@@ -142,7 +142,7 @@ input {
     text-decoration: underline;
   }
   &.Icon {
-    // background-image: url('icons/Send.svg');
+    // background-image: url('Send.svg');
     background-size: 24px 24px;
     background-repeat: no-repeat;
     background-position: 11px 10px;
@@ -156,7 +156,7 @@ input {
     background-position: 16px 9.5px;
   }
   &.Add {
-    background-image: url('icons/Plus.svg');
+    background-image: url('Plus.svg');
     width: 40px;
     border-radius: 20px;
     background-color: var(--dark_blue);
@@ -164,7 +164,7 @@ input {
     background-size: cover;
   }
   &.Remove {
-    background-image: url('icons/Minus.svg');
+    background-image: url('Minus.svg');
     width: 40px;
     border-radius: 20px;
     background-color: var(--gray);
@@ -202,52 +202,52 @@ input {
     height: 40px;
   }
   &.More {
-    background-image: url('icons/More.svg');
+    background-image: url('More.svg');
   }
   &.Share {
-    background-image: url('icons/Share.svg');
+    background-image: url('Share.svg');
   }
   &.Add {
-    background-image: url('icons/Add.svg');
+    background-image: url('Add.svg');
   }
   &.AddWhite {
-    background-image: url('icons/AddWhite.svg');
+    background-image: url('AddWhite.svg');
   }
   &.Edit {
-    background-image: url('icons/Edit.svg');
+    background-image: url('Edit.svg');
   }
   &.Delete {
-    background-image: url('icons/Delete.svg');
+    background-image: url('Delete.svg');
   }
   &.Tick {
-    background-image: url('icons/Tick.svg');
+    background-image: url('Tick.svg');
   }
   &.Cross {
-    background-image: url('icons/Cross.svg');
+    background-image: url('Cross.svg');
   }
   &.Search {
-    background-image: url('icons/Search.svg');
+    background-image: url('Search.svg');
   }
   &.SearchGray {
-    background-image: url('icons/SearchGray.svg');
+    background-image: url('SearchGray.svg');
   }
   &.ArrowUp {
-    background-image: url('icons/ArrowUpInCircle.svg');
+    background-image: url('ArrowUpInCircle.svg');
   }
   &.ArrowDown {
-    background-image: url('icons/ArrowDownInCircle.svg');
+    background-image: url('ArrowDownInCircle.svg');
   }
   &.ArrowRight {
-    background-image: url('icons/ArrowRightInCircle.svg');
+    background-image: url('ArrowRightInCircle.svg');
   }
   &.ArrowLeft {
-    background-image: url('icons/ArrowLeftInCircle.svg');
+    background-image: url('ArrowLeftInCircle.svg');
   }
   &.Close {
-    background-image: url('icons/Close.svg');
+    background-image: url('Close.svg');
   }
   &.Unliked {
-    background-image: url('icons/Unliked.svg');
+    background-image: url('Unliked.svg');
   }
 }
 .A_Logo {
@@ -257,22 +257,22 @@ input {
   background-position: center;
   background-size: contain;
   &.Blue1 {
-    background-image: url('logo/Blue1.svg');
+    background-image: url('Blue1.svg');
   }
   &.MidSummer1 {
-    background-image: url('logo/MidSummer1.svg');
+    background-image: url('MidSummer1.svg');
   }
   &.MidSummer2 {
-    background-image: url('logo/MidSummer2.svg');
+    background-image: url('MidSummer2.svg');
   }
   &.MidSummer3 {
-    background-image: url('logo/MidSummer3.svg');
+    background-image: url('MidSummer3.svg');
   }
   &.MidSummer4 {
-    background-image: url('logo/MidSummer4.svg');
+    background-image: url('MidSummer4.svg');
   }
   &.MidSummer5 {
-    background-image: url('logo/MidSummer5.svg');
+    background-image: url('MidSummer5.svg');
   }
 }
 .A_Input {
@@ -340,7 +340,7 @@ input[type='checkbox'] + label::before {
 
 input[type='checkbox']:checked + label::before {
   background-color: var(--dark_blue);
-  background-image: image-url('Icons/CheckBox.svg');
+  background-image: image-url('CheckBox.svg');
   background-size: cover;
 }
 .A_Caption {
@@ -394,7 +394,7 @@ input[type='checkbox']:checked + label::before {
     background-color: none;
   }
   &.Attachment {
-    background-image: url('Icons/Attachment.svg');
+    background-image: url('Attachment.svg');
   }
 }
 .A_Tag {
