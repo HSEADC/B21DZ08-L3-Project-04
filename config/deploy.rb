@@ -25,6 +25,7 @@ set :deploy_to, "/home/deployer/apps/#{fetch :application}"
 
 # Default value for :pty is false
 set :pty, true
+set :keep_releases, 5
 
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", "config/master.key", "config/puma.rb", "config/credentials.yml.enc"
