@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'replies/new'
   get 'replies/create'
+  get '/favicon.ico', to: redirect('/favicon.ico')
+
 
   namespace :api do
     namespace :v1 do
