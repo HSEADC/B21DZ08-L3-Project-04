@@ -40,10 +40,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   gtag('config', 'G-JKV354W70H');
 </script>
- 
+<!-- Top.Mail.Ru counter -->
+<script type="text/javascript">
+var _tmr = window._tmr || (window._tmr = []);
+_tmr.push({id: "3529427", type: "pageView", start: (new Date()).getTime()});
+(function (d, w, id) {
+  if (d.getElementById(id)) return;
+  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+  ts.src = "https://top-fwz1.mail.ru/js/code.js";
+  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window, "tmr-code");
+</script>
+<noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3529427;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+<!-- /Top.Mail.Ru counter -->
+
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta property="og:title" content="Луток — о нас" />
+    <meta property="og:type" content="website" />
+    <meta name="description" content="Цифровой альманах, упрощающий сохранение фольклора">
+    <meta property="og:image" content="<%= image_path('opengraph.jpg') %>" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
